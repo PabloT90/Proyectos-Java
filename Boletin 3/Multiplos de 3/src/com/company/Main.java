@@ -45,7 +45,7 @@ Estudio de Bucles:
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int numero=0;
+        int numero=0, total=0;
         char respuesta=' ';
         Scanner teclado = new Scanner(System.in);
 
@@ -62,10 +62,19 @@ public class Main {
                 numero = teclado.nextInt();
             }while(numero < 1);
 
+            //HallarMultiplos
             while(numero > 1){
-
+                if(numero % 3 == 0){
+                    System.out.println("Multiplo: " + numero);
+                    total = total+numero;
+                }
+                numero--;
             }
 
+            //MostrarSumaTotal
+            System.out.println("La suma total es: " + total);
+
+            //LeerValidarEjecutar
             do{
                 System.out.println("Quiere ejecutar?");
                 respuesta = Character.toLowerCase(teclado.next().charAt(0));
