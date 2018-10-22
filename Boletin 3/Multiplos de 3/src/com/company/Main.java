@@ -1,7 +1,7 @@
 package com.company;
 //Enunciado: hacer un programa que imprima, cuente y sume los multiplos de 3 que hay entre 1 y un numero leido por teclado
 /* Entrada: respuesta, numero.
-   Salida: nada, solo imprime en pantalla.
+   Salida: resultado de la suma y multiplos de 3
    Restricciones: respuesta solo puede ser 'S' o 'N'.
                   El numero debe ser entero positivo distinto de 0.
 
@@ -10,17 +10,22 @@ package com.company;
         LeerValidarEjecutar
         Mientras respuesta sea 'S'
             LeerValidarNumero
-            Mientras numero > 1
-                si numero es divisible entre 3
-                    PintarEnPantalla
-                    SumarNumero
-                fin_si
-                Actualizar contador
-            fin_mientras
+            HallarMultiplo
             MostrarSumaTotal
             LeerValidarEjecutar
         fin_Mientras
    FIN
+
+   Nombre modulo: HallarMultiplo
+     INCIO
+            Mientras numero > 1
+                si numero es divisible entre 3
+                    PintarEnPantallaNumero
+                    SumarNumero
+                fin_si
+                Actualizar contador
+            fin_mientras
+       FIN
 
 Estudio de Bucles:
     LeerValidarEjecutar
@@ -68,7 +73,7 @@ public class Main {
                     System.out.println("Multiplo: " + numero);
                     total = total+numero;
                 }
-                numero--;
+                numero--; //Actualizar contador
             }
 
             //MostrarSumaTotal
