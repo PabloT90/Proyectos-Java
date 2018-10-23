@@ -1,7 +1,7 @@
 /*  Descripcion: simulacion de una carrera de caballos.
     Entradas: caracter
     Salidas: eco de los datos, caballo ganador
-    Restricciones: el caracter solo puede ser 's' o 'n'
+    Restricciones: el caracter solo puede ser 's' o 'n's
 
 PG
 INICIO
@@ -9,13 +9,30 @@ INICIO
     Mientras quiera ejecutar
         Para (i = 0; i <= distancia; i++)
             generarAleatorio
-            avanceCaballos  //Desarrollar
+            avanceCaballos  //Desarrollado abajo
             limpiarConsola*
             mostrarRecorrido
         fin_Para
         MostrarCaballoGanador
+        ActualizarVariables
     fin_Mientras
 FIN
+
+avanceCaballos
+   INICIO
+       si(aleatorio == 1)
+            avanzaCaballoA
+            actualizarContadorCabA
+       sino
+         si(aleatorio == 2)
+            avanzaCaballoB
+            actualizarContadorCabB
+       sino
+            avanzaCaballoC
+            actualizarContadorCabC
+         fin_si
+       fin_si
+   FIN
 * */
 
 import java.util.Scanner;
@@ -69,6 +86,9 @@ public class Main {
                 System.out.println("Ha ganado el caballo B!!");
             }else System.out.println("Ha ganado el caballo C!!");
 
+            //ActualizarVariables
+             cabA=0; cabB=0; cabC=0;
+             caballoA = "A"; caballoB = "B"; caballoC = "C";
             //LeerValidarEjecutar
             do {
                 System.out.println("Quieres ejecutar?");
