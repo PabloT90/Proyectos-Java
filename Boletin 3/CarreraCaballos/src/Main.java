@@ -1,8 +1,9 @@
-/*  Descripcion: simulacion de una carrera de caballos.
+/* ************
+Descripcion: simulacion de una carrera de caballos.
     Entradas: caracter
     Salidas: eco de los datos, caballo ganador
-    Restricciones: el caracter solo puede ser 's' o 'n's
-
+    Restricciones: el caracter solo puede ser 's' o 'n'
+*************
 PG
 INICIO
     LeerValidarEjecutar
@@ -15,6 +16,7 @@ INICIO
         fin_Para
         MostrarCaballoGanador
         ActualizarVariables
+        LeerValidarEjecutar
     fin_Mientras
 FIN
 
@@ -33,6 +35,29 @@ avanceCaballos
          fin_si
        fin_si
    FIN
+*************
+
+*************
+Estudio Bucles
+___________________________
+    LeerValidarEjecutar
+        VBC: centinela.
+        Inicializacion: Lectura anticipada antes de la primera iteracion.
+        Actualizacion: Lectura final de teclado. Fisicamente al final del bucle.
+        Condicion salida: respuesta == 's' || respuesta == 'n'
+____________________________
+    Bucle FOR
+        VCB: contador
+        Inicializacion: Antes de la primera iteracion a 0
+        Actualizacion: Fisicamente al final del bucle incrementando el valor del contador en 1.
+        Condicion salida: i > distancia
+___________________________
+    Bucle WHILE
+        VCB: centinela
+        Inicializacion: Lectura anticipada. Antes de la primera iteracion.
+        Actualizacion: Lectura final por teclado. Fisicamente al final del bucle.
+        Condicion salida: ejecutar =! 's'
+*************
 * */
 
 import java.util.Scanner;
@@ -57,8 +82,7 @@ public class Main {
                 //GenerarAleatorio
                 aleatorio = random.nextInt(3) + 1;
 
-                //AvanceCaballos
-                // Funciona de la siguiente manera: en cada repeticion lanza un numero, depende del numero que salga avanza un caballo u otro.
+                //AvanceCaballos    // Funciona de la siguiente manera: en cada repeticion lanza un numero, depende del numero que salga avanza un caballo u otro.
                 if (aleatorio == 1) {
                     caballoA = "a" + caballoA ;
                     cabA +=1;
@@ -89,6 +113,7 @@ public class Main {
             //ActualizarVariables
              cabA=0; cabB=0; cabC=0;
              caballoA = "A"; caballoB = "B"; caballoC = "C";
+
             //LeerValidarEjecutar
             do {
                 System.out.println("Quieres ejecutar?");
