@@ -8,7 +8,7 @@ PG
 INICIO
     LeerValidarEjecutar
     Mientras quiera ejecutar
-        Para (i = 0; i <= distancia; i++)
+        Para (contador = 0; contador <= distancia; contador++)
             generarAleatorio
             avanceCaballos  //Desarrollado abajo
             limpiarConsola*
@@ -50,7 +50,7 @@ ____________________________
         VCB: contador
         Inicializacion: Antes de la primera iteracion a 0
         Actualizacion: Fisicamente al final del bucle incrementando el valor del contador en 1.
-        Condicion salida: i > distancia
+        Condicion salida: contador > distancia
 ___________________________
     Bucle WHILE
         VCB: centinela
@@ -78,7 +78,7 @@ public class Main {
         } while (ejecutar != 's' && ejecutar != 'n');
 
         while (ejecutar == 's') { //Mientras quiera ejecutar
-            for (int i = 0; i <= distancia; i++) {
+            for (int contador = 0; contador <= distancia; contador++) {
                 //GenerarAleatorio
                 aleatorio = random.nextInt(3) + 1;
 
