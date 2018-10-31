@@ -3,24 +3,31 @@ Descripcion: simulacion de una carrera de caballos.
     Entradas: caracter
     Salidas: eco de los datos, caballo ganador
     Restricciones: el caracter solo puede ser 's' o 'n'
+
 *************
-PG
+PG_0
 INICIO
     LeerValidarEjecutar
     Mientras quiera ejecutar
-        Para (contador = 0; contador <= distancia; contador++)
-            generarAleatorio
-            avanceCaballos  //Desarrollado abajo
-            limpiarConsola*
-            mostrarRecorrido
-        fin_Para
+        SimularCarreraCaballos
         MostrarCaballoGanador
         ActualizarVariables
         LeerValidarEjecutar
     fin_Mientras
 FIN
 
-avanceCaballos
+PG_1 SimularCarreraCaballos
+INICIO
+    Para (contador = 0; contador <= distancia; contador++)
+            generarAleatorio
+            avanceCaballos  //Desarrollado abajo
+            EstablecerFinRecorrido
+            limpiarConsola*
+            mostrarRecorrido
+    fin_Para
+FIN
+
+PG _2 avanceCaballos
    INICIO
        si(aleatorio == 1)
             avanzaCaballoA
@@ -50,7 +57,7 @@ ____________________________
         VCB: contador
         Inicializacion: Antes de la primera iteracion a 0
         Actualizacion: Fisicamente al final del bucle incrementando el valor del contador en 1.
-        Condicion salida: contador > distancia
+        Condicion salida: contador > 29
 ___________________________
     Bucle WHILE
         VCB: centinela
@@ -65,7 +72,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
         //Declaraciones
-        int aleatorio, cabA=0, cabB=0, cabC=0, distancia=29;
+        int aleatorio, cabA=0, cabB=0, cabC=0;
         String caballoA = "A", caballoB = "B", caballoC = "C";
         char ejecutar;
         Scanner teclado = new Scanner(System.in);
@@ -78,7 +85,9 @@ public class Main {
         } while (ejecutar != 's' && ejecutar != 'n');
 
         while (ejecutar == 's') { //Mientras quiera ejecutar
-            for (int contador = 0; contador <= distancia; contador++) {
+
+            //SimularCarreraCaballos
+            for (int contador = 0; contador <= 29; contador++) {
                 //GenerarAleatorio
                 aleatorio = random.nextInt(3) + 1;
 
@@ -93,6 +102,8 @@ public class Main {
                     caballoC =  "c" + caballoC ;
                     cabC +=1;
                 }
+                //EstablecerFinRecorrido   ¿Esto esta bien hacerlo asi, o es mejor resolver el ejercicio de otra forma?
+                if(cabA >= 10 || cabB >= 10 || cabC >= 10) contador = 29; //Tendria que reflejar cuando hace el fin de carrera en el analisis? o al gusto del diseñador?
 
                 //LimpiarConsola
                 Utilidades.limpiarConsola();
@@ -108,7 +119,7 @@ public class Main {
                 System.out.println("Ha ganado el caballo A!!");
             }else if(cabB > cabA && cabB >cabC){
                 System.out.println("Ha ganado el caballo B!!");
-            }else System.out.println("Ha ganado el caballo C!!");
+            }else System.out.println("Ha ganado el C!!");
 
             //ActualizarVariables
              cabA=0; cabB=0; cabC=0;

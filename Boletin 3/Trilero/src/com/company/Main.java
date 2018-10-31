@@ -10,10 +10,7 @@ INICIO
     LeerValidarEjecutar
     mientras quiera ejecutar
         LeerValidarApuesta
-        GenerarNumeroAleatorio
-        MostrarCubiletes
-        LeerValidarOpcioncubilete
-        MostrarCubileteDestapado
+        JugarTrilero
         MostrarGanador
         MostrarDineroTotal
         LeerValidarEjecutar
@@ -28,6 +25,14 @@ si numAleatorio == cubilete
 sino
     MostrarMensajePerdedor
     ActualizarDineroTotal
+FIN
+
+PG JugarTrilero
+INICIO
+    GenerarNumeroAleatorio
+    MostrarCubiletes
+    LeerValidarOpcioncubilete
+    MostrarCubileteDestapado
 FIN
 
 ***********************
@@ -65,7 +70,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         char respuesta;
-        int cubilete=0, numAleatorio=0, apuesta=0, dineroTotal=100;
+        int cubilete, numAleatorio, apuesta, dineroTotal=100;
         Scanner teclado = new Scanner(System.in);
         Random aleatorio = new Random();
 
