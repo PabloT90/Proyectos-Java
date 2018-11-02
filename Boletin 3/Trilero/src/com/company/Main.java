@@ -17,6 +17,14 @@ INICIO
     fin_mientras
 FIN
 
+PG JugarTrilero
+INICIO
+    GenerarNumeroAleatorio
+    MostrarCubiletes
+    LeerValidarOpcioncubilete
+    MostrarCubileteDestapado
+FIN
+
 PG 2 MostrarGanador
 INICIO
 si numAleatorio == cubilete
@@ -26,15 +34,6 @@ sino
     MostrarMensajePerdedor
     ActualizarDineroTotal
 FIN
-
-PG JugarTrilero
-INICIO
-    GenerarNumeroAleatorio
-    MostrarCubiletes
-    LeerValidarOpcioncubilete
-    MostrarCubileteDestapado
-FIN
-
 ***********************
 ***********************
 Estudio de Bucles

@@ -1,6 +1,6 @@
-/* ************
+/*
 Descripcion: simulacion de una carrera de caballos.
-    Entradas: caracter
+    Entradas: caracter.
     Salidas: eco de los datos, caballo ganador
     Restricciones: el caracter solo puede ser 's' o 'n'
 
@@ -18,7 +18,7 @@ FIN
 
 PG_1 SimularCarreraCaballos
 INICIO
-    Para (contador = 0; contador <= distancia; contador++)
+    Para (contador = 0; contador <= 28; contador++)
             generarAleatorio
             avanceCaballos  //Desarrollado abajo
             EstablecerFinRecorrido
@@ -57,13 +57,13 @@ ____________________________
         VCB: contador
         Inicializacion: Antes de la primera iteracion a 0
         Actualizacion: Fisicamente al final del bucle incrementando el valor del contador en 1.
-        Condicion salida: contador > 29
+        Condicion salida: contador > 28
 ___________________________
     Bucle WHILE
         VCB: centinela
         Inicializacion: Lectura anticipada. Antes de la primera iteracion.
         Actualizacion: Lectura final por teclado. Fisicamente al final del bucle.
-        Condicion salida: ejecutar =! 's'
+        Condicion salida: ejecutar == 'n'
 *************
 * */
 
@@ -87,23 +87,23 @@ public class Main {
         while (ejecutar == 's') { //Mientras quiera ejecutar
 
             //SimularCarreraCaballos
-            for (int contador = 0; contador <= 29; contador++) {
+            for (int contador = 0; contador <= 28; contador++) {
                 //GenerarAleatorio
                 aleatorio = random.nextInt(3) + 1;
 
                 //AvanceCaballos    // Funciona de la siguiente manera: en cada repeticion lanza un numero, depende del numero que salga avanza un caballo u otro.
                 if (aleatorio == 1) {
-                    caballoA = "a" + caballoA ;
+                    caballoA = " " + caballoA ;
                     cabA +=1;
                 }else if (aleatorio == 2){
-                    caballoB = "b" + caballoB ;
+                    caballoB = " " + caballoB ;
                     cabB +=1;
                 }else{
-                    caballoC =  "c" + caballoC ;
+                    caballoC =  " " + caballoC ;
                     cabC +=1;
                 }
                 //EstablecerFinRecorrido   ¿Esto esta bien hacerlo asi, o es mejor resolver el ejercicio de otra forma?
-                if(cabA >= 10 || cabB >= 10 || cabC >= 10) contador = 29; //Tendria que reflejar cuando hace el fin de carrera en el analisis? o al gusto del diseñador?
+                if(cabA >= 10 || cabB >= 10 || cabC >= 10) contador = 28; //Tendria que reflejar cuando hace el fin de carrera en el analisis? o al gusto del diseñador?
 
                 //LimpiarConsola
                 Utilidades.limpiarConsola();
