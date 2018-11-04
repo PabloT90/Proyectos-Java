@@ -1,4 +1,5 @@
 package com.company;
+import java.util.Scanner;
 /* PG
 INCICIO
     LeerValidarEjecutar
@@ -59,6 +60,37 @@ Restricciones: Asignaremos un numero a cada carta de la baraja española, sin 8 
 	Se pierde si se saca una carta que:
 		- Sea 22
 	- Numero de jugadas máximo: 10
+
+PG
+INICIO
+    LeerValidarEjecutar
+    mientras quiera ejecutar
+        LeerValidarNumeroPartidas
+        mientras haya partidas
+            JugarCartaMagica //Analizado abajo
+            ActualizarContadorPartidas
+        fin_mientras
+        MostrarResultadoGeneral
+        LeerValidarEjecutar
+    fin_mientras
+FIN
+
+PG JugarCartaMagica
+INICIO
+    GenerarCarta
+    EstablecerGanador
+    segun(ganador)
+        caso 1:
+            MostrarGanadorPersona
+            ActualizarVictoriasPersona
+            ActualizarNombreGanador
+        caso 2:
+            MostrarGanadorPC
+            ActualizarVictoriasPC
+            ActualizarNombreGanador //Tendremos un variable de tipo String a la que le cambiaremos su valor.
+        caso 3:
+            MostrarEmpate
+FIN
 */
 public class Main {
     public static void main(String[] args) {
