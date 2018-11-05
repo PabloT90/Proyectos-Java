@@ -48,22 +48,25 @@ PG _2 avanceCaballos
 Estudio Bucles
 ___________________________
     LeerValidarEjecutar
-        VBC: centinela.
+        VBC: centinela. Cualquier valor distinto de 's' o 'n'
         Inicializacion: Lectura anticipada antes de la primera iteracion.
         Actualizacion: Lectura final de teclado. Fisicamente al final del bucle.
         Condicion salida: respuesta == 's' || respuesta == 'n'
+        Condicion entrada: respuesta != 's' && respuesta != 'n'
 ____________________________
     Bucle FOR
-        VCB: contador
-        Inicializacion: Antes de la primera iteracion a 0
+        VCB: contador.
+        Inicializacion: Antes de la primera iteracion a 0.
         Actualizacion: Fisicamente al final del bucle incrementando el valor del contador en 1.
         Condicion salida: contador > 28
+        Condicion entrada: contador <= 28
 ___________________________
     Bucle WHILE
-        VCB: centinela
+        VCB: centinela. El centinela es 'n'
         Inicializacion: Lectura anticipada. Antes de la primera iteracion.
         Actualizacion: Lectura final por teclado. Fisicamente al final del bucle.
         Condicion salida: ejecutar == 'n'
+        Condicion entrada: ejecutar != 'n'
 *************
 * */
 
@@ -84,8 +87,7 @@ public class Main {
             ejecutar = Character.toLowerCase(teclado.next().charAt(0));
         } while (ejecutar != 's' && ejecutar != 'n');
 
-        while (ejecutar == 's') { //Mientras quiera ejecutar
-
+        while (ejecutar != 'n') { //Mientras quiera ejecutar
             //SimularCarreraCaballos
             for (int contador = 0; contador <= 28; contador++) {
                 //GenerarAleatorio
