@@ -66,11 +66,12 @@ INICIO
     LeerValidarEjecutar
     mientras quiera ejecutar
         LeerValidarNumeroPartidas
-        mientras haya partidas
+        para(int partidas; partidas <= numeroPartidas; partidas++)
             JugarCartaMagica //Analizado abajo
             ActualizarContadorPartidas
-        fin_mientras
+        fin_para
         MostrarResultadoGeneral
+        ActualizarVariables
         LeerValidarEjecutar
     fin_mientras
 FIN
@@ -90,6 +91,7 @@ INICIO
             ActualizarNombreGanador //Tendremos un variable de tipo String a la que le cambiaremos su valor.
         caso 3:
             MostrarEmpate
+            ActualizarEmpates
     fin_segun
 FIN
 */
@@ -145,11 +147,14 @@ public class Main {
                             System.out.println("Sale: "+ nombreGanador);
                             //GenerarCarta
                             carta = aleatorio.nextInt(40)+1;
-                            System.out.println(carta);
+
                             //EstablecerGanador
-                            if((carta <= 8 && carta >= 11) || (carta <= 21 && carta >= 40)) ganador = 1;
-                            else if (carta == 22) ganador = 2;
-                            else ganador = 3;
+                            if(carta >= 8 && carta <= 11 || carta == 21 || carta >= 23 && carta <= 40){
+                                ganador = 1;
+                            }else if (carta == 22) {
+                                ganador = 2;
+                            }else{ ganador = 3;
+                            }
 
                             switch(ganador) {//segun(ganador)
                                 case 1://caso 1:
@@ -180,9 +185,13 @@ public class Main {
 
                         //MostrarResultadoGeneral
                         System.out.println("El resultado ha sido /n" +
-                                "Victorias PC: "+ victoriasPC +"/n"+
-                                "Victorias Persona: "+ victoriasPersona+"/n"+
+                                "Victorias Persona: "+ victoriasPersona +"/n"+
+                                "Victorias PC: "+ victoriasPC+"/n"+
                                 "Empates: "+ empate);
+
+                        //ActualizarVaribales
+                        victoriasPC = 0; victoriasPersona = 0; empate = 0; nombreGanador = "Jugador";
+
                         //LeerValidarEjecutar
                         do{
                             System.out.println("Quieres ejecutar Carta Magica?");
