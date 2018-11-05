@@ -19,7 +19,7 @@ INCICIO
 FIN
 
 Analisis PintarColina
-Entrada: numeroAltura, caracterRelleno, caracterSuavizado.
+Entrada: numeroAltura, caracterRelleno, caracterSuavizado, ejecutar.
 Salida: pinta en pantalla.
 Restricciones:
     - El numero tiene que ser impar entre 5 y 17
@@ -43,10 +43,6 @@ El ordenador simulará un juego en el que hay que sacar una carta, segun las res
 decidiremos quien ha ganado la ronda. La primera jugada es del jugador. La primera vez saca el jugador, las siguientes
 saca el que haya ganado la anterior y en caso de empate sacará el ultimo que haya ganado
 
-La probabilidad de que gane el primer jugador es del 35 %
-La probabilidad de que gane el segundo jugador es del 2'5 %
-La probabilidad de empate es del 62'5 %
-
 Entrada: numeroPartidas, ejecutar.
 Salida: eco de los datos, resultados.
 Restricciones: Asignaremos un numero a cada carta de la baraja española, sin 8 ni 9
@@ -66,9 +62,8 @@ INICIO
     LeerValidarEjecutar
     mientras quiera ejecutar
         LeerValidarNumeroPartidas
-        para(int partidas; partidas <= numeroPartidas; partidas++)
+        para(int partida; partida <= numeroPartidas; partidas++)
             JugarCartaMagica //Analizado abajo
-            ActualizarContadorPartidas
         fin_para
         MostrarResultadoGeneral
         ActualizarVariables
@@ -78,6 +73,7 @@ FIN
 
 PG JugarCartaMagica
 INICIO
+    MostrarJugadorSalida
     GenerarCarta
     EstablecerGanador
     si ganador es igual a Persona
@@ -89,7 +85,7 @@ INICIO
             caso 2:
                 MostrarGanadorPC
                 ActualizarVictoriasPC
-                ActualizarNombreGanador //Tendremos un variable de tipo String a la que le cambiaremos su valor.
+                ActualizarNombreGanador
             caso 3:
                 MostrarEmpate
                 ActualizarEmpates
@@ -103,7 +99,7 @@ INICIO
             caso 2:
                 MostrarGanadorPersona
                 ActualizarVictoriasPersona
-                ActualizarNombreGanador //Tendremos un variable de tipo String a la que le cambiaremos su valor.
+                ActualizarNombreGanador
             caso 3:
                 MostrarEmpate
                 ActualizarEmpates
@@ -127,6 +123,7 @@ public class Main {
             System.out.println("1- Pintar Colina");
             System.out.println("2- Numero Malvado");
             System.out.println("3- Carta Magica");
+            System.out.println("4- Salir");
             opcionMenu = teclado.nextInt();
         }while(opcionMenu < 1 || opcionMenu > 4);
 
@@ -157,20 +154,19 @@ public class Main {
                             numeroPartidas = teclado.nextInt();
                         }while(numeroPartidas < 1 || numeroPartidas > 10);
 
-                        for(int partidas=0; partidas < numeroPartidas; partidas++) {//mientras haya partidas
+                        for(int partida = 0; partida < numeroPartidas; partida++) {//mientras haya partidas
                             //JugarCartaMagica
 
+                            //MostrarJugadorSalida
                             System.out.println("Sale: "+ nombreGanador);
                             //GenerarCarta
                             carta = aleatorio.nextInt(40)+1;
                             System.out.println("La carta ha salido: " + carta);
                             //EstablecerGanador
-                            if(carta >= 8 && carta <= 11 || carta == 21 || carta >= 23 && carta <= 40){
-                                ganador = 1;
-                            }else if (carta == 22) {
-                                ganador = 2;
-                            }else{ ganador = 3;
-                            }
+                            if(carta >= 8 && carta <= 11 || carta == 21 || carta >= 23 && carta <= 40) ganador = 1;
+                            else if (carta == 22)  ganador = 2;
+                            else ganador = 3;
+
                             if(nombreGanador.equals("Persona")) {
                                 switch (ganador) {//segun(ganador)
                                     case 1://caso 1:
@@ -180,6 +176,7 @@ public class Main {
                                         victoriasPersona++;
                                         //ActualizarNombreGanador
                                         nombreGanador = "Persona";
+                                        System.out.println("-------------------");
                                         break;
                                     case 2://caso 2:
                                         //MostrarGanadorPC
@@ -188,10 +185,12 @@ public class Main {
                                         victoriasPC++;
                                         //ActualizarNombreGanador
                                         nombreGanador = "PC";
+                                        System.out.println("-------------------");
                                         break;
                                     case 3://caso 3:
                                         //MostrarEmpate
                                         System.out.println("Ha habido un empate, el orden de tirada sera el mismo");
+                                        System.out.println("-------------------");
                                         //ActualizarEmpates
                                         empate++;
                                         break;
@@ -200,23 +199,26 @@ public class Main {
                                 switch (ganador) {//segun(ganador)
                                     case 1://caso 1:
                                         //MostrarGanadorPC
-                                        System.out.println("Ha ganado la Persona");
-                                        //ActualizarVictoriasPC
-                                        victoriasPersona++;
-                                        //ActualizarNombreGanador
-                                        nombreGanador = "Persona";
-                                        break;
-                                    case 2://caso 2:
-                                        //MostrarGanadorPersona
                                         System.out.println("Ha ganado el PC");
-                                        //ActualizarVictoriasPersona
+                                        //ActualizarVictoriasPC
                                         victoriasPC++;
                                         //ActualizarNombreGanador
                                         nombreGanador = "PC";
+                                        System.out.println("-------------------");
+                                        break;
+                                    case 2://caso 2:
+                                        //MostrarGanadorPersona
+                                        System.out.println("Ha ganado la Persona");
+                                        //ActualizarVictoriasPersona
+                                        victoriasPersona++;
+                                        //ActualizarNombreGanador
+                                        nombreGanador = "Persona";
+                                        System.out.println("-------------------");
                                         break;
                                     case 3://caso 3:
                                         //MostrarEmpate
                                         System.out.println("Ha habido un empate, el orden de tirada sera el mismo");
+                                        System.out.println("-------------------");
                                         //ActualizarEmpates
                                         empate++;
                                         break;
@@ -225,13 +227,13 @@ public class Main {
                         }//fin_para
 
                         //MostrarResultadoGeneral
-                        System.out.println("El resultado ha sido"+
+                        System.out.println("El resultado ha sido \n"+
                                 " Victorias Persona: "+ victoriasPersona +
-                                " Victorias PC: "+ victoriasPC+
-                                " Empates: "+ empate);
+                                " \n Victorias PC: "+ victoriasPC+
+                                " \n Empates: "+ empate);
 
                         //ActualizarVaribales
-                        victoriasPC = 0; victoriasPersona = 0; empate = 0; nombreGanador = "Jugador";
+                        victoriasPC = 0; victoriasPersona = 0; empate = 0; nombreGanador = "Persona";
 
                         //LeerValidarEjecutar
                         do{
