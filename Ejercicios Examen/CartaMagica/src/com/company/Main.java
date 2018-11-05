@@ -1,11 +1,11 @@
 package com.company;
-import java.util.Scanner;
 /* PG
+Entrada: opcionMenu.
+Salida: eco de los datos, menu.
+Restricciones: la opcion del menu debe estar entre 1 y 4.
 INCICIO
-    LeerValidarEjecutar
-    mientras quiera ejecutar
-        MostrarMenu
-        LeeryValidarMenu
+    MostrarMenuLeeryValidar
+    mientras opcionMenu != 4
         segun(opcionMenu)
             opcion 1:
                 PintarColina
@@ -14,7 +14,7 @@ INCICIO
             opcion 3:
                 CartaMagica
         fin_segun
-        LeerValidarEjecutar
+        MostrarMenuLeeryValidar
     fin_mientras
 FIN
 
@@ -90,10 +90,116 @@ INICIO
             ActualizarNombreGanador //Tendremos un variable de tipo String a la que le cambiaremos su valor.
         caso 3:
             MostrarEmpate
+    fin_segun
 FIN
 */
+import java.util.Scanner;
+import java.util.Random;
 public class Main {
     public static void main(String[] args) {
+        int opcionMenu=0,numeroPartidas = 0, carta=0;
+        int ganador= 0, victoriasPersona = 0, victoriasPC =0, empate = 0;
+        char ejecutar=' ';
+        String nombreGanador = "Persona";
+        Scanner teclado = new Scanner(System.in);
+        Random aleatorio = new Random();
+
+        //MostrarMenuLeeryValidar
+        do{
+            System.out.println("1- Pintar Colina");
+            System.out.println("2- Numero Malvado");
+            System.out.println("3- Carta Magica");
+            opcionMenu = teclado.nextInt();
+        }while(opcionMenu < 1 || opcionMenu > 4);
+
+        while(opcionMenu != 4) {//mientras opcionMenu != 4
+
+            switch(opcionMenu) {//segun(opcionMenu)
+                case 1://opcion 1:
+                    //PintarColina
+                    System.out.println("--En construccion--");
+                    break;
+                case 2://opcion 2:
+                    //NumeroMalvado
+                    System.out.println("--En construccion--");
+                    break;
+                //opcion 3:
+                case 3:
+                    //CartaMagica
+                    //LeerValidarEjecutar
+                    do{
+                        System.out.println("Quieres ejecutar Carta Magica?");
+                        ejecutar = Character.toLowerCase(teclado.next().charAt(0));
+                    }while(ejecutar != 's' && ejecutar != 'n');
+
+                    while(ejecutar != 'n') {//mientras quiera ejecutar
+                        //LeerValidarNumeroPartidas
+                        do{
+                            System.out.println("Cuantas partidas quieres? Entre 1 y 10");
+                            numeroPartidas = teclado.nextInt();
+                        }while(numeroPartidas < 1 || numeroPartidas > 10);
+
+                        for(int partidas=0; partidas < numeroPartidas; partidas++) {//mientras haya partidas
+                            //JugarCartaMagica
+
+                            System.out.println("Sale: "+ nombreGanador);
+                            //GenerarCarta
+                            carta = aleatorio.nextInt(40)+1;
+                            System.out.println(carta);
+                            //EstablecerGanador
+                            if((carta <= 8 && carta >= 11) || (carta <= 21 && carta >= 40)) ganador = 1;
+                            else if (carta == 22) ganador = 2;
+                            else ganador = 3;
+
+                            switch(ganador) {//segun(ganador)
+                                case 1://caso 1:
+                                    //MostrarGanadorPersona
+                                    System.out.println("Ha ganado la persona");
+                                    //ActualizarVictoriasPersona
+                                    victoriasPersona++;
+                                    //ActualizarNombreGanador
+                                    nombreGanador = "Persona";
+                                    break;
+                                case 2://caso 2:
+                                    //MostrarGanadorPC
+                                    System.out.println("Ha ganado el PC");
+                                    //ActualizarVictoriasPC
+                                    victoriasPC++;
+                                    //ActualizarNombreGanador
+                                    nombreGanador = "PC";
+                                    break;
+                                case 3://caso 3:
+                                    //MostrarEmpate
+                                    System.out.println("Ha habido un empate, el orden de tirada sera el mismo");
+                                    //ActualizarEmpates
+                                    empate++;
+                                    break;
+                            }//fin_segun
+
+                        }//fin_para
+
+                        //MostrarResultadoGeneral
+                        System.out.println("El resultado ha sido /n" +
+                                "Victorias PC: "+ victoriasPC +"/n"+
+                                "Victorias Persona: "+ victoriasPersona+"/n"+
+                                "Empates: "+ empate);
+                        //LeerValidarEjecutar
+                        do{
+                            System.out.println("Quieres ejecutar Carta Magica?");
+                            ejecutar = Character.toLowerCase(teclado.next().charAt(0));
+                        }while(ejecutar != 's' && ejecutar != 'n');
+                    }//fin_mientras
+                    break;
+            }//fin_segun
+
+            //MostrarMenuLeerValidar
+            do{
+                System.out.println("1- Pintar Colina");
+                System.out.println("2- Numero Malvado");
+                System.out.println("3- Carta Magica");
+                opcionMenu = teclado.nextInt();
+            }while(opcionMenu < 1 || opcionMenu > 4);
+        }//Fin_mientras
 
     }
 }
