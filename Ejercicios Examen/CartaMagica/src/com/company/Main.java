@@ -80,19 +80,35 @@ PG JugarCartaMagica
 INICIO
     GenerarCarta
     EstablecerGanador
-    segun(ganador)
-        caso 1:
-            MostrarGanadorPersona
-            ActualizarVictoriasPersona
-            ActualizarNombreGanador
-        caso 2:
-            MostrarGanadorPC
-            ActualizarVictoriasPC
-            ActualizarNombreGanador //Tendremos un variable de tipo String a la que le cambiaremos su valor.
-        caso 3:
-            MostrarEmpate
-            ActualizarEmpates
-    fin_segun
+    si ganador es igual a Persona
+        segun(ganador)
+            caso 1:
+                MostrarGanadorPersona
+                ActualizarVictoriasPersona
+                ActualizarNombreGanador
+            caso 2:
+                MostrarGanadorPC
+                ActualizarVictoriasPC
+                ActualizarNombreGanador //Tendremos un variable de tipo String a la que le cambiaremos su valor.
+            caso 3:
+                MostrarEmpate
+                ActualizarEmpates
+        fin_segun
+    sino
+        segun(ganador)
+            caso 1:
+                MostrarGanadorPC
+                ActualizarVictoriasPC
+                ActualizarNombreGanador
+            caso 2:
+                MostrarGanadorPersona
+                ActualizarVictoriasPersona
+                ActualizarNombreGanador //Tendremos un variable de tipo String a la que le cambiaremos su valor.
+            caso 3:
+                MostrarEmpate
+                ActualizarEmpates
+        fin_segun
+    fin_si
 FIN
 */
 import java.util.Scanner;
@@ -147,7 +163,7 @@ public class Main {
                             System.out.println("Sale: "+ nombreGanador);
                             //GenerarCarta
                             carta = aleatorio.nextInt(40)+1;
-
+                            System.out.println("La carta ha salido: " + carta);
                             //EstablecerGanador
                             if(carta >= 8 && carta <= 11 || carta == 21 || carta >= 23 && carta <= 40){
                                 ganador = 1;
@@ -155,39 +171,64 @@ public class Main {
                                 ganador = 2;
                             }else{ ganador = 3;
                             }
-
-                            switch(ganador) {//segun(ganador)
-                                case 1://caso 1:
-                                    //MostrarGanadorPersona
-                                    System.out.println("Ha ganado la persona");
-                                    //ActualizarVictoriasPersona
-                                    victoriasPersona++;
-                                    //ActualizarNombreGanador
-                                    nombreGanador = "Persona";
-                                    break;
-                                case 2://caso 2:
-                                    //MostrarGanadorPC
-                                    System.out.println("Ha ganado el PC");
-                                    //ActualizarVictoriasPC
-                                    victoriasPC++;
-                                    //ActualizarNombreGanador
-                                    nombreGanador = "PC";
-                                    break;
-                                case 3://caso 3:
-                                    //MostrarEmpate
-                                    System.out.println("Ha habido un empate, el orden de tirada sera el mismo");
-                                    //ActualizarEmpates
-                                    empate++;
-                                    break;
-                            }//fin_segun
-
+                            if(nombreGanador.equals("Persona")) {
+                                switch (ganador) {//segun(ganador)
+                                    case 1://caso 1:
+                                        //MostrarGanadorPersona
+                                        System.out.println("Ha ganado la persona");
+                                        //ActualizarVictoriasPersona
+                                        victoriasPersona++;
+                                        //ActualizarNombreGanador
+                                        nombreGanador = "Persona";
+                                        break;
+                                    case 2://caso 2:
+                                        //MostrarGanadorPC
+                                        System.out.println("Ha ganado el PC");
+                                        //ActualizarVictoriasPC
+                                        victoriasPC++;
+                                        //ActualizarNombreGanador
+                                        nombreGanador = "PC";
+                                        break;
+                                    case 3://caso 3:
+                                        //MostrarEmpate
+                                        System.out.println("Ha habido un empate, el orden de tirada sera el mismo");
+                                        //ActualizarEmpates
+                                        empate++;
+                                        break;
+                                }//fin_segun
+                            }else{
+                                switch (ganador) {//segun(ganador)
+                                    case 1://caso 1:
+                                        //MostrarGanadorPC
+                                        System.out.println("Ha ganado la Persona");
+                                        //ActualizarVictoriasPC
+                                        victoriasPersona++;
+                                        //ActualizarNombreGanador
+                                        nombreGanador = "Persona";
+                                        break;
+                                    case 2://caso 2:
+                                        //MostrarGanadorPersona
+                                        System.out.println("Ha ganado el PC");
+                                        //ActualizarVictoriasPersona
+                                        victoriasPC++;
+                                        //ActualizarNombreGanador
+                                        nombreGanador = "PC";
+                                        break;
+                                    case 3://caso 3:
+                                        //MostrarEmpate
+                                        System.out.println("Ha habido un empate, el orden de tirada sera el mismo");
+                                        //ActualizarEmpates
+                                        empate++;
+                                        break;
+                                }//fin_segun
+                            }
                         }//fin_para
 
                         //MostrarResultadoGeneral
-                        System.out.println("El resultado ha sido /n" +
-                                "Victorias Persona: "+ victoriasPersona +"/n"+
-                                "Victorias PC: "+ victoriasPC+"/n"+
-                                "Empates: "+ empate);
+                        System.out.println("El resultado ha sido"+
+                                " Victorias Persona: "+ victoriasPersona +
+                                " Victorias PC: "+ victoriasPC+
+                                " Empates: "+ empate);
 
                         //ActualizarVaribales
                         victoriasPC = 0; victoriasPersona = 0; empate = 0; nombreGanador = "Jugador";
