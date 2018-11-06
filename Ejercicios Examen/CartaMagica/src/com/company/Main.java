@@ -25,6 +25,7 @@ Restricciones:
     - El numero tiene que ser impar entre 5 y 17
 	- El caracter de relleno tiene que ser una letra mayuscula
 	- Los caracteres de suavizado solo pueden ser d,b,n,A,J
+	- Ejecutar debe ser 's' o 'n'.
 
 PG PintarColina
 INICIO
@@ -45,7 +46,8 @@ saca el que haya ganado la anterior y en caso de empate sacará el ultimo que ha
 
 Entrada: numeroPartidas, ejecutar.
 Salida: eco de los datos, resultados.
-Restricciones: Asignaremos un numero a cada carta de la baraja española, sin 8 ni 9
+Restricciones: - numeroPartidas debe estar entre 1 y 10.
+               - ejecutar debe ser 's' o 'n'.
 	- OROS: del 1 al 10 (figuras: 8, 9, 10)
 	- BASTOS: del 11 al 20 (figuras: 18, 19, 20)
 	- COPAS: del 21 al 30 (figuras: 28, 29, 30)
@@ -111,9 +113,9 @@ import java.util.Scanner;
 import java.util.Random;
 public class Main {
     public static void main(String[] args) {
-        int opcionMenu=0,numeroPartidas = 0, carta=0;
-        int ganador= 0, victoriasPersona = 0, victoriasPC =0, empate = 0;
-        char ejecutar=' ';
+        int opcionMenu,numeroPartidas, carta;
+        int ganador, victoriasPersona = 0, victoriasPC =0, empate = 0;
+        char ejecutar;
         String nombreGanador = "Persona";
         Scanner teclado = new Scanner(System.in);
         Random aleatorio = new Random();
@@ -159,9 +161,11 @@ public class Main {
 
                             //MostrarJugadorSalida
                             System.out.println("Sale: "+ nombreGanador);
+
                             //GenerarCarta
                             carta = aleatorio.nextInt(40)+1;
                             System.out.println("La carta ha salido: " + carta);
+
                             //EstablecerGanador
                             if(carta >= 8 && carta <= 11 || carta == 21 || carta >= 23 && carta <= 40) ganador = 1;
                             else if (carta == 22)  ganador = 2;
@@ -172,8 +176,10 @@ public class Main {
                                     case 1://caso 1:
                                         //MostrarGanadorPersona
                                         System.out.println("Ha ganado la persona");
+
                                         //ActualizarVictoriasPersona
                                         victoriasPersona++;
+
                                         //ActualizarNombreGanador
                                         nombreGanador = "Persona";
                                         System.out.println("-------------------");
@@ -181,8 +187,10 @@ public class Main {
                                     case 2://caso 2:
                                         //MostrarGanadorPC
                                         System.out.println("Ha ganado el PC");
+
                                         //ActualizarVictoriasPC
                                         victoriasPC++;
+
                                         //ActualizarNombreGanador
                                         nombreGanador = "PC";
                                         System.out.println("-------------------");
@@ -191,6 +199,7 @@ public class Main {
                                         //MostrarEmpate
                                         System.out.println("Ha habido un empate, el orden de tirada sera el mismo");
                                         System.out.println("-------------------");
+
                                         //ActualizarEmpates
                                         empate++;
                                         break;
@@ -200,8 +209,10 @@ public class Main {
                                     case 1://caso 1:
                                         //MostrarGanadorPC
                                         System.out.println("Ha ganado el PC");
+
                                         //ActualizarVictoriasPC
                                         victoriasPC++;
+
                                         //ActualizarNombreGanador
                                         nombreGanador = "PC";
                                         System.out.println("-------------------");
@@ -209,8 +220,10 @@ public class Main {
                                     case 2://caso 2:
                                         //MostrarGanadorPersona
                                         System.out.println("Ha ganado la Persona");
+
                                         //ActualizarVictoriasPersona
                                         victoriasPersona++;
+
                                         //ActualizarNombreGanador
                                         nombreGanador = "Persona";
                                         System.out.println("-------------------");
@@ -219,6 +232,7 @@ public class Main {
                                         //MostrarEmpate
                                         System.out.println("Ha habido un empate, el orden de tirada sera el mismo");
                                         System.out.println("-------------------");
+
                                         //ActualizarEmpates
                                         empate++;
                                         break;
