@@ -1,14 +1,17 @@
 /*
 Descripcion: simulacion de una carrera de caballos.
-    Entradas: caracter.
-    Salidas: eco de los datos, caballo ganador
-    Restricciones: el caracter solo puede ser 's' o 'n'
+    Entradas: caracter, distancia.
+    Salidas: eco de los datos, caballo ganador.
+    Restricciones:
+        - el caracter solo puede ser 's' o 'n'
+        - la distancia debe ser mayor que 0
 
 *************
 PG_0
 INICIO
     LeerValidarEjecutar
     Mientras quiera ejecutar
+        LeerValidarDistanciaCarrera
         SimularCarreraCaballos
         MostrarCaballoGanador
         ActualizarVariables
@@ -18,13 +21,13 @@ FIN
 
 PG_1 SimularCarreraCaballos
 INICIO
-    Para (contador = 0; contador <= 28; contador++)
-            generarAleatorio
-            avanceCaballos  //Desarrollado abajo
-            EstablecerFinRecorrido
-            limpiarConsola*
-            mostrarRecorrido
-    fin_Para
+    mientras ganador sea falso
+        generarAleatorio
+        avanceCaballos //Desarrollado abajo
+        ComprobarLlegadaMeta
+        limpiarConsola*
+        mostrarRecorrido
+    fin_mientras
 FIN
 
 PG _2 avanceCaballos
@@ -54,12 +57,12 @@ ___________________________
         Condicion salida: respuesta == 's' || respuesta == 'n'
         Condicion entrada: respuesta != 's' && respuesta != 'n'
 ____________________________
-    Bucle FOR
-        VCB: contador.
-        Inicializacion: Antes de la primera iteracion a 0.
-        Actualizacion: Fisicamente al final del bucle incrementando el valor del contador en 1.
-        Condicion salida: contador > 28
-        Condicion entrada: contador <= 28
+    BBucle CarreraCaballos
+        VCB: indicador.
+        Inicializacion: Antes de la primera iteracion a false.
+        Actualizacion: Lectura final, fisicamente al final del bucle.
+        Condicion salida: llegadaMeta == true
+        Condicion entrada: llegadaMeta != true
 ___________________________
     Bucle WHILE
         VCB: centinela. El centinela es 'n'
@@ -75,7 +78,8 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
         //Declaraciones
-        int aleatorio, cabA=0, cabB=0, cabC=0;
+        int aleatorio, cabA=0, cabB=0, cabC=0, distancia = 0;
+        boolean llegadaMeta = false;
         String caballoA = "A", caballoB = "B", caballoC = "C";
         char ejecutar;
         Scanner teclado = new Scanner(System.in);
@@ -88,24 +92,30 @@ public class Main {
         } while (ejecutar != 's' && ejecutar != 'n');
 
         while (ejecutar != 'n') { //Mientras quiera ejecutar
+            //LeerValidarDistanciaCarrera
+            do{
+                System.out.println("Establece la distancia de la carrera");
+                distancia = teclado.nextInt();
+            }while(distancia < 0);
+
             //SimularCarreraCaballos
-            for (int contador = 0; contador <= 28; contador++) {
+            while(!llegadaMeta) {
                 //GenerarAleatorio
                 aleatorio = random.nextInt(3) + 1;
 
                 //AvanceCaballos    // Funciona de la siguiente manera: en cada repeticion lanza un numero, depende del numero que salga avanza un caballo u otro.
                 if (aleatorio == 1) {
-                    caballoA = " " + caballoA ;
+                    caballoA = "a" + caballoA ;
                     cabA +=1;
                 }else if (aleatorio == 2){
-                    caballoB = " " + caballoB ;
+                    caballoB = "b" + caballoB ;
                     cabB +=1;
                 }else{
-                    caballoC =  " " + caballoC ;
+                    caballoC =  "c" + caballoC ;
                     cabC +=1;
                 }
-                //EstablecerFinRecorrido   ¿Esto esta bien hacerlo asi, o es mejor resolver el ejercicio de otra forma?
-                if(cabA >= 10 || cabB >= 10 || cabC >= 10) contador = 28; //Tendria que reflejar cuando hace el fin de carrera en el analisis? o al gusto del diseñador?
+                //EstablecerFinRecorrido
+                if(cabA >= distancia || cabB >= distancia || cabC >= distancia) llegadaMeta = true;
 
                 //LimpiarConsola
                 Utilidades.limpiarConsola();
@@ -114,7 +124,7 @@ public class Main {
                 System.out.println(caballoA);
                 System.out.println(caballoB);
                 System.out.println(caballoC);
-            }
+            }//fin_mientras
 
             //MostrarCaballoGanador
             if(cabA > cabB && cabA >cabC){
@@ -126,6 +136,7 @@ public class Main {
             //ActualizarVariables
              cabA=0; cabB=0; cabC=0;
              caballoA = "A"; caballoB = "B"; caballoC = "C";
+             llegadaMeta = false;
 
             //LeerValidarEjecutar
             do {
