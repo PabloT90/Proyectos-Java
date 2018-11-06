@@ -78,7 +78,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
         //Declaraciones
-        int aleatorio, cabA=0, cabB=0, cabC=0, distancia = 0;
+        int aleatorio, cabA=0, cabB=0, cabC=0, distancia;
         boolean llegadaMeta = false;
         String caballoA = "A", caballoB = "B", caballoC = "C";
         char ejecutar;
@@ -105,13 +105,13 @@ public class Main {
 
                 //AvanceCaballos    // Funciona de la siguiente manera: en cada repeticion lanza un numero, depende del numero que salga avanza un caballo u otro.
                 if (aleatorio == 1) {
-                    caballoA = "a" + caballoA ;
+                    caballoA = " " + caballoA ;
                     cabA +=1;
                 }else if (aleatorio == 2){
-                    caballoB = "b" + caballoB ;
+                    caballoB = " " + caballoB ;
                     cabB +=1;
                 }else{
-                    caballoC =  "c" + caballoC ;
+                    caballoC =  " " + caballoC ;
                     cabC +=1;
                 }
                 //EstablecerFinRecorrido
