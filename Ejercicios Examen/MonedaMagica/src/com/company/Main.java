@@ -1,6 +1,3 @@
-package com.company;
-import java.util.Scanner;
-import java.util.Random;
 /*Nombre: ExamenMoneda
  * Descripción: Este programa implementa un menu con diferentes opciones:
  * 	1º opción --> Pintar Esfera (Solo validamos los datos de entrada, lo demás queda en construcción)
@@ -56,14 +53,14 @@ import java.util.Random;
  * 	    fin_mientras
  * 	FIN
  *
- * 	Solo detallare MonedaMagica, los demas son muy simples y no me interesan.
+ * 	Solo detallare MonedaMagica, los demas son muy simples.
  *
  * 	PG_1 MonedaMagica
  * 	INICIO
  * 	    LeerValidarNumeroPartidas
  * 	    para(partida; partida < numeroPartidas; partida++)
  * 	        JugarMonedaMagica
- * 	        MostrarResultadoRonda
+ * 	        MostrarGanadorRonda
  * 	    fin_para
  * 	    MostrarResultadoGeneral
  * 	FIN
@@ -72,9 +69,12 @@ import java.util.Random;
  * 	INICIO
  * 	    GenerarMonedasAleatorias
  * 	    SumarValorMonedas //Lo que hace es: establezco que cara vale 1 y que cruz vale 2. Asi sumando puedo saber que ha salido y obtener un ganador.
- * 	    ComprobarGanador
+ * 	    MostrarResultadoMonedas   //Si ha salido 3 veces lo mismo o no.
  * 	FIN
  */
+package com.company;
+import java.util.Scanner;
+import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         int opcionMenu, numeroPartidas;
@@ -119,7 +119,7 @@ public class Main {
                     /* Estudio del bucle
                     * VCB: contador.
                     * Inicializacion: antes de la primera iteracion a 0.
-                    * Actualizacion: fisicamente al final del bucle.
+                    * Actualizacion: físicamente al final del bucle incrementando el valor del contador en 1.
                     * Condicion entrada: partida >= numeroPartidas
                     * Condicion Salida: partida < numeroPartidas
                     * */
@@ -133,16 +133,17 @@ public class Main {
                         //SumarValorMonedas
                         valorMonedas = moneda1+moneda2+moneda3;
 
-                        //ComprobarGanador
+                        //MostrarResultadoMonedas   //Si ha salido 3 veces lo mismo o no.
                         if(valorMonedas == 3 || valorMonedas == 6){
                             System.out.println("En las 3 monedas ha salido el mismo resultado!!");
                             ganador = "Persona";
                             vicPersona++;
-                        }else
+                        }else{
                             ganador = "PC";
                             vicPC++;
                             System.out.println("En las monedas no ha coincidido el resultado");
-                        //MostrarResultadoRonda
+                        }
+                        //MostrarGanadorRonda
                         System.out.println("El ganador de la ronda ha sido: "+ ganador);
                     }//fin_para
 
