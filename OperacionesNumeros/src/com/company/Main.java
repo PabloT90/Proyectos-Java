@@ -1,8 +1,8 @@
 package com.company;
 /* Descripcion: Realizar un programa que mediante menú nos permita sumar los dígitos de un número, o bien devolverlo invertido.
 * Entrada: entero opcionMenu, entero numero.
-* Salida:
-* Restricciones:
+* Salida: mensajes de comunicacion con el usuario, el numero invertido, la suma de los digitos de un numero.
+* Restricciones: ninguna.
 *
 * PG
 * INICIO
@@ -10,11 +10,15 @@ package com.company;
 *   mientras opcionMenu != 3
 *       segun(opcionMenu)
 *           caso 1:
+*               LeerNumero
 *               SumarDigitosNumero*
+*               MostrarResultadoSumaDigitos
 *           fin_caso 1
 *
 *           caso 2:
+*               LeerNumero
 *               NumeroInvertido*
+*               MostrarResultadoNumeroInvertido
 *           fin_c-aso 2
 *       fin_segun
 *       MostrarMenu, leeryValidarOpcionMenu
@@ -39,17 +43,27 @@ public class Main {
         while(opcionMenu != 3) {//mientras opcionMenu != 3
             switch(opcionMenu) { //segun(OpcionMenu)
                 case 1:
-                    //SumarDigitosNumero
+                    //LeerNumero
                     System.out.println("Dime un numero:");
                     numero = teclado.nextInt();
 
+                    //SumarDigitosNumero*
                     sumaDigitos = Utilidades.SumarDigitosNumero(numero);
-                    System.out.println("El la suma de los digitos del numero: " + numero + " es: "+sumaDigitos);
+
+                    //MostrarResultadoSumaDigitos
+                    System.out.println("El la suma de los digitos del numero: " + numero + " es: "+ sumaDigitos);
                     break;
 
                 case 2:
-                    //NumeroInvertido
+                    //LeerNumero
+                    System.out.println("Dame un numero");
+                    numero = teclado.nextInt();
 
+                    //NumeroInvertido*
+                    numeroInvertido = Utilidades.NumeroInvertido(numero);
+
+                    //MostrarResultadoNumeroInvertido
+                    System.out.println("El numero invertido de " + numero + " es: "+ numeroInvertido);
                     break;
             }
 
