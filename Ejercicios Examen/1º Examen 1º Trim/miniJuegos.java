@@ -170,7 +170,6 @@ public class miniJuegos{
 							default:
 								System.out.print("Has sacado el " + numeroCarta +" de");
 							break;
-							
 						}
 						
 						switch(palo){
@@ -215,7 +214,7 @@ public class miniJuegos{
 							}else if(palo == 2 || (numeroCarta == 2 && palo == 4)){
 								System.out.println("Ha ganado la persona, por tanto sigue el");
 								ganadorRonda = 1;
-								vicPC++;
+								vicPersona++; //Fallo, antes tenia vicPC, seria vicPersona.
 							}else{
 								 System.out.println("Ha habido un empate, sigue el vencedor de la ultima ronda ganada");
 								 empate++;

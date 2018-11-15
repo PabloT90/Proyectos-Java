@@ -24,7 +24,7 @@ package com.company;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int opcionMenu=0,numero=0;
+        int opcionMenu=0,numero=0, sumaDigitos=0, numeroInvertido=0;
         Scanner teclado = new Scanner(System.in);
 
         //MostrarMenu, leeryValidarOpcionMenu
@@ -40,10 +40,16 @@ public class Main {
             switch(opcionMenu) { //segun(OpcionMenu)
                 case 1:
                     //SumarDigitosNumero
+                    System.out.println("Dime un numero:");
+                    numero = teclado.nextInt();
+
+                    sumaDigitos = Utilidades.SumarDigitosNumero(numero);
+                    System.out.println("El la suma de los digitos del numero: " + numero + " es: "+sumaDigitos);
                     break;
 
                 case 2:
                     //NumeroInvertido
+
                     break;
             }
 
