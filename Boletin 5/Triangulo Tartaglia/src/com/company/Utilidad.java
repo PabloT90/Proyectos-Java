@@ -22,6 +22,7 @@ public class Utilidad {
         for(int contador1 =0; contador1<= altura;altura--) {
             aux2=altura;
             for (int coeficiente = 0; coeficiente <= altura; coeficiente++) {
+                //System.out.print(Resguardo.OperacionesFactorial(altura, aux2));
                 System.out.print(OperacionesFactorial(altura, aux2));
                 aux2--;
             }
@@ -29,16 +30,16 @@ public class Utilidad {
         }
     }
 
-    /* Entrada: entero altura, entero contador.
+    /* Entrada: entero altura, entero coeficiente.
        Salida: entero
-       Restricciones: no hay.
+       Restricciones:el coeficiente no puede ser mayor que la altura.
        E/s: nada.
        Descripcion: calcula los factoriales necesarios para aplicar el binomio de Newton
        --------
        Entrada: entero altura, entero contador.
-       Precondiciones: no hay.
+       Precondiciones: el coeficiente no puede ser mayor que la altura.
        Salida: entero.
-       PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido.
+       PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido. Si devuelve -1 significa que el coeficiente era mayor que la altura.
        Cabecera: entero OperacionesFactorial(entero altura, entero contador)
     */
     /* PG
@@ -51,26 +52,28 @@ public class Utilidad {
     public static int OperacionesFactorial(int altura, int coeficiente){
        int factorialNumerador = 1,factorialDenominador = 1,factorialParentesis=1;
        int parentesis =altura-coeficiente; //Para poder aplicar la formula, es decir, calcular el factorial del parentesis de la formula.
-       int resultado;
-       //CalcularFactorialNumerador
-        while (altura != 0) {
-            factorialNumerador=factorialNumerador*altura;
-            altura--;
-        }
-            //CalcularFactorialDenominador
-        while (coeficiente != 0) {
-            factorialDenominador = factorialDenominador * coeficiente;
-            coeficiente--;
-        }
+       int resultado=0;
+       if(coeficiente <= altura) {
+           //CalcularFactorialNumerador
+           while (altura != 0) {
+               factorialNumerador = factorialNumerador * altura;
+               altura--;
+           }
+           //CalcularFactorialDenominador
+           while (coeficiente != 0) {
+               factorialDenominador = factorialDenominador * coeficiente;
+               coeficiente--;
+           }
 
-        //CalcularFactorialParentesis
-        while (parentesis != 0) {
-            factorialParentesis = factorialParentesis * parentesis;
-            parentesis--;
-        }
+           //CalcularFactorialParentesis
+           while (parentesis != 0) {
+               factorialParentesis = factorialParentesis * parentesis;
+               parentesis--;
+           }
 
-        //CalcularResultadoBinomio //Formula aplicada: n! / m!(n-m)!
-        resultado = factorialNumerador /(factorialDenominador*(factorialParentesis));
+           //CalcularResultadoBinomio //Formula aplicada: n! / m!(n-m)!
+           resultado = factorialNumerador / (factorialDenominador * (factorialParentesis));
+       }else resultado = -1; //Si devuelve menos 1 es que el coeficiente era mayor que la altura.
         return resultado;
     }
 

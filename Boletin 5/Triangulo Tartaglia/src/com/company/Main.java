@@ -12,23 +12,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 	    Scanner teclado = new Scanner(System.in);
-	    int altura=0;
-	    char ejecutar=' ';
+	    int altura;
+	    char ejecutar;
 
+        //LeerValidarEjecutar
 	    do{
 	        System.out.println("Quieres ejecutar?");
 	        ejecutar = teclado.next().charAt(0);
         }while(ejecutar != 's' && ejecutar != 'n');
 
-	    while(ejecutar != 'n'){
+	    while(ejecutar != 'n'){//mientras quiera ejecutar
+	        //LeerValidarEjecutar
             do{
                 System.out.println("Dime la altura del triangulo");
                 altura = teclado.nextInt();
             }while(altura < 0);
 
-            //PintarTriangulo
+            //PintarTriangulo*
+            //Resguardo.TrianguloPascal(altura);
             Utilidad.TrianguloPascal(altura);
 
+            //LeerValidarEjecutar
             do{
                 System.out.println("Quieres ejecutar?");
                 ejecutar = teclado.next().charAt(0);
