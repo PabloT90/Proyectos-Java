@@ -32,12 +32,12 @@ public class Utilidad {
 
     /* Entrada: entero altura, entero coeficiente.
        Salida: entero
-       Restricciones:el coeficiente no puede ser mayor que la altura.
+       Restricciones: nada.
        E/s: nada.
        Descripcion: calcula los factoriales necesarios para aplicar el binomio de Newton
        --------
        Entrada: entero altura, entero contador.
-       Precondiciones: --No se si se quitaria de aqui, aunque es el propio subprograma quien realiza la validacion.
+       Precondiciones:no hay.
        Salida: entero.
        PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido. Si devuelve -1 significa que el coeficiente era mayor que la altura.
        Cabecera: entero OperacionesFactorial(entero altura, entero contador)
