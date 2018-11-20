@@ -18,61 +18,68 @@ public class Utilidad {
     * */
     public static void TrianguloPascal(int altura){
         int aux2; // porque al comenzar tiene que tener lo mismo que altura |n|
-        //                                                                  |n|
+        //                                                                  |m|
+        int numeroImprimir=0;
+        int posicionN=0, posicionM=0, posicionNM=0;
         for(int contador1 =0; contador1<= altura;altura--) {
             aux2=altura;
             for (int coeficiente = 0; coeficiente <= altura; coeficiente++) {
-                //System.out.print(Resguardo.OperacionesFactorial(altura, aux2));
-                System.out.print(OperacionesFactorial(altura, aux2));
-                aux2--;
+                //Hacemos 3 llamadas a CalcularFactorial
+                posicionN = CalcularFactorial(altura);
+                posicionM = CalcularFactorial(aux2);
+                posicionNM = CalcularFactorial(altura-aux2);
+
+                //CalcularBinomio*
+                numeroImprimir = CalcularBinomio(posicionN,posicionM,posicionNM); //A calcular Binomio le paso los 3 parametros recien obtenidos.
+
+                //ImprimirNumeroCalculado
+                System.out.print(numeroImprimir);
+
+                aux2--; //Esto seria M. Aqui actualizamos el valor de M en cada iteracion.
             }
             System.out.println();
         }
     }
+    /* Entrada: entero numero.
+       Salida: entero factorial.
+       Restricciones: nada.
+       E/s: nada.
+       Descripcion: calcula el factorial de un numero dado.
+       --------
+       Entrada: entero numero.
+       Precondiciones: nada.
+       Salida: entero factorial.
+       PostCondiciones: asociado al nombre se manda el resultado de calcular el factorial. Devuelve 0 si el numero es menor que 0.
+       Cabecera: entero CalcularFactorial(entero numero)
+    * */
+    public static int CalcularFactorial (int numero){
+        int factorial =1;
+        if(numero >=0) {
+            while (numero != 0) {
+                factorial = factorial * numero;
+                numero--;
+            }
+        }else factorial = 0;
+        return factorial;
+    }
 
-    /* Entrada: entero altura, entero coeficiente.
+    /* Entrada: entero N, entero M, entero NmenosM.
        Salida: entero
        Restricciones: nada.
        E/s: nada.
-       Descripcion: calcula los factoriales necesarios para aplicar el binomio de Newton
+       Descripcion: calcula binomio de Newton
        --------
-       Entrada: entero altura, entero contador.
+       Entrada: entero N, entero M, entero NmenosM.
        Precondiciones:no hay.
        Salida: entero.
        PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido. Si devuelve -1 significa que el coeficiente era mayor que la altura.
-       Cabecera: entero OperacionesFactorial(entero altura, entero contador)
+       Cabecera: entero CalcularBinomio(entero N, entero M, entero NmenosM)
     */
-    /* PG
-     * CalcularFactorialNumerador
-     * CalcularFactorialDenominador
-     * CalcularFactorialParentesis
-     * CalcularResultadoBinomio
-     */
-
-    public static int OperacionesFactorial(int altura, int coeficiente){
-       int factorialNumerador = 1,factorialDenominador = 1,factorialParentesis=1;
-       int parentesis =altura-coeficiente; //Para poder aplicar la formula, es decir, calcular el factorial del parentesis de la formula.
+    public static int CalcularBinomio(int N, int M, int NmenosM){
        int resultado=0;
-       if(coeficiente <= altura) {
-           //CalcularFactorialNumerador
-           while (altura != 0) {
-               factorialNumerador = factorialNumerador * altura;
-               altura--;
-           }
-           //CalcularFactorialDenominador
-           while (coeficiente != 0) {
-               factorialDenominador = factorialDenominador * coeficiente;
-               coeficiente--;
-           }
-
-           //CalcularFactorialParentesis
-           while (parentesis != 0) {
-               factorialParentesis = factorialParentesis * parentesis;
-               parentesis--;
-           }
-
-           //CalcularResultadoBinomio //Formula aplicada: n! / m!(n-m)!
-           resultado = factorialNumerador / (factorialDenominador * (factorialParentesis));
+       if(M <= N) {
+           //Calcular Binomio de Newton.
+           resultado = N / (M * (NmenosM));
        }else resultado = -1; //Si devuelve menos 1 es que el coeficiente era mayor que la altura.
         return resultado;
     }

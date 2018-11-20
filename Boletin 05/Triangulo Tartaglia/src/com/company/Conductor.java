@@ -2,7 +2,7 @@ package com.company;
 
 public class Conductor {
     public static void main (String[]args){
-        System.out.println("Pintar Triangulo");
+        /*System.out.println("Pintar Triangulo");
         int altura = 0; //Debe mostrar solo una fila
         Utilidad.TrianguloPascal(altura);
 
@@ -33,5 +33,6 @@ public class Conductor {
         coeficiente = 3; altura = 6;
         resultado = Utilidad.OperacionesFactorial(altura,coeficiente);
         System.out.println("Prueba4: "+resultado);
+        */
     }
 }

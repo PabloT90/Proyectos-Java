@@ -19,19 +19,36 @@ public class Resguardo {
         System.out.println("En construccion.");
     }
 
-    /* Entrada: entero altura, entero contador.
-       Salida: entero
-       Restricciones: no hay.
+    /* Entrada: entero numero.
+       Salida: entero factorial.
+       Restricciones: nada.
        E/s: nada.
-       Descripcion: calcula los factoriales necesarios para aplicar el binomio de Newton
+       Descripcion: calcula el factorial de un numero dado.
        --------
-       Entrada: entero altura, entero contador.
-       Precondiciones: no hay.
+       Entrada: entero numero.
+       Precondiciones: nada.
+       Salida: entero factorial.
+       PostCondiciones: asociado al nombre se manda el resultado de calcular el factorial.
+       Cabecera: entero CalcularFactorial(entero numero)
+    * */
+    public static int CalcularFactorial (int numero){
+        System.out.println("Aun en construccion.");
+        return 1;
+    }
+
+    /* Entrada: entero N, entero M, entero NmenosM.
+       Salida: entero
+       Restricciones: nada.
+       E/s: nada.
+       Descripcion: calcula binomio de Newton.
+       --------
+       Entrada: entero N, entero M, entero NmenosM.
+       Precondiciones:no hay.
        Salida: entero.
-       PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido.
-       Cabecera: entero OperacionesFactorial(entero altura, entero contador)
+       PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido. Si devuelve -1 significa que el coeficiente era mayor que la altura.
+       Cabecera: entero CalcularBinomio(entero N, entero M, entero NmenosM)
     */
-    public static int OperacionesFactorial(int altura, int coeficiente){
+    public static int CalcularBinomio(int N, int M, int NmenosM){
         System.out.println("Aun en construccion.");
         return 1;
     }
