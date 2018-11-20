@@ -2,37 +2,38 @@ package com.company;
 
 public class Conductor {
     public static void main (String[]args){
-        /*System.out.println("Pintar Triangulo");
-        int altura = 0; //Debe mostrar solo una fila
+        //Probar TrainguloPascal
+        System.out.println("Pruebas de TrianguloPascal");
+        int altura=0; //Debe pintar solo 1 fila.
         Utilidad.TrianguloPascal(altura);
 
-        altura = 10;
+        altura=4;
         Utilidad.TrianguloPascal(altura);
 
-        altura = -3; //No debe hacer nada
+        altura=7;
         Utilidad.TrianguloPascal(altura);
 
-        altura = 7;
-        Utilidad.TrianguloPascal(altura);
+        altura=-3;
+        Utilidad.TrianguloPascal(altura); //No debe mostrar nada.
 
-        System.out.println("Operaciones factorial");
+        //Probar calcularFactorial
+        System.out.println("Pruebas de CalcularFactorial");
+        System.out.println(Utilidad.CalcularFactorial(8)); //Debe dar correcto.
 
-        int coeficiente = 1; altura = 1;
-        int resultado;
-        resultado = Utilidad.OperacionesFactorial(altura,coeficiente);
-        System.out.println("Prueba1: "+resultado);
+        System.out.println(Utilidad.CalcularFactorial(-4)); //Deberia devolver 0.
 
-        coeficiente = 0; altura = 0;
-        resultado = Utilidad.OperacionesFactorial(altura,coeficiente);
-        System.out.println("Prueba2: "+resultado);
+        System.out.println(Utilidad.CalcularFactorial(0)); //Debe dar 1.
 
-        coeficiente = 4; altura = 3; //Debe fallar porque coeficiente > altura. Devuelve -1
-        resultado = Utilidad.OperacionesFactorial(altura,coeficiente);
-        System.out.println("Prueba3: "+resultado);
+        //Probar CalcularBinomio
+        System.out.println("Pruebas de CalcularBinomio");
+        System.out.println(Utilidad.CalcularBinomio(1000,7,1));
 
-        coeficiente = 3; altura = 6;
-        resultado = Utilidad.OperacionesFactorial(altura,coeficiente);
-        System.out.println("Prueba4: "+resultado);
-        */
+        System.out.println(Utilidad.CalcularBinomio(5,3,2));
+
+        System.out.println(Utilidad.CalcularBinomio(7,1,6));
+
+        System.out.println(Utilidad.CalcularBinomio(1,1,0)); //Devolveria -2.
+
+        System.out.println(Utilidad.CalcularBinomio(7,8,6)); //Devolveria -1.
     }
 }

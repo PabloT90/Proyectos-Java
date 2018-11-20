@@ -10,15 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../Boletin 03/CarreraCaballos/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1128" />
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,6 +26,7 @@
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Conductor.java" />
         <option value="$PROJECT_DIR$/src/com/company/Utilidad.java" />
+        <option value="$PROJECT_DIR$/../../Proyectos Sueltos/Pruebas/src/com/company/Main.java" />
       </list>
     </option>
   </component>
@@ -48,10 +41,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Triangulo Tartaglia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Triangulo Tartaglia" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Boletin 05/Triangulo Tartaglia" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -117,15 +123,18 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/Utilidad.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Conductor.java" />
     <entry file="file://$PROJECT_DIR$/../../Proyectos Sueltos/src/com/company/Main.java" />
-    <entry file="file://$PROJECT_DIR$/../../Proyectos Sueltos/OperacionesNumeros/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Proyectos Sueltos/OperacionesNumeros/src/com/company/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Resguardo.java" />
     <entry file="file://$PROJECT_DIR$/../../Boletin 03/CarreraCaballos/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1128" />
+        <state relative-caret-position="-672" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Proyectos Sueltos/Pruebas/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
       </provider>
     </entry>
   </component>

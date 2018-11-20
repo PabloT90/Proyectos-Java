@@ -1,8 +1,5 @@
 package com.company;
-
 public class Resguardo {
-    //Aqui todos los metodos pero sin codigo
-
     /* Entrada: entero altura.
        Salida:nada.
        Restricciones: la altura debe ser mayor de 0.
@@ -37,15 +34,17 @@ public class Resguardo {
     }
 
     /* Entrada: entero N, entero M, entero NmenosM.
-       Salida: entero
+       Salida: entero resultadoBinomio.
        Restricciones: nada.
        E/s: nada.
-       Descripcion: calcula binomio de Newton.
+       Descripcion: calcula binomio de Newton siguiendo la formula n! / (m! * (n-m)!)
        --------
        Entrada: entero N, entero M, entero NmenosM.
        Precondiciones:no hay.
-       Salida: entero.
-       PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido. Si devuelve -1 significa que el coeficiente era mayor que la altura.
+       Salida: entero resultadoBinomio.
+       PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido.
+                        - Devuelve -1 significa que M era mayor que la N.
+                        - Devulve -2 si M o NmenosM es 0.
        Cabecera: entero CalcularBinomio(entero N, entero M, entero NmenosM)
     */
     public static int CalcularBinomio(int N, int M, int NmenosM){

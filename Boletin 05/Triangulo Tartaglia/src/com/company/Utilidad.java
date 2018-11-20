@@ -2,7 +2,7 @@ package com.company;
 public class Utilidad {
     //Esta funcionalidad hace uso del binomio de Newton |n| (a+b)^n
     //                                                  |m|
-    //'n' seria la altura y 'm' un coeficiente binomial. Para mas info consultar en el papel o google xD
+    //'n' seria la altura y 'm' un coeficiente binomial.
 
     /* Entrada: entero altura.
        Salida:nada.
@@ -17,28 +17,27 @@ public class Utilidad {
        Cabecera: nada TrianguloPascal(entero altura)
     * */
     public static void TrianguloPascal(int altura){
-        int aux2; // porque al comenzar tiene que tener lo mismo que altura |n|
-        //                                                                  |m|
+        int coefM; //Esto seria M, mas concretamente el valor de M en cada iteracion.
         int numeroImprimir=0;
         int posicionN=0, posicionM=0, posicionNM=0;
+
         for(int contador1 =0; contador1<= altura;altura--) {
-            aux2=altura;
+            coefM = altura;
             for (int coeficiente = 0; coeficiente <= altura; coeficiente++) {
                 //Hacemos 3 llamadas a CalcularFactorial
                 posicionN = CalcularFactorial(altura);
-                posicionM = CalcularFactorial(aux2);
-                posicionNM = CalcularFactorial(altura-aux2);
-
+                posicionM = CalcularFactorial(coefM);
+                posicionNM = CalcularFactorial(altura - coefM);
                 //CalcularBinomio*
-                numeroImprimir = CalcularBinomio(posicionN,posicionM,posicionNM); //A calcular Binomio le paso los 3 parametros recien obtenidos.
-
-                //ImprimirNumeroCalculado
+                numeroImprimir = CalcularBinomio(posicionN, posicionM, posicionNM);
+                //ImprimirNumeroBinomio
+                System.out.print(" ");
                 System.out.print(numeroImprimir);
-
-                aux2--; //Esto seria M. Aqui actualizamos el valor de M en cada iteracion.
+                coefM--; //Aqui actualizamos el valor de M en cada iteracion.
             }
             System.out.println();
         }
+
     }
     /* Entrada: entero numero.
        Salida: entero factorial.
@@ -64,24 +63,30 @@ public class Utilidad {
     }
 
     /* Entrada: entero N, entero M, entero NmenosM.
-       Salida: entero
+       Salida: entero resultadoBinomio.
        Restricciones: nada.
        E/s: nada.
-       Descripcion: calcula binomio de Newton
+       Descripcion: calcula binomio de Newton siguiendo la formula n! / (m! * (n-m)!)
        --------
        Entrada: entero N, entero M, entero NmenosM.
        Precondiciones:no hay.
-       Salida: entero.
-       PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido. Si devuelve -1 significa que el coeficiente era mayor que la altura.
+       Salida: entero resultadoBinomio.
+       PostCondiciones: asociado al nombre se manda el resultado del binomio de Newton obtenido.
+                        - Devuelve -1 significa que M era mayor que la N.
+                        - Devulve -2 si M o NmenosM es 0.
        Cabecera: entero CalcularBinomio(entero N, entero M, entero NmenosM)
     */
     public static int CalcularBinomio(int N, int M, int NmenosM){
-       int resultado=0;
-       if(M <= N) {
-           //Calcular Binomio de Newton.
-           resultado = N / (M * (NmenosM));
-       }else resultado = -1; //Si devuelve menos 1 es que el coeficiente era mayor que la altura.
-        return resultado;
+       int resultadoBinomio=0;
+        if(M == 0 || NmenosM == 0){
+            resultadoBinomio = -2; //Devuelve -2 si M o NmenosM es 0.
+        }else {
+            if (M <= N) {
+                //Calcular Binomio de Newton.
+                resultadoBinomio = N / (M * (NmenosM));
+            } else resultadoBinomio = -1; //Si devuelve menos 1 es que el coeficiente era mayor que la altura.
+        }
+        return resultadoBinomio;
     }
 
 }
