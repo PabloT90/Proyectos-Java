@@ -25,6 +25,7 @@ INICIO
     fin_mientras
 FIN
 * */
+import javax.swing.text.Utilities;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -63,12 +64,20 @@ public class Main {
                     coorX = teclado.nextDouble();
                     System.out.println("Dime la coordenada Y");
                     coorY = teclado.nextDouble();
+
                     cuadrante = Utilidades.CudrantePunto(coorX, coorY);
                     System.out.println("El punto pertenece al: "+cuadrante +"º cuadrante.");
                 break;//fin_caso 2
 
                 case 3://caso 3:
                     //CalcularCoordenadasPolares*
+                    //LeerCoordenadas
+                    System.out.println("Dime la coordenada X");
+                    coorX = teclado.nextDouble();
+                    System.out.println("Dime la coordenada Y");
+                    coorY = teclado.nextDouble();
+
+                    Utilidades.CalcularCoordenadasPolares(coorX,coorY);
                 break;//fin_caso 3
             }//fin_segun
             //PresentarMenu, leeryValidarOpcionMenu

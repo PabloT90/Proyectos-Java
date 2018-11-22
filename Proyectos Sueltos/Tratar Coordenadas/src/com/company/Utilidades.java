@@ -77,17 +77,42 @@ public class Utilidades {
     }
 
     /*CalcularCoordenadasPolares
-    Entrada:
-    Salida:
-    E/S:
-    Restricciones:
-    Descripcion:
+    Entrada: real coorX, real coorY.
+    Salida: nada.
+    E/S: nada.
+    Restricciones: no hay.
+    Descripcion: Dado un punto se calculan las coordenadas polares de este.
     ----------
-    Entrada:
-    Precondiciones:
-    Salida:
-    Postcondiciones:
-    Cabecera:
+    Interfaz Intermedia
+    Entrada: real coorX, real coorY.
+    Salida: entero grado, entero radio.
+    Restricciones: nada.
+    E/S: nada.
+
+    Entrada: real coorX, real coorY.
+    Precondiciones: nada.
+    Salida: entero grado, entero radio.
+    Postcondiciones: asociado al nombre se manda el grado y el radio.
+    Cabecera: entero entero CalcularCoordenadasPolares(real coorX, real coorY)
+
+    ----------
+    Interfaz adaptada a java
+    Entrada: real coorX, real coorY.
+    Precondiciones: nada.
+    Salida: nada, pinta en pantalla.
+    Postcondiciones: nada.
+    Cabecera: void CalcularCoordenadasPolares(double coorX, double coorY)
     * */
+    public static void CalcularCoordenadasPolares(double coorX, double coorY){
+        //Calcular Hipotenusa Puedo usar la funcionalidad creada antes, Distancia2Puntos
+        final double coorXinicial = 0, coorYinicial=0;
+        double hipotenusa, grados;
+        hipotenusa = Distancia2Puntos(coorX,coorXinicial,coorY,coorYinicial);
+        System.out.println("El radio es: "+ hipotenusa);
+
+        //Calcular grados.
+        grados = Math.asin(coorY/hipotenusa);
+        System.out.println("Los grados son: "+ grados); //Al hacerlo sobre el eje Y pueden dar 2 soluciones, aqui solo reflejo 1.
+    }
 
 }
