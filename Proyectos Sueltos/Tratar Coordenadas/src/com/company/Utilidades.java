@@ -1,6 +1,5 @@
 package com.company;
 public class Utilidades {
-
     /*PuntoPerteneceaCircunferencia
     Entrada: real coorX, real coorY.
     Salida: logico pertenece.
@@ -25,7 +24,6 @@ public class Utilidades {
             if(distanciaPunto == distancia || distanciaPunto >= 9.99){ //Lo he hecho asi porque al tratar con numeros reales la mayoria de las veces no da exactamente lo mismo que distancia.
                 pertenece = true;
             }
-
         return pertenece;
     }
 
@@ -94,7 +92,6 @@ public class Utilidades {
     Salida: entero grado, entero radio.
     Postcondiciones: asociado al nombre se manda el grado y el radio.
     Cabecera: entero entero CalcularCoordenadasPolares(real coorX, real coorY)
-
     ----------
     Interfaz adaptada a java
     Entrada: real coorX, real coorY.
@@ -106,13 +103,45 @@ public class Utilidades {
     public static void CalcularCoordenadasPolares(double coorX, double coorY){
         //Calcular Hipotenusa Puedo usar la funcionalidad creada antes, Distancia2Puntos
         final double coorXinicial = 0, coorYinicial=0;
-        double hipotenusa, grados;
+        double hipotenusa, grados=0;
+        int cuadrante=0;
+        String palabra =" ";
+
+        //CalcularHipotenusa (realmente es el radio)
         hipotenusa = Distancia2Puntos(coorX,coorXinicial,coorY,coorYinicial);
         System.out.println("El radio es: "+ hipotenusa);
 
-        //Calcular grados.
-        grados = Math.asin(coorY/hipotenusa);
-        System.out.println("Los grados son: "+ grados); //Al hacerlo sobre el eje Y pueden dar 2 soluciones, aqui solo reflejo 1.
+        //ObtenerCuadrante
+        cuadrante = CudrantePunto(coorX,coorY);
+
+        //Calcular grados segun el cuadrante
+        if(cuadrante==2){
+            grados = Math.asin(coorY/hipotenusa);
+            palabra = " +90º";
+        }else if(cuadrante == 3){
+            grados = Math.asin(coorY/hipotenusa);
+            palabra = " +180º";
+        }else if(cuadrante == 4){
+            grados = Math.asin(coorY/hipotenusa);
+            palabra = " +270º";
+        }else if(cuadrante ==1){
+            grados = Math.asin(coorY/hipotenusa);
+            palabra = " es del primer cuadrante";
+        }
+        //Casos especiales, cuando el punto esta sobre algun eje.
+        if(coorX==0 || coorY==0){
+            if(coorX==0 && coorY>0){
+                grados = 90;
+            }else if(coorX==0 && coorY<0){
+                grados= 270;
+            }else if(coorY==0 && coorX>0){
+                grados=0;
+            }else if(coorY==0 && coorX<0){
+                grados=180;
+            }
+        }
+        //MostrarResultados
+        System.out.println("Los grados son: "+ grados + palabra);
     }
 
 }
