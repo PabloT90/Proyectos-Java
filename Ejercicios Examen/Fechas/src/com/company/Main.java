@@ -1,5 +1,10 @@
 package com.company;
 /*El ejercicio consiste en: mostrar un menu que compare fechas o que las reste.
+Entrada:
+    - Entero: opcionMenu, dia1, dia2, mes1, mes2, anio1, anio2.
+Salida: mensajes de comunicacion con el usuario, que fecha es mas reciente, resultado de restar 2 fechas.
+Restricciones:
+
 PG
 INICIO
     MostrarMenu, leeryValidarOpcionMenu
@@ -9,12 +14,14 @@ INICIO
                 LeerValidarFecha1
                 LeerValidarFecha2
                 CompararFechas*
+                ImprimirResultadoFechas
             fin_caso1
 
             caso 2:
                 LeerValidarFecha1
                 LeerValidarFecha2
                 RestarFechas*
+                ImprimirResultadoFechasResta
             fin_caso2
         fin_segun
         MostrarMenu, leeryValidarOpcionMenu
@@ -34,7 +41,7 @@ public class Main {
             System.out.println("1- Comparar Fechas");
             System.out.println("2- Restar Fechas");
             System.out.println("0- Salir");
-            System.out.println();
+            System.out.println("-------------------");
             opcionMenu = teclado.nextInt();
         }while(opcionMenu < 1 || opcionMenu >2);
 
@@ -53,7 +60,36 @@ public class Main {
                         anio1 = teclado.nextInt();
                     }while(Utilidades.ExisteFecha(dia1, mes1, anio1)); //Mientras no exista la fecha se sigue repitiendo.
 
-                    System.out.println("Has conseguido pasar");
+                    //LeerValidarFecha2
+                    do{
+                        System.out.println("Dime el dia de la segunda fecha");
+                        dia2 = teclado.nextInt();
+
+                        System.out.println("Dime el mes de la segunda fecha");
+                        mes2 = teclado.nextInt();
+
+                        System.out.println("Dime el año de la segunda fecha");
+                        anio2 = teclado.nextInt();
+                    }while(Utilidades.ExisteFecha(dia2, mes2, anio2));
+
+                    //CompararFechas*
+
+                    //ImprimirResultadoFechas
+
+                    break;
+
+                case 2: //caso 2:
+                    //LeerValidarFecha1
+                    do{
+                        System.out.println("Dime el dia de la primera fecha");
+                        dia1 = teclado.nextInt();
+
+                        System.out.println("Dime el mes de la primera fecha");
+                        mes1 = teclado.nextInt();
+
+                        System.out.println("Dime el año de la primera fecha");
+                        anio1 = teclado.nextInt();
+                    }while(Utilidades.ExisteFecha(dia1, mes1, anio1));
 
                     //LeerValidarFecha2
                     do{
@@ -65,40 +101,13 @@ public class Main {
 
                         System.out.println("Dime el año de la segunda fecha");
                         anio2 = teclado.nextInt();
-                    }while(!Utilidades.ExisteFecha(dia2, mes2, anio2)); //Mientras no exista la fecha se sigue repitiendo.
+                    }while(Utilidades.ExisteFecha(dia2, mes2, anio2));
 
-                    //CompararFechas *
-                    break;//fin_caso1
+                    //RestarFechas*
 
-                case 2: //caso 2:
-                    //LeerValidarFecha1
-                    do{
-                        System.out.println("Dime el año de la primera fecha");
-                        anio1 = teclado.nextInt();
-                    }while(anio1 < 1582);
+                    //ImprimirResultadoFechasResta
 
-                    do{
-                        System.out.println("Dime el mes de la primera fecha");
-                        mes1 = teclado.nextInt();
-                    }while(mes1 < 1 || mes1 > 12);
-
-
-
-                    //LeerValidarFecha2
-                    do{
-                        System.out.println("Dime el año de la primera fecha");
-                        anio1 = teclado.nextInt();
-                    }while(anio1 < 1582);
-
-                    do{
-                        System.out.println("Dime el mes de la primera fecha");
-                        mes1 = teclado.nextInt();
-                    }while(mes1 < 1 || mes1 > 12);
-
-
-
-                    //RestarFechas *
-                    break; //fin_caso2
+                    break;
             }//fin_segun
 
             //MostrarMenu, leeryValidarOpcionMenu
@@ -106,7 +115,7 @@ public class Main {
                 System.out.println("1- Comparar Fechas");
                 System.out.println("2- Restar Fechas");
                 System.out.println("0- Salir");
-                System.out.println();
+                System.out.println("-------------------");
                 opcionMenu = teclado.nextInt();
             } while (opcionMenu < 1 || opcionMenu > 2);
         }//fin_mientras
