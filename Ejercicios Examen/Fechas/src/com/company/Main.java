@@ -33,6 +33,7 @@ public class Main {
     public static void main(String[] args) {
         int opcionMenu;
         int anio1, anio2, mes1, mes2, dia1, dia2;
+        int cantDias1=0, cantDias2=0;
         boolean diaAceptado=false;
         Scanner teclado = new Scanner(System.in);
 
@@ -58,8 +59,8 @@ public class Main {
 
                         System.out.println("Dime el año de la primera fecha");
                         anio1 = teclado.nextInt();
-                    }while(Utilidades.ExisteFecha(dia1, mes1, anio1)); //Mientras no exista la fecha se sigue repitiendo.
-
+                    }while(!Utilidades.ExisteFecha(dia1, mes1, anio1)); //Mientras no exista la fecha se sigue repitiendo.
+                    System.out.println(Utilidades.cantidadDias(dia1,mes1,anio1));
                     //LeerValidarFecha2
                     do{
                         System.out.println("Dime el dia de la segunda fecha");
@@ -70,12 +71,18 @@ public class Main {
 
                         System.out.println("Dime el año de la segunda fecha");
                         anio2 = teclado.nextInt();
-                    }while(Utilidades.ExisteFecha(dia2, mes2, anio2));
+                    }while(!Utilidades.ExisteFecha(dia2, mes2, anio2));
 
                     //CompararFechas*
-
+                    cantDias1 = Utilidades.cantidadDias(dia1,mes1,anio1);
+                    cantDias2 = Utilidades.cantidadDias(dia2,mes2,anio2);
+                    System.out.println("Primera fecha: "+cantDias1+" ---Segunda Fecha: "+cantDias2);
                     //ImprimirResultadoFechas
-
+                    if(cantDias1 > cantDias2){
+                        System.out.println("La fecha 1 es mas reciente que la 2º");
+                    }else if(cantDias2 > cantDias1){
+                        System.out.println("La fecha 2 es mas reciente que la 1º");
+                    }else  System.out.println("Son iguales");
                     break;
 
                 case 2: //caso 2:
@@ -89,8 +96,7 @@ public class Main {
 
                         System.out.println("Dime el año de la primera fecha");
                         anio1 = teclado.nextInt();
-                    }while(Utilidades.ExisteFecha(dia1, mes1, anio1));
-
+                    }while(!Utilidades.ExisteFecha(dia1, mes1, anio1));
                     //LeerValidarFecha2
                     do{
                         System.out.println("Dime el dia de la segunda fecha");
@@ -101,7 +107,7 @@ public class Main {
 
                         System.out.println("Dime el año de la segunda fecha");
                         anio2 = teclado.nextInt();
-                    }while(Utilidades.ExisteFecha(dia2, mes2, anio2));
+                    }while(!Utilidades.ExisteFecha(dia2, mes2, anio2));
 
                     //RestarFechas*
 
