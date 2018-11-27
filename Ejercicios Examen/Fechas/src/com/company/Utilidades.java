@@ -88,10 +88,7 @@ public class Utilidades {
     //Calcula los años bisiesto que ha habido en una fecha dada hasta 1582
     public static int CalcularAniosBisiestosTotales(int dia, int mes, int anio){
         int aniosBisiestos=0;
-        int contadorAnios=0;
-         if(mes>=2)
-             contadorAnios = anio-1;
-         else contadorAnios = anio;
+        int contadorAnios=anio;
 
             for(; contadorAnios >= 1582;contadorAnios--){
                 if(esBisiesto(contadorAnios)){
@@ -110,13 +107,14 @@ public class Utilidades {
             mesAux--;
         }
         resultado = dia+acumulador;
+        System.out.println("Dias del año en curso:"+resultado);
         return resultado;
     }
 
     //Dice los posibles dias segun el mes y el año.
     public static int diasPosibles(int dia, int mes, int anio){
         int resultado=0;
-        switch(dia){
+        switch(mes){
             case 1: case 3: case 5: case 7: case 8: case 10: case 12:
                 resultado = 31;
                 break;
