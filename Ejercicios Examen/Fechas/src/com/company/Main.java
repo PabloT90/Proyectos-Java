@@ -3,7 +3,7 @@ package com.company;
 Entrada:
     - Entero: opcionMenu, dia1, dia2, mes1, mes2, anio1, anio2.
 Salida: mensajes de comunicacion con el usuario, que fecha es mas reciente, resultado de restar 2 fechas.
-Restricciones:
+Restricciones: opcionMenu debe estar entre 1 y 2.
 
 PG
 INICIO
@@ -33,8 +33,7 @@ public class Main {
     public static void main(String[] args) {
         int opcionMenu;
         int anio1, anio2, mes1, mes2, dia1, dia2;
-        int cantDias1=0, cantDias2=0;
-        boolean diaAceptado=false;
+        int compararFechas=0;
         Scanner teclado = new Scanner(System.in);
 
         //MostrarMenu, leeryValidarOpcionMenu
@@ -46,7 +45,7 @@ public class Main {
             opcionMenu = teclado.nextInt();
         }while(opcionMenu < 1 || opcionMenu >2);
 
-        while(opcionMenu != 0) { //mientras opcionMenu !=2
+        while(opcionMenu != 0) { //mientras opcionMenu !=0
             switch(opcionMenu) { //segun(opcionMenu)
                 case 1://caso 1:
                     //LeerValidarFecha1
@@ -60,7 +59,7 @@ public class Main {
                         System.out.println("Dime el año de la primera fecha");
                         anio1 = teclado.nextInt();
                     }while(!Utilidades.ExisteFecha(dia1, mes1, anio1)); //Mientras no exista la fecha se sigue repitiendo.
-                    System.out.println(Utilidades.cantidadDias(dia1,mes1,anio1));
+
                     //LeerValidarFecha2
                     do{
                         System.out.println("Dime el dia de la segunda fecha");
@@ -74,15 +73,15 @@ public class Main {
                     }while(!Utilidades.ExisteFecha(dia2, mes2, anio2));
 
                     //CompararFechas*
-                    cantDias1 = Utilidades.cantidadDias(dia1,mes1,anio1);
-                    cantDias2 = Utilidades.cantidadDias(dia2,mes2,anio2);
-                    System.out.println("Primera fecha: "+cantDias1+" ---Segunda Fecha: "+cantDias2);
+                    compararFechas = Utilidades.compararFechas(dia1,mes1,anio1,dia2,mes2,anio2);
+
                     //ImprimirResultadoFechas
-                    if(cantDias1 > cantDias2){
+                    if(compararFechas==1){
                         System.out.println("La fecha 1 es mas reciente que la 2º");
-                    }else if(cantDias2 > cantDias1){
+                    }else if(compararFechas==2){
                         System.out.println("La fecha 2 es mas reciente que la 1º");
                     }else  System.out.println("Son iguales");
+
                     break;
 
                 case 2: //caso 2:

@@ -38,6 +38,76 @@ public class Utilidades {
         return existe;
     }
 
+    /* CantidadDiasFecha
+    Nec: entero: dia1, mes1, anio1, dia2, mes2, anio2
+    Dev: entero fechaComparada.
+    Nec/Dev: nada.
+    Requisitos: nada.
+
+    Interfaz
+    Precondiciones: nada.
+    Entrada: entero dia, mes, anio
+    Salida: entero cantidadDias.
+    Postcondiciones: asociado al nombre se manda que fecha es posterior. Devuelve 1 en caso de que la fecha 1 sea posterior a la 2. 2 en caso contrario y 3 si son iguales.
+    Cabecera: int compararFechas(int dia, int mes, int anio)
+    * */
+    public static int compararFechas(int dia1, int mes1, int anio1, int dia2, int mes2, int anio2){
+        int resultado=0;
+
+        if(anio1>anio2 || (anio1 == anio2 && mes1 > mes2) || (anio1 == anio2 && mes1 == mes2 && dia1 > dia2))
+            resultado =1;
+        else if(anio1 == anio2 && mes1 == mes2 && dia1 == dia2)
+            resultado = 3;
+        else
+            resultado = 2;
+
+        return resultado;
+    }
+
+    public static int restarFechas(int dia1, int mes1, int anio1, int dia2, int mes2, int anio2){
+        int resultado = 0;
+        int cantidadDias=0;
+        int cantidadMeses=0;
+        if(compararFechas(dia1, mes1, anio1, dia2, mes2, anio2)==1){
+
+            //Operamos normal
+            //Calculo cantidad de años de diferencia
+            cantidadDias = anio1-anio2;
+
+            //Calculo los meses de diferencia
+
+            //
+        }else{
+            //Hay que cambiar el orden de las variables. Esto se puede hacer alterando el orden de los parametro que envio. (dia2, dia1)
+        }
+        return resultado;
+    }
+
+    /* CantidadDiasFecha
+    Nec: entero: dia, mes, anio
+    Dev: entero cantidadDias
+    Nec/Dev: nada.
+    Requisitos: nada.
+    Interfaz
+    Precondiciones: nada.
+    Entrada: entero dia, mes, anio
+    Salida: entero cantidadDias.
+    Postcondiciones: asociado al nombre se manda la cantidad de dia que posee una fecha.
+    Cabecera: int cantidadDias(int dia, int mes, int anio)
+    * */
+    public static int cantidadDias(int dia, int mes, int anio, int dia2, int mes2, int anio2){
+        int aniosBisiestos=0;
+        int cantidadDias=0;
+        //Primero le sumo todos los años-1
+        cantidadDias=(anio-1583)*365;
+        //Le sumo los dias del año en curso
+        cantidadDias= cantidadDias+diasAnioCurso(dia,mes,anio);
+        //Le sumo los años bisiesto restantes
+       // cantidadDias = cantidadDias+CalcularAniosBisiestosTotales(dia,mes,anio);
+
+        return cantidadDias;
+    }
+
     /* esBisiesto
     Nec: entero anio
     Dev: logico isBisiesto
@@ -59,39 +129,12 @@ public class Utilidades {
         return isBisiesto;
     }
 
-    /* CantidadDiasFecha
-    Nec: entero: dia, mes, anio
-    Dev: entero cantidadDias
-    Nec/Dev: nada.
-    Requisitos: nada.
-
-    Interfaz
-    Precondiciones: nada.
-    Entrada: entero dia, mes, anio
-    Salida: entero cantidadDias.
-    Postcondiciones: asociado al nombre se manda la cantidad de dia que posee una fecha.
-    Cabecera: int cantidadDias(int dia, int mes, int anio)
-    * */
-    public static int cantidadDias(int dia, int mes, int anio){
-        int aniosBisiestos=0;
-        int cantidadDias=0;
-        //Primero le sumo todos los años-1
-        cantidadDias=(anio-1583)*365;
-        //Le sumo los dias del año en curso
-        cantidadDias= cantidadDias+diasAnioCurso(dia,mes,anio);
-        //Le sumo los años bisiesto restantes
-        cantidadDias = cantidadDias+CalcularAniosBisiestosTotales(dia,mes,anio);
-
-        return cantidadDias;
-    }
-
     //Calcula los años bisiesto que ha habido en una fecha dada hasta 1582
-    public static int CalcularAniosBisiestosTotales(int dia, int mes, int anio){
+    public static int CalcularAniosBisiestosTotales(int dia, int mes, int anio, int dia2, int mes2, int anio2){
         int aniosBisiestos=0;
-        int contadorAnios=anio;
 
-            for(; contadorAnios >= 1582;contadorAnios--){
-                if(esBisiesto(contadorAnios)){
+            for(; anio >= anio2;anio--){
+                if(esBisiesto(anio)){
                     aniosBisiestos++;
                 }
         }
@@ -107,7 +150,7 @@ public class Utilidades {
             mesAux--;
         }
         resultado = dia+acumulador;
-        System.out.println("Dias del año en curso:"+resultado);
+
         return resultado;
     }
 
