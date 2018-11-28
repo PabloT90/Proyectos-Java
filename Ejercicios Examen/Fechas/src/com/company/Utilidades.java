@@ -52,14 +52,12 @@ public class Utilidades {
     Cabecera: int compararFechas(int dia, int mes, int anio)
     * */
     public static int compararFechas(int dia1, int mes1, int anio1, int dia2, int mes2, int anio2){
-        int resultado=0;
+        int resultado=2;
 
         if(anio1>anio2 || (anio1 == anio2 && mes1 > mes2) || (anio1 == anio2 && mes1 == mes2 && dia1 > dia2))
             resultado =1;
         else if(anio1 == anio2 && mes1 == mes2 && dia1 == dia2)
             resultado = 3;
-        else
-            resultado = 2;
 
         return resultado;
     }
