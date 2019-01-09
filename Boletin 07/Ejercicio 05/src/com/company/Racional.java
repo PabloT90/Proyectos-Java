@@ -4,8 +4,8 @@
 *   Propiedades basicas:  numerador entero, consultable y modificable.
 *                         denominador entero, consultable y modificable.
 *   Propiedades derivadas: no hay.
-*   Propiedades compartidas: no hay.
-*   Añadidas: no hay.
+*   Propiedades compartidas: nada.
+*   Añadidas: multiplicar y dividir racionales.
 *
 *   Interfaz
 *   Getters y setters
@@ -61,5 +61,39 @@ public class Racional {
         return (numerador+"/"+denominador);
     }
 
-    //En este punto la clase estaria a la mitad. Aun faltan el ComparteTo y demas pero aun no los hemos dado.
+    //En este punto la clase estaria a la mitad. Aun faltan el CompareTo y demas pero aun no los hemos dado.
+
+    /*  prototipo: public Racional multiplicarRacionales(Racional multiplicacion)
+		comentarios: multiplica 2 racionales.
+		precondiciones: no hay
+		entradas: 1 Racionales. Se pasan por referencia
+		salidas: un Racional
+		entr/sal: no hay
+		postcondiciones: devuelve un Racional asociado al nombre.
+	*/
+    public Racional multiplicarRacionales(Racional multiplicacion){
+        Racional resultado = new Racional();
+
+        resultado.setNumerador(this.getNumerador()*multiplicacion.getNumerador());
+        resultado.setDenominador(this.getDenominador()*multiplicacion.getDenominador());
+
+        return resultado;
+    }
+
+    /*  prototipo: public Racional dividirRacionales(Racional division)
+		comentarios: divide 2 racionales.
+		precondiciones: no hay
+		entradas: 1 Racionales. Se pasan por referencia
+		salidas: un Racional
+		entr/sal: no hay
+		postcondiciones: devuelve un Racional asociado al nombre.
+	*/
+    public Racional dividirRacionales(Racional division){
+        Racional resultado = new Racional();
+
+        resultado.setNumerador(this.getNumerador()*division.getNumerador());
+        resultado.setDenominador(this.getDenominador()*division.getDenominador());
+
+        return resultado;
+    }
 }
