@@ -29,26 +29,26 @@ int getHabilidadSanacion()
 void setHabilidadSanacion(int sanacion)
 */
 public class Jugador {
-    private String nombre = new String();
+    private String nombre;
     private int edad;
     private int vida;
-    private Habilidad destreza = new Habilidad();
+    private Habilidad destreza;
 
     //Constructores
     //Por defecto
     public Jugador(){
-        nombre = " ";
-        vida = 100;
+        nombre = new String();
+        vida = 100; //No creo que haya problema en iniciar a 100
         edad = 0;
         destreza = new Habilidad();
     }
 
     //Con parametros
-    public Jugador(String nombre, int vida,int edad, Habilidad destreza){
+    public Jugador(String nombre, int vida,int edad, int danio, int sanacion){
         this.nombre = nombre;
         this.vida = vida;
         this.edad = edad;
-        this.destreza = new Habilidad(destreza);
+        this.destreza = new Habilidad(danio,sanacion);
     }
 
     //De copia
@@ -82,13 +82,6 @@ public class Jugador {
     }
 
     //Patron delegacion Habilidad
-    public String getNombreHabilidad(){
-        return destreza.getNombreHabilidad();
-    }
-    public void setNombreHabilidad(String nombre){
-        destreza.setNombreHabilidad(nombre);
-    }
-
     public int getHabilidadDanio() {
         return destreza.getDanio();
     }
@@ -106,5 +99,5 @@ public class Jugador {
     @Override
     public String toString(){
         return "Jugador: "+ getNombre()+" Edad: "+ getEdad();
-    }
+    } //Duda: tengo que poner aqui los atributos de la clase Habilidad?
 }

@@ -34,7 +34,7 @@ void setCentroCoorY(int coorY)
 public class circulo {
     //Aqui no se ponen las derivadas
     private double radio;
-    private Punto centro = new Punto();
+    private Punto centro;
     private final static double pi = 3.14;
 
     //Constructores

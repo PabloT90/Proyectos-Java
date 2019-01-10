@@ -1,7 +1,7 @@
 package com.company;
 /* Entrada: nombre de los 2 jugadores. Edad de los jugadores.
-   Salida: eco de los datos, victoria.
-   Restricciones: nada.
+   Salida: eco de los datos, quien ha ganado.
+   Restricciones: nada. (Tiene, pero no las pongo porque quiero centrarme en lo importante)
 
 PG
 INICIO
@@ -14,16 +14,14 @@ FIN
 
 PG_1 JugarStreetFighter
 INICIO
-    MostrarQuienInicia
-    mientras jugador1.getVida() > 0 || jugador2.getVida() > 0
+    GenerarSalidaAleatoria
+    mientras jugador1.getVida() > 0 && jugador2.getVida() > 0
         si (aleatorio % 2 == 0)
-            MostrarQuienSale
-            MostrarAtaques
+            MostrarQuienSaleyAtaques*
             ElegirAtaque
             RealizarAtaque
         sino
-            MostrarQuienSale
-            MostrarAtaques
+            MostrarQuienSaleyAtaques*
             ElegirAtaque
             RealizarAtaque
         fin_si
@@ -39,27 +37,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         Random rnd = new Random();
+
         //Jugadores
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
-        //Ataques Jugador
-
-        //Cambiar todo esto, hacerlo de otra forma.
-        Habilidad ataque1 = new Habilidad("Mina de contusion",10,0);
-        Habilidad ataque2 = new Habilidad("Tormenta de Flechas",20,0);
-        Habilidad ataque3 = new Habilidad("Resurreccion",0,15);
-        Habilidad ataque4 = new Habilidad("Torbellino",35,0);
-        //Ataques otro Jugador
-        Habilidad ataque5 = new Habilidad("Robo de vida",10,10);
-        Habilidad ataque6 = new Habilidad("Cohete Valkyria",20,0);
-        Habilidad ataque7 = new Habilidad("Placaje",10,0);
-        Habilidad ataque8 = new Habilidad("Destruccion",20,0);
-
-        String Nombreplayer1=" ", Nombreplayer2=" ";
-        int aleatorio=0;
-        int edad1=0, edad2=0;
-        int elegirAtaque=0;
+        String Nombreplayer1, Nombreplayer2;
+        int aleatorio;
+        int edad1, edad2;
+        int elegirAtaque;
 
         //LeerEstablecerNombreJugadores
         System.out.println("Nombre del primer jugador");
@@ -83,58 +69,57 @@ public class Main {
         System.out.println(jugador2.toString());
 
         //JugarStreetFighter
-        //GenerarNumeroAleatorio
+        //GenerarSalidaAleatoria
         aleatorio = rnd.nextInt(2)+1;
 
-        //MostrarQuienInicia
-        if (aleatorio ==1) System.out.println("Empieza: "+ jugador1.getNombre());
-            else System.out.println("Empieza: "+ jugador2.getNombre());
-
-        while(jugador1.getVida() > 0 || jugador2.getVida() > 0) {//mientras jugador1.getVida() > 0 || jugador2.getVida() > 0
+        while(jugador1.getVida() > 0 && jugador2.getVida() > 0) {//mientras jugador1.getVida() > 0 && jugador2.getVida() > 0
             if(aleatorio % 2 == 0) {//Si aleatorio % 2 == 0
-                //MostrarQuienSale
-                System.out.println("-------------");
-                System.out.println("Va el jugador 1");
-                System.out.println("-------------");
-                //MostrarAtaques
-                System.out.println("Ataques disponibles:");
-                System.out.println(ataque1);
-                System.out.println(ataque2);
-                System.out.println(ataque3);
-                System.out.println(ataque4);
+                //MostrarQuienSaleyAtaques
+                Utilidades.pintarHabiliades(aleatorio);
 
                 //ElegirAtaque
                 System.out.print("Elijo: ");
                 elegirAtaque = teclado.nextInt();
 
                 //realizarAtaque
-                if(elegirAtaque==1) jugador2.setVida(jugador2.getVida()-jugador1.getHabilidadDanio());
-                    else if(elegirAtaque==2) jugador2.setVida(jugador2.getVida()-ataque2.getDanio());
-                        else if(elegirAtaque==3) jugador1.setVida(jugador2.getVida()+ataque3.getSanacion());
-                            else jugador2.setVida(jugador2.getVida()-ataque4.getDanio());
-            }else {//sino
-                //MostrarQuienSale
-                System.out.println("-------------");
-                System.out.println("Va el jugador 2");
-                System.out.println("-------------");
-                //MostrarAtaques
-                System.out.println("Ataques disponibles:");
-                System.out.println(ataque5);
-                System.out.println(ataque6);
-                System.out.println(ataque7);
-                System.out.println(ataque8);
+                if(elegirAtaque==1){   //Mina de contusion
+                    jugador1.setHabilidadDanio(10);
+                    jugador2.setVida(jugador2.getVida()-jugador1.getHabilidadDanio());
+                }else if(elegirAtaque==2){   //Tormenta de flechas
+                    jugador1.setHabilidadDanio(20);
+                    jugador2.setVida(jugador2.getVida()-jugador1.getHabilidadDanio());
+                }else if(elegirAtaque==3) {   //Resurreccion
+                    jugador1.setHabilidadSanacion(15);
+                    jugador1.setVida(jugador1.getVida()+jugador1.getHabilidadSanacion());
+                }else {   //Torbellino
+                    jugador1.setHabilidadDanio(35);
+                    jugador2.setVida(jugador2.getVida()-jugador1.getHabilidadDanio());
+                }
+            }else{//sino
+                //MostrarQuienSaleyAtaques
+                Utilidades.pintarHabiliades(aleatorio);
+                System.out.println("Esto es del jugador 2");
 
                 //ElergirAtaque
                 System.out.print("Elijo: ");
                 elegirAtaque = teclado.nextInt();
+
                 //RealizarAtaque
-                if(elegirAtaque==1) {
-                    jugador1.setVida(jugador1.getVida()-ataque5.getDanio());
-                    jugador2.setVida(jugador2.getVida()+ataque5.getSanacion());
+                if(elegirAtaque==1) {    //Robo de vida
+                    jugador2.setHabilidadDanio(10);
+                    jugador2.setHabilidadSanacion(10);
+                    jugador1.setVida(jugador1.getVida()-jugador2.getHabilidadDanio());
+                    jugador2.setVida(jugador2.getVida()+jugador2.getHabilidadSanacion());
+                }else if(elegirAtaque==2){    //Cohete Valkyria
+                    jugador2.setHabilidadDanio(25);
+                    jugador1.setVida(jugador1.getVida()-jugador2.getHabilidadDanio());
+                }else if(elegirAtaque==3){    //Placaje
+                    jugador2.setHabilidadDanio(20);
+                    jugador1.setVida(jugador1.getVida()-jugador2.getHabilidadDanio());
+                }else {    //Destruccion
+                    jugador2.setHabilidadDanio(15);
+                    jugador1.setVida(jugador1.getVida()-jugador2.getHabilidadDanio());
                 }
-                else if(elegirAtaque==2) jugador1.setVida(jugador1.getVida()-ataque6.getDanio());
-                    else if(elegirAtaque==3) jugador2.setVida(jugador1.getVida()+ataque7.getSanacion());
-                        else jugador1.setVida(jugador1.getVida()-ataque8.getDanio());
 
             }
             //MostrarResultadoRonda
@@ -143,7 +128,7 @@ public class Main {
             System.out.println("Vida del jugador 2: "+jugador2.getVida());
 
             //cambiarTurno
-            aleatorio++; //Con esto soluciono de forma muy rapida el cambiar el turno. En los IF tengo el modulo de la division por lo que ira alternando.
+            aleatorio++;
         }//fin_mientras
 
         //MostrarGanador
