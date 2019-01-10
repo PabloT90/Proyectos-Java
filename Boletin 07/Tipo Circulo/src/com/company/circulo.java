@@ -22,6 +22,7 @@ void setRadio(double radio)
 int getPerimetro()
 int getArea()
 static final int getPI()
+
 Patron Delegacion Punto
 int getCentroCoorX()
 void setCentroCoorX(int coorX)
@@ -33,7 +34,7 @@ void setCentroCoorY(int coorY)
 public class circulo {
     //Aqui no se ponen las derivadas
     private double radio;
-    private Punto centro;
+    private Punto centro = new Punto();
     private final static double pi = 3.14;
 
     //Constructores

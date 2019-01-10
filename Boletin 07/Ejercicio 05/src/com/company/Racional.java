@@ -91,8 +91,8 @@ public class Racional {
     public Racional dividirRacionales(Racional division){
         Racional resultado = new Racional();
 
-        resultado.setNumerador(this.getNumerador()*division.getNumerador());
-        resultado.setDenominador(this.getDenominador()*division.getDenominador());
+        resultado.setNumerador(this.getNumerador()*division.getDenominador());
+        resultado.setDenominador(this.getDenominador()*division.getNumerador());
 
         return resultado;
     }
