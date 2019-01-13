@@ -5,7 +5,7 @@ Propiedades basicas: - Nombre: String, consultable y modificable.
                      - Edad: int, conultable y modificable.
                      - Destreza: Habilidad, consultable y modificable.
 Propiedades derivadas: no hay.
-Propiedades añadidas: nada.
+Propiedades añadidas: atacar, sanar.
 Propiedades compartidas: nada.
 
 Get/Set
@@ -38,7 +38,7 @@ public class Jugador {
     //Por defecto
     public Jugador(){
         nombre = new String();
-        vida = 100; //No creo que haya problema en iniciar a 100
+        vida = 100;
         edad = 0;
         destreza = new Habilidad();
     }
@@ -98,6 +98,15 @@ public class Jugador {
 
     @Override
     public String toString(){
-        return "Jugador: "+ getNombre()+" Edad: "+ getEdad();
-    } //Duda: tengo que poner aqui los atributos de la clase Habilidad?
+        return "Jugador: "+ getNombre()+" Edad: "+ getEdad() + " Habilidad: "+destreza;
+    }
+
+
+    public void Atacar(Jugador jugador,int danio){
+        jugador.setVida(jugador.getVida()-danio);
+    }
+
+    public void Sanar(Jugador jugador, int sanacion){
+        jugador.setVida(jugador.getVida()+sanacion);
+    }
 }
