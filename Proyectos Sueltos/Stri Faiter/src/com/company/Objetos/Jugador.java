@@ -164,9 +164,7 @@ public class Jugador implements Cloneable{
         this.getVida() == otro.getVida()){
             ret = 0;
         }
-
         return ret;
     }
-
 
 }

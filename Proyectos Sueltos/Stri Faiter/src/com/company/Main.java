@@ -74,7 +74,7 @@ public class Main {
 
         while(jugador1.getVida() > 0 && jugador2.getVida() > 0) {//mientras jugador1.getVida() > 0 && jugador2.getVida() > 0
             if(turno % 2 == 0) {//Si turno % 2 == 0
-                //MostrarQuienSaleyAtaques
+                //MostrarQuienSaleyAtaques*
                 Utilidades.pintarHabiliades(turno);
 
                 //ElegirAtaque
@@ -85,14 +85,14 @@ public class Main {
                 Utilidades.realizarAtaque(elegirAtaque,jugador1, jugador2);
 
             }else{//sino  //Jugador2
-                //MostrarQuienSaleyAtaques
+                //MostrarQuienSaleyAtaques*
                 Utilidades.pintarHabiliades(turno);
 
                 //ElergirAtaque
                 System.out.print("Elijo: ");
                 elegirAtaque = teclado.nextInt();
 
-                //RealizarAtaque
+                //RealizarAtaque*
                  Utilidades.realizarAtaque2(elegirAtaque,jugador1, jugador2);
             }
             //MostrarResultadoRonda
