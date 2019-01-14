@@ -28,7 +28,7 @@ void setHabilidadDano(int danio)
 int getHabilidadSanacion()
 void setHabilidadSanacion(int sanacion)
 */
-public class Jugador {
+public class Jugador implements Cloneable{
     private String nombre;
     private int edad;
     private int vida;
@@ -96,12 +96,6 @@ public class Jugador {
         destreza.setSanacion(sanacion);
     }
 
-    @Override
-    public String toString(){
-        return "Jugador: "+ getNombre()+" Edad: "+ getEdad() + " Habilidad: "+destreza;
-    }
-
-
     public void Atacar(Jugador jugador,int danio){
         jugador.setVida(jugador.getVida()-danio);
     }
@@ -109,4 +103,70 @@ public class Jugador {
     public void Sanar(Jugador jugador, int sanacion){
         jugador.setVida(jugador.getVida()+sanacion);
     }
+
+    @Override
+    public String toString(){
+        return "Jugador: "+ getNombre()+" Edad: "+ getEdad() + " Habilidad: "+destreza;
+    }
+
+    @Override
+    public int hashCode(){
+        return getEdad()*3+getVida()+getHabilidadDanio()*2;
+    }
+
+    /*
+    * Criterio de igualdad: son iguales si la vida, el nombre y la edad son iguales.*/
+    @Override
+    public boolean equals(Object obj){
+        boolean ret = false;
+
+        if(this == obj) {
+            ret = true;
+        }else{
+            if(obj != null && obj instanceof Jugador){
+                Jugador otro = (Jugador) obj;
+
+                if(this.getNombre() == otro.getNombre() &&
+                this.getVida() == otro.getVida() &&
+                this.getEdad() == otro.getEdad()){
+                    ret = true;
+                }
+            }
+        }
+        return ret;
+    }
+
+    @Override
+    public Jugador clone(){ //Copia superficial
+        Jugador copia = null;
+
+        try{
+            copia = (Jugador)super.clone();
+            //copia.destreza = new Habilidad(this.destreza); Con esto seria en profundidad.
+        }catch(CloneNotSupportedException error){
+            System.out.println("Error en la copia");
+        }
+        return copia;
+    }
+
+    /*Criterio de comparacion:
+    * Devuelve 0 si la vida y la edad son iguales
+    * Devuelve 1 si la edad y vida del primero son mayores que el 2
+    * Devuelve -1 si la edad y vida del segundo es mayor que el 1
+    * */
+    public int compareTo(Jugador otro){
+        int ret = -1;
+
+        if(this.getEdad() > otro.getEdad() &&
+        this.getVida() > otro.getVida() ){
+            ret = 1;
+        }else if(this.getEdad() == otro.getEdad() &&
+        this.getVida() == otro.getVida()){
+            ret = 0;
+        }
+
+        return ret;
+    }
+
+
 }
