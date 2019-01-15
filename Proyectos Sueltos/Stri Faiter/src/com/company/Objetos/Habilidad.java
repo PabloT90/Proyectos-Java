@@ -5,6 +5,8 @@ Propiedades basicas: - Danio int, consultable y modificable.
 Propiedades derivadas: no hay (por el momento).
 Propiedades añadidas: no hay.
 Propiedades compartidas: no hay.
+Restricciones: - El daño tiene que ser mayor o igual a 0.
+               - La sanacion tiene que ser mayor o igual a 0.
 
 Get/Set
 int getDanio()
@@ -13,7 +15,8 @@ void setDanio(int danio)
 int getSanacion()
 void setSanacion(int sanacion)
 */
-public class Habilidad implements Cloneable{
+import com.company.Excepciones;
+public class Habilidad implements Cloneable, Comparable<Habilidad>{
     private int danio;
     private int sanacion;
 
@@ -40,15 +43,19 @@ public class Habilidad implements Cloneable{
     public int getDanio(){
         return danio;
     }
-    public void setDanio(int danio){
-        this.danio = danio;
+    public void setDanio(int danio) throws Excepciones{
+        if(danio >= 0)
+            this.danio = danio;
+        else throw new Excepciones("Error en la sanacion");
     }
 
     public int getSanacion(){
         return sanacion;
     }
-    public void setSanacion(int sanacion){
-        this.sanacion = sanacion;
+    public void setSanacion(int sanacion)throws Excepciones{
+        if(sanacion >=0)
+            this.sanacion = sanacion;
+        else throw new Excepciones("Error en la sanacion");
     }
 
     @Override
@@ -84,7 +91,6 @@ public class Habilidad implements Cloneable{
 
         try{
             copia = (Habilidad)super.clone();
-            //Como se haria este en profundidad?
         }catch(CloneNotSupportedException error){
             System.out.println("Error en la copia");
         }

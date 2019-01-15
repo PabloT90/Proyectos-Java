@@ -45,7 +45,7 @@ public class Utilidades {
                 break;
             case 2: player1.Atacar(player2,20); //Tormenta de flechas
                 break;
-            case 3: player1.Sanar(player1,15); //Resurreccion
+            case 3: player1.Sanar(15); //Resurreccion
                 break;
             case 4: player1.Atacar(player2,35); //Torbellino
                 break;
@@ -56,7 +56,7 @@ public class Utilidades {
         switch(numAtaque){
             case 1:  //Robo de vida
                 player2.Atacar(player1,10);
-                player2.Sanar(player2,10);
+                player2.Sanar(10);
                 break;
             case 2: player2.Atacar(player1,25); //Cohete Valkyria
                 break;

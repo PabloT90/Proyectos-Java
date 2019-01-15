@@ -58,10 +58,15 @@ public class Main {
         //LeerEstablecerEdadJugadores
         System.out.println("Edad del primer jugador");
         edad1 = teclado.nextInt();
-        jugador1.setEdad(edad1);
         System.out.println("Edad del segundo jugador");
         edad2 = teclado.nextInt();
-        jugador2.setEdad(edad2);
+
+        try{
+            jugador1.setEdad(edad1);
+            jugador2.setEdad(edad2);
+        }catch(Excepciones error){
+            System.out.println("Error en la edad");
+        }
 
         //MostrarDatosJugadores
         System.out.println("Hola");

@@ -1,4 +1,7 @@
 package com.company.Objetos;
+
+import com.company.Excepciones;
+
 /*
 Propiedades basicas: - Nombre: String, consultable y modificable.
                      - Vida: int, consultable y modificable.
@@ -7,6 +10,10 @@ Propiedades basicas: - Nombre: String, consultable y modificable.
 Propiedades derivadas: no hay.
 Propiedades añadidas: atacar, sanar.
 Propiedades compartidas: nada.
+Restricciones: La vida tiene que ser mayor o igual a 0.
+               La edad tiene que ser mayor o igual que 0.
+               Destreza tiene que tener parametros validos.
+
 
 Get/Set
 String getNombre()
@@ -28,7 +35,7 @@ void setHabilidadDano(int danio)
 int getHabilidadSanacion()
 void setHabilidadSanacion(int sanacion)
 */
-public class Jugador implements Cloneable{
+public class Jugador implements Cloneable, Comparable<Jugador>{
     private String nombre;
     private int edad;
     private int vida;
@@ -70,38 +77,50 @@ public class Jugador implements Cloneable{
     public int getEdad(){
         return edad;
     }
-    public void setEdad(int edad){
-        this.edad = edad;
+    public void setEdad(int edad)throws Excepciones{
+        if(edad >= 0)
+            this.edad = edad;
+        else throw new Excepciones("No se ha podido establecer la edad.");
     }
 
     public int getVida(){
         return vida;
     }
-    public void setVida(int vida){
-        this.vida = vida;
+    public void setVida(int vida)throws Excepciones{
+        if(vida >= 0)
+            this.vida = vida;
+        else throw new Excepciones("No se ha establecido la vida.");
     }
 
     //Patron delegacion Habilidad
     public int getHabilidadDanio() {
         return destreza.getDanio();
     }
-    public void setHabilidadDanio(int danio) {
-        destreza.setDanio(danio);
+    public void setHabilidadDanio(int danio)throws Excepciones {
+        if(danio >= 0)
+            destreza.setDanio(danio);
+        else throw new Excepciones("Error al establecer el danio.");
     }
 
     public int getHabilidadSanacion() {
         return destreza.getSanacion();
     }
-    public void setHabilidadSanacion(int sanacion) {
-        destreza.setSanacion(sanacion);
+    public void setHabilidadSanacion(int sanacion)throws Excepciones {
+        if(sanacion >= 0)
+            destreza.setSanacion(sanacion);
+        else throw new Excepciones("No se ha podido establecer la sanacion");
     }
 
     public void Atacar(Jugador jugador,int danio){
-        jugador.setVida(jugador.getVida()-danio);
+        try {
+            jugador.setVida(jugador.getVida() - danio);
+        }catch(Excepciones error){
+            System.out.println("No se ha podido establecer la vida");
+        }
     }
 
-    public void Sanar(Jugador jugador, int sanacion){
-        jugador.setVida(jugador.getVida()+sanacion);
+    public void Sanar(int sanacion){
+            this.vida = getVida() + sanacion;
     }
 
     @Override
