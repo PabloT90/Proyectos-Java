@@ -1,5 +1,5 @@
 package com.company.Enums;
 
 public enum EnumJugador {
-    PABLO,NESDE,YERAY,RAFAEL
+    PABLO("",), NESDE("",), YERAY("",), RAFAEL("",)
 }
