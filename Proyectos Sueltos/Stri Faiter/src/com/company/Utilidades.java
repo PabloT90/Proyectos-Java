@@ -1,13 +1,11 @@
 package com.company;
 import com.company.Objetos.Jugador;
 public class Utilidades {
-    /* Descripcion: proporciona los ataques de cada jugador.
-    Entrada: int muestraAtaques.
-    Precondiciones: no hay.
-    Salida: nada.
-    PostCondiciones: no hay, solo pinta en pantalla.
-    Cabecera: public static void pintarHabiliades(int muestraAtaques)
-    * */
+    /**
+     * @author "Pablo Prats"
+     * @version "1.0"
+     * @param turno "Establece que cuarteto de habilidades se va a mostrar. Se pasa por valor."
+     */
     public static void pintarHabiliades(int turno) {
         if (turno % 2 == 0) {
             System.out.println("-------------");
@@ -32,13 +30,13 @@ public class Utilidades {
         }
     }
 
-    /* Descripcion: se encarga se realizar el ataque elegido previamente.
-    Entrada: int numAtaque, Jugador player1, Jugador player2.
-    Precondiciones: por valor se pasa el numero del ataque elegido y 2 jugadores por direccionamiento.
-    Salida: nada.
-    PostCondiciones: nada, modifica el estado de los jugadores.
-    Cabecera: void realizarAtaque(int numAtaque, Jugador player1, Jugador player2)
-    * */
+    /**
+     * @author "Pablo Prats"
+     * @version "v1.0"
+     * @param numAtaque "El numero del ataque deseado. Entre 1 y 4. Se pasa por valor."
+     * @param player1 "Quien realiza la accion. Se pasa por direccionamiento."
+     * @param player2 "A quien se le aplica la accion. Se pasa por direccionamiento."
+     */
     public static void realizarAtaque(int numAtaque,Jugador player1, Jugador player2){
         switch(numAtaque){
             case 1: player1.Atacar(player2,10); //Mina de contusion
@@ -52,6 +50,13 @@ public class Utilidades {
         }
     }
 
+    /**
+     * @author "Pablo Prats"
+     * @version "v1.0"
+     * @param numAtaque "Numero del ataque deseado. Entre 1 y 4. Se pasa por valor."
+     * @param player1 "Quien realiza la accion. Se pasa por direccionamiento."
+     * @param player2 "A quien se le aplica la accion. Se pasa por direccionamiento."
+     */
     public static void realizarAtaque2(int numAtaque,Jugador player1, Jugador player2){
         switch(numAtaque){
             case 1:  //Robo de vida

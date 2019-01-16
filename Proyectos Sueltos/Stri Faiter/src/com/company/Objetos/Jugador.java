@@ -111,6 +111,12 @@ public class Jugador implements Cloneable, Comparable<Jugador>{
         else throw new Excepciones("No se ha podido establecer la sanacion");
     }
 
+    /**
+     * @author "Pablo Prats"
+     * @version "v1.0"
+     * @param jugador "Quien recibe la accion. Se pasa por direccionamiento"
+     * @param danio "El danio que se le aplica. Tiene que ser mayor o igual a 0. Se pasa por valor."
+     */
     public void Atacar(Jugador jugador,int danio){
         try {
             jugador.setVida(jugador.getVida() - danio);
@@ -119,6 +125,11 @@ public class Jugador implements Cloneable, Comparable<Jugador>{
         }
     }
 
+    /**
+     * @author "Pablo Prats"
+     * @version "v1.0"
+     * @param sanacion "La sanacion que se le aplica. Tiene que ser mayor o igual a 0. Se pasa por valor."
+     */
     public void Sanar(int sanacion){
             this.vida = getVida() + sanacion;
     }

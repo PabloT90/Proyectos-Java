@@ -14,8 +14,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+            <state relative-caret-position="115">
+              <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -26,29 +26,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Utilidades.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+            <state relative-caret-position="1150">
+              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Habilidad.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Enums/EnumJugador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1016">
-              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            <state relative-caret-position="92">
+              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Tests/TestHabilidad.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Habilidad.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="805">
-              <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-899">
+              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -56,23 +53,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Jugador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="112" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="1767">
+              <caret line="117" column="53" selection-start-line="117" selection-start-column="53" selection-end-line="117" selection-end-column="53" />
               <folding>
-                <element signature="e#3291#3292#0" expanded="true" />
-                <element signature="e#3343#3344#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Tests/TestJugador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="74" selection-end-column="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3357#3358#0" expanded="true" />
+                <element signature="e#3409#3410#0" expanded="true" />
+                <element signature="e#3454#3455#0" expanded="true" />
+                <element signature="e#3548#3549#0" expanded="true" />
+                <element signature="e#3590#3591#0" expanded="true" />
+                <element signature="e#3656#3657#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,14 +93,17 @@
         <option value="$PROJECT_DIR$/../../../../Primer Año/Programacion/Alumnos/Nacho/Examen clases/Encuesta.java" />
         <option value="$PROJECT_DIR$/../../../../Primer Año/Programacion/Alumnos/Nacho/Examen clases/Examen15022018Main.java" />
         <option value="$PROJECT_DIR$/../../Boletin 07/Tipo Circulo/src/com/company/circulo.java" />
-        <option value="$PROJECT_DIR$/../../../../../Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/ExcepcionPersona.java" />
+        <option value="$USER_HOME$/Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/ExcepcionPersona.java" />
         <option value="$PROJECT_DIR$/src/com/company/Excepciones.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Objetos/Habilidad.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Utilidades.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Objetos/Jugador.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tests/TestJugador.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tests/TestHabilidad.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="//servidor/free/Asignaturas de primero/Programación/Alumnos/Victor/Enums/EnumNombreApellidos.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Enums/EnumNombre.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Objetos/Jugador.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Utilidades.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Enums/EnumJugador.java" />
       </list>
     </option>
   </component>
@@ -144,6 +136,13 @@
               <item name="Stri Faiter" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Stri Faiter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stri Faiter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="Enums" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Stri Faiter" type="b2602c69:ProjectViewProjectNode" />
@@ -224,8 +223,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12872024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12872024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -245,6 +245,27 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12872024" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41571194" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Objetos.java" />
@@ -270,64 +291,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/TestFecha.java" />
-    <entry file="file://$PROJECT_DIR$/../../../../../Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/ExcepcionPersona.java" />
-    <entry file="file://$PROJECT_DIR$/../../../../../Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/MediaPersonas.java" />
+    <entry file="file://$USER_HOME$/Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/TestFecha.java" />
+    <entry file="file://$USER_HOME$/Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/ExcepcionPersona.java" />
+    <entry file="file://$USER_HOME$/Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/MediaPersonas.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Excepciones.java" />
-    <entry file="file://$PROJECT_DIR$/../../../../../Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/Persona.java" />
-    <entry file="file://$PROJECT_DIR$/../../../../../Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/TestPersona.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/Utilidades.java">
+    <entry file="file://$USER_HOME$/Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/Persona.java" />
+    <entry file="file://$USER_HOME$/Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/TestPersona.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tests/TestHabilidad.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Jugador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-          <folding>
-            <element signature="e#3291#3292#0" expanded="true" />
-            <element signature="e#3343#3344#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="161">
+          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Tests/TestJugador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="74" selection-end-column="83" />
+        <state relative-caret-position="115">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="74" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tests/TestHabilidad.java">
+    <entry file="file://$USER_HOME$/Desktop/Ciclo/Programacion/Compañeros/Enums/EnumNombre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Ciclo/Programacion/Compañeros/Enums/TestEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="46" column="51" lean-forward="true" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Ciclo/Programacion/Compañeros/Enums/EnumNota.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:////servidor/free/Asignaturas de primero/Programación/Alumnos/Victor/Enums/EnumNombreApellidos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Enums/EnumNombre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="14" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#137#138#0" expanded="true" />
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Habilidad.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1016">
+        <state relative-caret-position="-899">
           <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Jugador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1767">
+          <caret line="117" column="53" selection-start-line="117" selection-start-column="53" selection-end-line="117" selection-end-column="53" />
+          <folding>
+            <element signature="e#3357#3358#0" expanded="true" />
+            <element signature="e#3409#3410#0" expanded="true" />
+            <element signature="e#3454#3455#0" expanded="true" />
+            <element signature="e#3548#3549#0" expanded="true" />
+            <element signature="e#3590#3591#0" expanded="true" />
+            <element signature="e#3656#3657#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Utilidades.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Enums/EnumJugador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
