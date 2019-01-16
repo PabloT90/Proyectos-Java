@@ -32,6 +32,19 @@ public class Utilidades {
 
     /**
      * @author "Pablo Prats"
+     * @version "1.0"
+     * @param turno "Establece que cuarteto de personajes disponibles."
+     */
+    public static void MostrarOponentes(){
+        System.out.println("Con quien quieres jugar?");
+        System.out.println("1) Nesde");
+        System.out.println("2) Pablo");
+        System.out.println("3) Rafa");
+        System.out.println("4) Yeray");
+    }
+
+    /**
+     * @author "Pablo Prats"
      * @version "v1.0"
      * @param numAtaque "El numero del ataque deseado. Entre 1 y 4. Se pasa por valor."
      * @param player1 "Quien realiza la accion. Se pasa por direccionamiento."

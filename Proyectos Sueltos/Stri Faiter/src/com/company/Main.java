@@ -1,12 +1,13 @@
 package com.company;
 /* Entrada: nombre de los 2 jugadores. Edad de los jugadores.
    Salida: eco de los datos, quien ha ganado.
-   Restricciones: nada. (Tiene, pero no las pongo porque quiero centrarme en lo importante)
+   Restricciones: La seleccion de jugadores solo admite numeros entre 1 y 4.
 
 PG
 INICIO
-    LeerEstablecerNombreJugadores
-    LeerEstablecerEdadJugadores
+    --LeerEstablecerNombreJugadores
+    --LeerEstablecerEdadJugadores
+  ++LeerValidarSeleccionarJugador
     MostrarDatosJugadores
     JugarStreetFighter
     MostrarGanador
@@ -32,6 +33,8 @@ FIN
 * */
 import java.util.Scanner;
 import java.util.Random;
+
+import com.company.Enums.EnumJugador;
 import com.company.Objetos.*;
 public class Main {
     public static void main(String[] args) {
@@ -39,15 +42,25 @@ public class Main {
         Random rnd = new Random();
 
         //Jugadores
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        //Jugador jugador1 = new Jugador();
+        Jugador jugador1;
+        Jugador jugador2;
+        //Jugador jugador2 = new Jugador();
+
+        //Enum
+        EnumJugador pablo = EnumJugador.PABLO;
+        EnumJugador yeray = EnumJugador.YERAY;
+        EnumJugador rafa = EnumJugador.RAFAEL;
+        EnumJugador nesde = EnumJugador.NESDE;
 
         String Nombreplayer1, Nombreplayer2;
         int turno;
         int edad1, edad2;
         int elegirAtaque;
 
-        //LeerEstablecerNombreJugadores
+        int selectJugador,selectJugador2;
+
+       /* //LeerEstablecerNombreJugadores
         System.out.println("Nombre del primer jugador");
         Nombreplayer1 = teclado.nextLine();
         jugador1.setNombre(Nombreplayer1);
@@ -66,6 +79,42 @@ public class Main {
             jugador2.setEdad(edad2);
         }catch(Excepciones error){
             System.out.println("Error en la edad");
+        } */
+
+       //LeerValidarSeleccionarJugador
+        do{
+            Utilidades.MostrarOponentes();
+            selectJugador = teclado.nextInt();
+            System.out.println("Elige oponente:");
+            Utilidades.MostrarOponentes();
+            selectJugador2 = teclado.nextInt();
+        }while((selectJugador < '1' || selectJugador > 4) && (selectJugador2 < 1 || selectJugador2 > 4));
+
+
+        switch(selectJugador){
+            case 1: jugador1 = new Jugador(nesde.getNombre(),100,nesde.getEdad(),0,0);
+                break;
+            case 2: jugador1 = new Jugador(pablo.getNombre(),100,pablo.getEdad(),0,0);
+                break;
+            case 3: jugador1 = new Jugador(rafa.getNombre(),100,rafa.getEdad(),0,0);
+                break;
+            case 4: jugador1 = new Jugador(yeray.getNombre(),100, yeray.getEdad(),0,0);
+                break;
+            default: jugador1 = new Jugador();
+                break;
+        }
+
+        switch(selectJugador2){
+            case 1: jugador2 = new Jugador(nesde.getNombre(),100,nesde.getEdad(),0,0);
+                break;
+            case 2: jugador2 = new Jugador(pablo.getNombre(),100,pablo.getEdad(),0,0);
+                break;
+            case 3: jugador2 = new Jugador(rafa.getNombre(),100,rafa.getEdad(),0,0);
+                break;
+            case 4: jugador2 = new Jugador(yeray.getNombre(),100, yeray.getEdad(),0,0);
+                break;
+                default: jugador2 = new Jugador();
+                    break;
         }
 
         //MostrarDatosJugadores
