@@ -5,9 +5,7 @@ package com.company;
 
 PG
 INICIO
-    --LeerEstablecerNombreJugadores
-    --LeerEstablecerEdadJugadores
-  ++LeerValidarSeleccionarJugador
+  LeerValidarSeleccionarJugador
     MostrarDatosJugadores
     JugarStreetFighter
     MostrarGanador
@@ -42,10 +40,8 @@ public class Main {
         Random rnd = new Random();
 
         //Jugadores
-        //Jugador jugador1 = new Jugador();
         Jugador jugador1;
         Jugador jugador2;
-        //Jugador jugador2 = new Jugador();
 
         //Enum
         EnumJugador pablo = EnumJugador.PABLO;
@@ -59,27 +55,6 @@ public class Main {
         int elegirAtaque;
 
         int selectJugador,selectJugador2;
-
-       /* //LeerEstablecerNombreJugadores
-        System.out.println("Nombre del primer jugador");
-        Nombreplayer1 = teclado.nextLine();
-        jugador1.setNombre(Nombreplayer1);
-        System.out.println("Nombre del segundo jugador");
-        Nombreplayer2 = teclado.nextLine();
-        jugador2.setNombre(Nombreplayer2);
-
-        //LeerEstablecerEdadJugadores
-        System.out.println("Edad del primer jugador");
-        edad1 = teclado.nextInt();
-        System.out.println("Edad del segundo jugador");
-        edad2 = teclado.nextInt();
-
-        try{
-            jugador1.setEdad(edad1);
-            jugador2.setEdad(edad2);
-        }catch(Excepciones error){
-            System.out.println("Error en la edad");
-        } */
 
        //LeerValidarSeleccionarJugador
         do{

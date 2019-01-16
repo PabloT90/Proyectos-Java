@@ -188,7 +188,7 @@ public class Jugador implements Cloneable, Comparable<Jugador>{
         int ret = -1;
 
         if(this.getEdad() > otro.getEdad() &&
-        this.getVida() > otro.getVida() ){
+        this.getVida() > otro.getVida()){
             ret = 1;
         }else if(this.getEdad() == otro.getEdad() &&
         this.getVida() == otro.getVida()){

@@ -16,12 +16,14 @@ public class TestJugador {
         //Gets y sets
         try {
             player1.setVida(10);
+            //player1.setVida(-10); Debe dar error
         }catch(Excepciones error){
             System.out.println("Error en la vida");
         }
         System.out.println("Vida: "+player1.getVida());
         try{
             player1.setEdad(11);
+            //player1.setEdad(-1); Debe dar error
         }catch(Excepciones error){
             System.out.println("Error en la edad");
         }
