@@ -1,11 +1,13 @@
 package com.company;
-/* Entrada: nombre de los 2 jugadores. Edad de los jugadores.
-   Salida: eco de los datos, quien ha ganado.
-   Restricciones: La seleccion de jugadores solo admite numeros entre 1 y 4.
+/* Entrada: x2 entero seleccion de jugadores, x2 entero seleccionar ataque.
+   Salida: mensajes de comunicacion con el usuario, Personajes disponibles, ataques disponibles para cada jugador, quien ha ganado,
+           vida de los personajes en cada ronda.
+   Restricciones: - La seleccion de jugadores solo admite numeros entre 1 y 4.
+                  - La seleccion de ataque solo admite numeros entre 1 y 4.
 
 PG
 INICIO
-  LeerValidarSeleccionarJugador
+  LeerValidarSeleccionarJugadores
     MostrarDatosJugadores
     JugarStreetFighter
     MostrarGanador
@@ -31,7 +33,6 @@ FIN
 * */
 import java.util.Scanner;
 import java.util.Random;
-
 import com.company.Enums.EnumJugador;
 import com.company.Objetos.*;
 public class Main {
@@ -49,14 +50,12 @@ public class Main {
         EnumJugador rafa = EnumJugador.RAFAEL;
         EnumJugador nesde = EnumJugador.NESDE;
 
-        String Nombreplayer1, Nombreplayer2;
         int turno;
-        int edad1, edad2;
         int elegirAtaque;
 
         int selectJugador,selectJugador2;
 
-       //LeerValidarSeleccionarJugador
+       //LeerValidarSeleccionarJugadores
         do{
             Utilidades.MostrarOponentes();
             selectJugador = teclado.nextInt();
@@ -93,7 +92,7 @@ public class Main {
         }
 
         //MostrarDatosJugadores
-        System.out.println("Hola");
+        System.out.println("Datos de los personajes:");
         System.out.println("Nombre: "+jugador1.getNombre()+" Edad: "+ jugador1.getEdad());
         System.out.println("Nombre: "+jugador2.getNombre()+" Edad: "+ jugador2.getEdad());
 
@@ -107,8 +106,10 @@ public class Main {
                 Utilidades.pintarHabiliades(turno);
 
                 //ElegirAtaque
-                System.out.print("Elijo: ");
-                elegirAtaque = teclado.nextInt();
+                do{
+                    System.out.print("Elijo: ");
+                    elegirAtaque = teclado.nextInt();
+                }while(elegirAtaque < 1 || elegirAtaque > 4);
 
                 //realizarAtaque*
                 Utilidades.realizarAtaque(elegirAtaque,jugador1, jugador2);
@@ -118,8 +119,10 @@ public class Main {
                 Utilidades.pintarHabiliades(turno);
 
                 //ElergirAtaque
-                System.out.print("Elijo: ");
-                elegirAtaque = teclado.nextInt();
+                do{
+                    System.out.print("Elijo: ");
+                    elegirAtaque = teclado.nextInt();
+                }while(elegirAtaque < 1 || elegirAtaque > 4);
 
                 //RealizarAtaque*
                  Utilidades.realizarAtaque2(elegirAtaque,jugador1, jugador2);
@@ -135,6 +138,6 @@ public class Main {
 
         //MostrarGanador
         if(jugador1.getVida() <= 0) System.out.println("Ha ganado el jugador 1");
-        else System.out.println("Ha ganado el jugador 2");
+            else System.out.println("Ha ganado el jugador 2");
     }
 }
