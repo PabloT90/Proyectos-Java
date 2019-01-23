@@ -12,18 +12,15 @@ public class Gestora {
                 ret = tablero.ComprobarOcupacion(posX, posY);
                 break;
             case 2:
-                posX = 0;
-                posY = 1;
+                posX = 0;posY = 1;
                 ret = tablero.ComprobarOcupacion(posX, posY);
                 break;
             case 3:
-                posX = 0;
-                posY = 2;
+                posX = 0;posY = 2;
                 ret = tablero.ComprobarOcupacion(posX, posY);
                 break;
             case 4:
-                posX = 1;
-                posY = 0;
+                posX = 1;posY = 0;
                 ret = tablero.ComprobarOcupacion(posX, posY);
                 break;
             case 5:
@@ -31,18 +28,15 @@ public class Gestora {
                 ret = tablero.ComprobarOcupacion(posX, posY);
                 break;
             case 6:
-                posX = 1;
-                posY = 2;
+                posX = 1;posY = 2;
                 ret = tablero.ComprobarOcupacion(posX, posY);
                 break;
             case 7:
-                posX = 2;
-                posY = 0;
+                posX = 2;posY = 0;
                 ret = tablero.ComprobarOcupacion(posX, posY);
                 break;
             case 8:
-                posX = 2;
-                posY = 1;
+                posX = 2;posY = 1;
                 ret = tablero.ComprobarOcupacion(posX, posY);
                 break;
             case 9:
