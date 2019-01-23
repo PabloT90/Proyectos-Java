@@ -26,12 +26,10 @@ void setCasillaCruz(boolean cruz)
 */
 public class Tablero implements Cloneable{
     private Casilla[][] tablero;
-    private Casilla cas;
     //Constructores
     //Por defecto
     public Tablero(){
         tablero = new Casilla[3][3];
-        cas = new Casilla();
 
         for(int i = 0; i < tablero.length; i++){			//Para evitar que los valores de cada casilla valgan 'null'
             for(int j = 0; j < tablero[0].length; j++){
@@ -48,7 +46,6 @@ public class Tablero implements Cloneable{
     //De copia
     public Tablero(Tablero tablero){
         this.tablero = tablero.getTablero();
-        this.cas = tablero.cas;
     }
 
     //Gets/Sets
@@ -127,16 +124,22 @@ public class Tablero implements Cloneable{
     public int Ganador(){
         int ganador =0;
         if(tablero[0][0].getCara() && tablero[0][1].getCara() && tablero[0][2].getCara() ||  //Comprobar cada caso :(
-            tablero[1][0].getCara() && tablero[1][1].getCara() && tablero[1][2].getCara() ||
+                tablero[1][0].getCara() && tablero[1][1].getCara() && tablero[1][2].getCara() ||
                 tablero[2][0].getCara() && tablero[2][1].getCara() && tablero[2][2].getCara() ||
                 tablero[0][0].getCara() && tablero[1][1].getCara() && tablero[2][2].getCara() ||
-                tablero[0][2].getCara() && tablero[1][1].getCara() && tablero[2][0].getCara())
+                tablero[0][2].getCara() && tablero[1][1].getCara() && tablero[2][0].getCara() ||
+                tablero[0][0].getCara() && tablero[1][0].getCara() && tablero[2][0].getCara() ||
+                tablero[0][1].getCara() && tablero[1][1].getCara() && tablero[2][1].getCara() ||
+                tablero[0][2].getCara() && tablero[1][2].getCara() && tablero[2][2].getCara())
             ganador = 1;
         else if(tablero[0][0].getCruz() && tablero[0][1].getCruz() && tablero[0][2].getCruz() ||
                 tablero[1][0].getCruz() && tablero[1][1].getCruz() && tablero[1][2].getCruz() ||
                 tablero[2][0].getCruz() && tablero[2][1].getCruz() && tablero[2][2].getCruz() ||
                 tablero[0][0].getCruz() && tablero[1][1].getCruz() && tablero[2][2].getCruz() ||
-                tablero[0][2].getCruz() && tablero[1][1].getCruz() && tablero[2][0].getCruz())
+                tablero[0][2].getCruz() && tablero[1][1].getCruz() && tablero[2][0].getCruz() ||
+                tablero[0][0].getCruz() && tablero[1][0].getCruz() && tablero[2][0].getCruz() ||
+                tablero[0][1].getCruz() && tablero[1][1].getCruz() && tablero[2][1].getCruz() ||
+                tablero[0][2].getCruz() && tablero[1][2].getCruz() && tablero[2][2].getCruz())
             ganador = 2;
         return ganador;
     }
