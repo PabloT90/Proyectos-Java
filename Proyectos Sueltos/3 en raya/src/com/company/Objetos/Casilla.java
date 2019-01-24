@@ -4,11 +4,13 @@ Propiedades basicas:
     - vacia boolean consultable y modificable.
     - cara boolean consultable y modificable.
     - cruz boolean consultable y modificable.
-
 Propiedades derivadas: no hay.
-Propiedades añadidas: Las de object
+Propiedades añadidas:
+    - clone
+    - equals
 Propiedades comunes: no hay.
-Restricciones: por defecto la casilla se establece a true.
+Restricciones: no hay.
+
 Gets/sets
 boolean getVacia()
 void setVacia(boolean vacia)
@@ -77,12 +79,12 @@ public class Casilla implements Cloneable{
         try{
             copia = (Casilla)super.clone();
         }catch(CloneNotSupportedException error){
-            System.out.println("Error al copiar");
+            System.out.println("Error al clonar");
         }
         return copia;
     }
 
-    //Dos tipo casilla son iguales si sus atributos son iguales.
+    //Dos casillas son iguales si sus atributos son iguales.
     @Override
     public boolean equals(Object obj){
         boolean ret = false;
@@ -94,9 +96,9 @@ public class Casilla implements Cloneable{
                 Casilla otra = (Casilla)obj;
 
                 if(this.getVacia() == otra.getVacia() &&
-                this.getCara() == otra.getCara() &&
-                this.getCruz() == otra.getCruz()){
-                    ret = true;
+                    this.getCara() == otra.getCara() &&
+                    this.getCruz() == otra.getCruz()){
+                        ret = true;
                 }
             }
         }

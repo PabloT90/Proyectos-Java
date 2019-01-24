@@ -1,8 +1,12 @@
 package com.company;
 import com.company.Objetos.*;
 public class Gestora {
-
-    //Devuelve true si esta ocupada, false en caso contrario
+    /*
+    * Entrada: entero posMarca, Tablero tablero
+    * Precondiciones: la posicion de la casilla debe ser valida.
+    * Salida: boolean ret.
+    * Postcondiciones: asociado al nombre devuelve true en caso de estar ocupada y false en caso contrario.
+    * */
     public static boolean CasillaOcupada(int posMarca,Tablero tablero) {
         boolean ret = false;
         int posX = 0, posY = 0;
@@ -47,6 +51,12 @@ public class Gestora {
         return ret;
     }
 
+    /* Pone la marca X en el tablero
+     * Entrada: entero posMarca, Tablero tablero
+     * Precondiciones: la posicion de la casilla debe ser valida.
+     * Salida: no hay.
+     * Postcondiciones: no hay, solo muestra en pantalla.
+     * */
     public static void ponerMarcaX(int posMarca, Tablero tablero){
         int posX=0,posY=0;
         switch(posMarca){
@@ -80,6 +90,12 @@ public class Gestora {
         }
     }
 
+    /* Pone la marca O en el tablero
+     * Entrada: entero posMarca, Tablero tablero
+     * Precondiciones: la posicion de la casilla debe ser valida.
+     * Salida: no hay.
+     * Postcondiciones: no hay, solo muestra en pantalla.
+     * */
     public static void ponerMarcaY(int posMarca, Tablero tablero){
         int posX=0,posY=0;
         switch(posMarca){

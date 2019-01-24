@@ -92,7 +92,7 @@ public class Tablero implements Cloneable{
         }
     }
 
-    /*+ "Comprueba si una casilla esta ocupada."
+    /** "Comprueba si una casilla esta ocupada."
      * @param posX "Posicion X del tablero."
      * @param posY "Posicion Y del tablero"
      * @return "Boolean. True en caso de estar ocupada la casilla. False en caso de no estar ocupada."
