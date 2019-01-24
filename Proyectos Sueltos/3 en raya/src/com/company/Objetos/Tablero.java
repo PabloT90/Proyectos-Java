@@ -31,9 +31,9 @@ public class Tablero implements Cloneable{
     public Tablero(){
         tablero = new Casilla[3][3];
 
-        for(int i = 0; i < tablero.length; i++){			//Para evitar que los valores de cada casilla valgan 'null'
+        for(int i = 0; i < tablero.length; i++){			//Asi evito que los valores de cada casilla valgan null
             for(int j = 0; j < tablero[0].length; j++){
-                tablero[i][j] = new Casilla();              //utilizamos el constructor por defecto de la clase Casilla
+                tablero[i][j] = new Casilla();              //utilizo el constructor por defecto de la clase Casilla
             }
         }
     }

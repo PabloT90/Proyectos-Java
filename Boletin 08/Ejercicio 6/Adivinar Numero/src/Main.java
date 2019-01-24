@@ -9,7 +9,7 @@
 *
 * PG
 * INICIO
-*   GenerarEstablecerNumero
+*   GeneraryEstablecerNumero
 *   Repetir
 *       LeerValidarNumero
 *       ActualizarIntentos
@@ -30,11 +30,14 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         Combinacion codigo = new Combinacion();
 
-        //GenerarEstablecerNumero
+        //GeneraryEstablecerNumero
         numAleatorio = rnd.nextInt(9999)+1000;
         combinacion = Gestora.ObtenerDigitos(numAleatorio);
         codigo.setCodigo(combinacion);
-
+        System.out.println("Codigo secreto: "+numAleatorio);
+        for(int i = 0; i < combinacion.length; i++){
+            System.out.print(" "+combinacion[i]);
+        }
         do {//Repetir
             //LeerValidarNumero
             do{
@@ -49,6 +52,7 @@ public class Main {
             //MostrarResultados
             System.out.println("Numero de aciertos y posiciones correctas: "+Gestora.numerosPosicionCorrecta(combinacion,numDicho));
             Gestora.AciertosDesordenados(combinacion, numDicho);
+            System.out.println("Intento: "+intento);
 
             //ComprobarSiEsCorrecto
             if( Gestora.numerosPosicionCorrecta(combinacion,numDicho) == 4) codigo.setUnlocked(true);

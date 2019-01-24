@@ -1,5 +1,10 @@
 public class Gestora {
-    //Comprobar numero correcto
+    /* Dado un numero nos devuelve los digitos que lo componen.
+        Entrada: int numero
+        Precondiciones: Por valor se pasa el numero de la combinacion.
+        Salida: int[] digitos
+        Postcondiciones: Se devuelven los digitos que conforman el numero de la combinacion.
+    */
     public static int[] ObtenerDigitos(int numero){
         int[] digitos;
         int uno,dos,tres,cuatro;
@@ -9,10 +14,16 @@ public class Gestora {
         tres = (numero%100)/10;
         cuatro = numero%10;
         digitos = new int[]{uno,dos,tres,cuatro};
+
         return digitos;
     }
 
-    //numeros en posicion correcta
+    /* Comprueba cuantos numeros estan en su posicion correcta
+       Entrada: int[] numeroCombinacion, int[] numeroDicho
+       Precondiciones: no hay.
+       Salida: int aciertos
+       Postcondiciones: Se devuelve el numero de aciertos de la combinacion.
+   */
     public static int numerosPosicionCorrecta(int[] numeroCombinacion, int[]numeroDicho){
         int aciertos = 0;
         for(int i =0; i < numeroCombinacion.length; i++){
@@ -24,7 +35,12 @@ public class Gestora {
         return aciertos;
     }
 
-    //Aciertos en posiciones desordenadas.
+    /* Comprueba cuantos numeros has acertado, no importa el orden.
+       Entrada: int[] numeroCombinacion, int[] numeroDicho
+       Precondiciones: no hay.
+       Salida: no hay.
+       Postcondiciones: solo muestra en pantalla.
+   */
     public static void AciertosDesordenados(int[] numeroCombinacion, int[]numeroDicho){
         int aciertos = 0;
         for(int i= 0; i < numeroDicho.length; i++){
