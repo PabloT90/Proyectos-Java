@@ -35,9 +35,7 @@ public class Main {
         combinacion = Gestora.ObtenerDigitos(numAleatorio);
         codigo.setCodigo(combinacion);
         System.out.println("Codigo secreto: "+numAleatorio);
-        for(int i = 0; i < combinacion.length; i++){
-            System.out.print(" "+combinacion[i]);
-        }
+
         do {//Repetir
             //LeerValidarNumero
             do{
