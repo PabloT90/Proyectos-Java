@@ -3,7 +3,7 @@ public class Gestora {
         Entrada: int numero
         Precondiciones: Por valor se pasa el numero de la combinacion.
         Salida: int[] digitos
-        Postcondiciones: Se devuelven los digitos que conforman el numero de la combinacion.
+        Postcondiciones:Asociado al nombre se devuelven los digitos que conforman el numero de la combinacion.
     */
     public static int[] ObtenerDigitos(int numero){
         int[] digitos;
@@ -22,7 +22,7 @@ public class Gestora {
        Entrada: int[] numeroCombinacion, int[] numeroDicho
        Precondiciones: no hay.
        Salida: int aciertos
-       Postcondiciones: Se devuelve el numero de aciertos de la combinacion.
+       Postcondiciones: Se devuelve asociado al nombre el numero de aciertos de la combinacion.
    */
     public static int numerosPosicionCorrecta(int[] numeroCombinacion, int[]numeroDicho){
         int aciertos = 0;

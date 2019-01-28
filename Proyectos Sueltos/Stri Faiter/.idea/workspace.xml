@@ -54,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="24" />
+            <state relative-caret-position="261">
+              <caret line="127" column="77" lean-forward="true" selection-start-line="127" selection-start-column="77" selection-end-line="127" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,11 +73,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/com/company/Main.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/com/company/Utilidades.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/company/Tests/TestHabilidad.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/company/Objetos/Jugador.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/company/Objetos/Habilidad.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/com/company/Utilidades.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/com/company/Main.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -113,6 +113,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,12 +158,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../3 en raya" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Boletin 08/Ejercicio 3" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -357,8 +357,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="24" />
+        <state relative-caret-position="261">
+          <caret line="127" column="77" lean-forward="true" selection-start-line="127" selection-start-column="77" selection-end-line="127" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

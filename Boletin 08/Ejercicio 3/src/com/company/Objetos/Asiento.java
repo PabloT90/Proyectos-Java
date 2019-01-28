@@ -8,9 +8,10 @@ package com.company.Objetos;
 *  Propiedades añadidas:
 *       - toString
 *       - hashCode
+*       - clone
 *  Propiedades comunes: no hay.
 *  Restricciones:
-*       - Los asientos 1 al 15 estan reservados para fumadores. El resto para ambos siempre que no fumen.
+*       - no hay
 *
 * Gets/Sets
 * boolean getZonaFumador()
@@ -22,7 +23,7 @@ package com.company.Objetos;
 * boolean getOcupacion()
 * void setOcupacion(boolean ocupacion)
 * */
-public class Asiento {
+public class Asiento implements Cloneable{
     private boolean zonaFumador;
     private int numero;
     private boolean ocupacion;
@@ -78,6 +79,18 @@ public class Asiento {
     @Override
     public int hashCode(){
         return this.getNumero()*2;
+    }
+
+    @Override
+    public Asiento clone(){
+        Asiento copia = null;
+
+        try{
+            copia = (Asiento)super.clone();
+        }catch(CloneNotSupportedException error){
+            System.out.println("Error en la copia");
+        }
+        return copia;
     }
 
 }

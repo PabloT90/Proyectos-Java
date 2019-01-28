@@ -24,8 +24,8 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[]args){
         int numero, intento=0, numAleatorio;
-        int[] combinacion = new int[3];
-        int[] numDicho = new int[3];
+        int[] combinacion = new int[3]; //La combinacion generada aleatoriamente.
+        int[] numDicho = new int[3]; //El numero que dice el usuario.
         Random rnd = new Random();
         Scanner teclado = new Scanner(System.in);
         Combinacion codigo = new Combinacion();
@@ -34,12 +34,11 @@ public class Main {
         numAleatorio = rnd.nextInt(9999)+1000;
         combinacion = Gestora.ObtenerDigitos(numAleatorio);
         codigo.setCodigo(combinacion);
-        System.out.println("Codigo secreto: "+numAleatorio);
 
         do {//Repetir
             //LeerValidarNumero
             do{
-                System.out.println("Dime un numero de 4 cifras mayor que 1000");
+                System.out.println("Dime un numero de 4 cifras entre 1000 y 9999");
                 numero = teclado.nextInt();
             }while(numero < 1000 || numero > 9999);
             numDicho = Gestora.ObtenerDigitos(numero);
@@ -58,7 +57,7 @@ public class Main {
         }while(!codigo.getUnlocked() && intento < 12);//mientras no se acierte el numero y queden intentos.
 
         //MostrarGanador
-        if(codigo.getUnlocked())System.out.println("Has ganado");
-            else System.out.println("La proxima sera dude!");
+        if(codigo.getUnlocked())System.out.println("Has ganado!!");
+            else System.out.println("La proxima sera...");
     }
 }
