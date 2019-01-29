@@ -1,9 +1,7 @@
 package com.company.Objetos;
 /*
 Propiedades basicas:
-    - vacia boolean consultable y modificable.
-    - cara boolean consultable y modificable.
-    - cruz boolean consultable y modificable.
+    - estado int consultable y modificable.
 Propiedades derivadas: no hay.
 Propiedades añadidas:
     - clone
@@ -12,65 +10,37 @@ Propiedades comunes: no hay.
 Restricciones: no hay.
 
 Gets/sets
-boolean getVacia()
-void setVacia(boolean vacia)
-
-boolean getCara()
-void setCara(boolean cara)
-
-boolean getCruz()
-void setCruz(boolean cruz)
+boolean getEstado()
+void setEstado(int estado)
 */
 public class Casilla implements Cloneable{
-    private boolean vacia;
-    private boolean cara;
-    private boolean cruz;
+    private int estado;
 
     //Constructores
     //Por defecto
     public Casilla(){
-        vacia = true;
-        cruz = false;
-        cara = false;
+        estado = 0; //0 es vacio
     }
     //Con parametros
-    public Casilla(boolean vacia, boolean cruz, boolean cara){
-        this.vacia = vacia;
-        this.cruz = cruz;
-        this.cara = cara;
+    public Casilla(int estado){
+        this.estado = estado;
     }
     //De copia
     public Casilla(Casilla casilla){
-        this.vacia = casilla.getVacia();
-        this.cara = casilla.getCara();
-        this.cruz = casilla.getCruz();
+        this.estado = casilla.getEstado();
     }
 
     //Gets/sets
-    public boolean getVacia(){
-        return vacia;
+    public int getEstado(){
+        return estado;
     }
-    public void setVacia(boolean vacia){
-        this.vacia = vacia;
-    }
-
-    public boolean getCara(){
-        return cara;
-    }
-    public void setCara(boolean cara){
-        this.cara = cara;
-    }
-
-    public boolean getCruz(){
-        return cruz;
-    }
-    public void setCruz(boolean cruz){
-        this.cruz = cruz;
+    public void setEstado(int estado){
+        this.estado = estado;
     }
 
     @Override
     public String toString(){
-        return "Vacia: "+getVacia()+" Cara: "+getCara()+" Cruz: "+getCruz();
+        return "Estado: "+getEstado();
     }
 
     @Override
@@ -95,9 +65,7 @@ public class Casilla implements Cloneable{
             if(obj != null && obj instanceof Casilla){
                 Casilla otra = (Casilla)obj;
 
-                if(this.getVacia() == otra.getVacia() &&
-                    this.getCara() == otra.getCara() &&
-                    this.getCruz() == otra.getCruz()){
+                if(this.estado == otra.estado){
                         ret = true;
                 }
             }

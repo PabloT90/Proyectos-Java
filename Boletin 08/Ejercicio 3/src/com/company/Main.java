@@ -3,7 +3,7 @@ package com.company;
 * Entrada:char reservar, int asiento, char fumador
 * Salida: mensajes de comunicacion con el usuario. Las reservas disponibles y las que no segun si es fumador o no.
 * Restricciones:
-*   - Los asientos 1 al 14 estan reservados para no fumadores. El resto para los que no fumen (15-19).
+*   - Los asientos 0 al 14 estan reservados para no fumadores. El resto para los que no fumen (15-19).
 *   - reservar debe ser 's' o 'n'.
 *   - fumador debe ser 's' o 'n'.
 * PG

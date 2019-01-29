@@ -3,7 +3,7 @@ import com.company.Objetos.Casilla;
 import com.company.Objetos.Tablero;
 public class TestTablero {
     public static void main(String[]args){
-        Tablero tablero = new Tablero();
+       Tablero tablero = new Tablero();
 
         //MostrarTablero
         System.out.println("Mostrar Tablero");
@@ -11,9 +11,9 @@ public class TestTablero {
         System.out.println("---------------------------");
 
         System.out.println("Mostrar Tablero con Fichas");
-        Casilla casilla3 = new Casilla(true,false,false);
-        Casilla casilla = new Casilla(false,true,false);
-        Casilla casilla2 = new Casilla(false,false,true);
+        Casilla casilla3 = new Casilla(0);
+        Casilla casilla = new Casilla(1);
+        Casilla casilla2 = new Casilla(2);
 
         Casilla[][] casill = {
                 {casilla,casilla2,casilla3},

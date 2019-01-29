@@ -1,11 +1,11 @@
 package com.company.Objetos;
 /*
  *  Propiedades basicas:
- *       - asiento[] avion consutable y modificable.
+        - asiento[] avion consutable y modificable.
  *  Propiedades derivadas: no hay.
  *  Propiedades añadidas:
- *      - MostrarAvion
- *      - clone
+        - MostrarAvion
+        - clone
         - plazasFumadores
         - fumadoresLibres
         - plazasNoFumadores
@@ -14,12 +14,11 @@ package com.company.Objetos;
         - AsientoOcupado
  *  Propiedades comunes: no hay.
  *  Restricciones:
- *      - La zona de fumadores va desde el 15 al 19
- *      - La zona de no fumadores va desde el 0 hasta el 14
- *
+        - La zona de fumadores va desde el 15 al 19
+        - La zona de no fumadores va desde el 0 hasta el 14
  * Gets/Sets
- * Asiento[] getAvion()
- * void setAvion(Asiento[] avion)
+   Asiento[] getAvion()
+   void setAvion(Asiento[] avion)
  * */
 public class Avion implements Cloneable{
     private Asiento[] avion;

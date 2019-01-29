@@ -60,13 +60,13 @@ public class Tablero implements Cloneable{
     public void mostrarTablero(){
         for(int i=0; i < getTablero().length;i++){
             for(int j=0; j < getTablero()[i].length;j++){
-                if(tablero[i][j].getVacia()){
+                if(tablero[i][j].getEstado() == 0){
                     System.out.print("|_|");
                 }
-                if(tablero[i][j].getCruz()){
+                if(tablero[i][j].getEstado() == 1){
                     System.out.print("|X|");
                 }
-                if(tablero[i][j].getCara()){
+                if(tablero[i][j].getEstado() == 2){
                     System.out.print("|O|");
                 }
             }
@@ -86,9 +86,9 @@ public class Tablero implements Cloneable{
 
         if(ComprobarOcupacion(posX,posY)){ //Compruebo que la casilla este vacia.
             if(marca == 'X')
-                tablero[posX][posY] = casilla = new Casilla(false,true,false);
+                tablero[posX][posY] = casilla = new Casilla(1);
             else
-                tablero[posX][posY] = casilla = new Casilla(false,false,true);
+                tablero[posX][posY] = casilla = new Casilla(2);
         }
     }
 
@@ -99,7 +99,7 @@ public class Tablero implements Cloneable{
      */
     public boolean ComprobarOcupacion(int posX, int posY){
         boolean ret= false;
-        if(tablero[posX][posY].getVacia()) ret = true; //Si la casilla esta vacia devuelve true.
+        if(tablero[posX][posY].getEstado()==0) ret = true; //Si la casilla esta vacia devuelve true.
         return ret;
     }
 
@@ -111,7 +111,7 @@ public class Tablero implements Cloneable{
         boolean lleno = true;
         for(int i=0; i < tablero.length; i++){
             for(int j=0; j < tablero[i].length;j++){
-                if(tablero[i][j].getVacia()) lleno = false; //Si encuentra alguna casilla vacia devuelve false.
+                if(tablero[i][j].getEstado()==0) lleno = false; //Si encuentra alguna casilla vacia devuelve false.
             }
         }
         return lleno;
@@ -123,23 +123,23 @@ public class Tablero implements Cloneable{
      */
     public int Ganador(){
         int ganador =0;
-        if(tablero[0][0].getCara() && tablero[0][1].getCara() && tablero[0][2].getCara() ||  //Comprobar cada caso :(
-                tablero[1][0].getCara() && tablero[1][1].getCara() && tablero[1][2].getCara() ||
-                tablero[2][0].getCara() && tablero[2][1].getCara() && tablero[2][2].getCara() ||
-                tablero[0][0].getCara() && tablero[1][1].getCara() && tablero[2][2].getCara() ||
-                tablero[0][2].getCara() && tablero[1][1].getCara() && tablero[2][0].getCara() ||
-                tablero[0][0].getCara() && tablero[1][0].getCara() && tablero[2][0].getCara() ||
-                tablero[0][1].getCara() && tablero[1][1].getCara() && tablero[2][1].getCara() ||
-                tablero[0][2].getCara() && tablero[1][2].getCara() && tablero[2][2].getCara())
+        if(tablero[0][0].getEstado()==1 && tablero[0][1].getEstado()==1 && tablero[0][2].getEstado()==2 ||  //Comprobar cada caso :(
+                tablero[1][0].getEstado()==2 && tablero[1][1].getEstado()==2 && tablero[1][2].getEstado()==2 ||
+                tablero[2][0].getEstado()==2 && tablero[2][1].getEstado()==2 && tablero[2][2].getEstado()==2 ||
+                tablero[0][0].getEstado()==2 && tablero[1][1].getEstado()==2 && tablero[2][2].getEstado()==2 ||
+                tablero[0][2].getEstado()==2 && tablero[1][1].getEstado()==2 && tablero[2][0].getEstado()==2 ||
+                tablero[0][0].getEstado()==2 && tablero[1][0].getEstado()==2 && tablero[2][0].getEstado()==2 ||
+                tablero[0][1].getEstado()==2 && tablero[1][1].getEstado()==2 && tablero[2][1].getEstado()==2 ||
+                tablero[0][2].getEstado()==2 && tablero[1][2].getEstado()==2 && tablero[2][2].getEstado() == 2)
             ganador = 1;
-        else if(tablero[0][0].getCruz() && tablero[0][1].getCruz() && tablero[0][2].getCruz() ||
-                tablero[1][0].getCruz() && tablero[1][1].getCruz() && tablero[1][2].getCruz() ||
-                tablero[2][0].getCruz() && tablero[2][1].getCruz() && tablero[2][2].getCruz() ||
-                tablero[0][0].getCruz() && tablero[1][1].getCruz() && tablero[2][2].getCruz() ||
-                tablero[0][2].getCruz() && tablero[1][1].getCruz() && tablero[2][0].getCruz() ||
-                tablero[0][0].getCruz() && tablero[1][0].getCruz() && tablero[2][0].getCruz() ||
-                tablero[0][1].getCruz() && tablero[1][1].getCruz() && tablero[2][1].getCruz() ||
-                tablero[0][2].getCruz() && tablero[1][2].getCruz() && tablero[2][2].getCruz())
+        else if(tablero[0][0].getEstado()==1 && tablero[0][1].getEstado()==1 && tablero[0][2].getEstado()==1 ||
+                tablero[1][0].getEstado()==1 && tablero[1][1].getEstado()==1 && tablero[1][2].getEstado()==1 ||
+                tablero[2][0].getEstado()==1 && tablero[2][1].getEstado()==1 && tablero[2][2].getEstado()==1 ||
+                tablero[0][0].getEstado()==1 && tablero[1][1].getEstado()==1 && tablero[2][2].getEstado()==1 ||
+                tablero[0][2].getEstado()==1 && tablero[1][1].getEstado()==1 && tablero[2][0].getEstado()==1 ||
+                tablero[0][0].getEstado()==1 && tablero[1][0].getEstado()==1 && tablero[2][0].getEstado()==1 ||
+                tablero[0][1].getEstado()==1 && tablero[1][1].getEstado()==1 && tablero[2][1].getEstado()==1 ||
+                tablero[0][2].getEstado()==1 && tablero[1][2].getEstado()==1 && tablero[2][2].getEstado()==1)
             ganador = 2;
         return ganador;
     }
