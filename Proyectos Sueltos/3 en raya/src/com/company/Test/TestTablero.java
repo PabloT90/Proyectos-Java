@@ -41,6 +41,7 @@ public class TestTablero {
         System.out.println("---------------------------");
 
         System.out.println("Ganador");
+        tablerito.mostrarTablero();
         System.out.println(tablerito.Ganador()); //Para comprobar si hay ganador solo basta con modificar los valores de tablerito.
         System.out.println("---------------------------");
 

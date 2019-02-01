@@ -13,16 +13,8 @@ Propiedades añadidas:
     - Ganador
 Propiedades comunes: no hay.
 
-Patron delegacion Casilla
-boolean getCasillaVacia()
-void setCasillaVacia(boolean vacia)
-
-boolean getCasillaCara()
-void setCasillaCara(boolean Cara)
-
-boolean getCasillaCruz()
-void setCasillaCruz(boolean cruz)
-
+Casilla[][] getTablero()
+void setTablero(Casilla[][] tablero)
 */
 public class Tablero implements Cloneable{
     private Casilla[][] tablero;
@@ -63,17 +55,16 @@ public class Tablero implements Cloneable{
                 if(tablero[i][j].getEstado() == 0){
                     System.out.print("|_|");
                 }
-                if(tablero[i][j].getEstado() == 1){
+                else if(tablero[i][j].getEstado() == 1){
                     System.out.print("|X|");
                 }
-                if(tablero[i][j].getEstado() == 2){
+                else if(tablero[i][j].getEstado() == 2){
                     System.out.print("|O|");
                 }
             }
             System.out.println();
         }
     }
-
 
     /** "Permite modificar una casilla del tablero."
      * @author Pablo
@@ -123,14 +114,14 @@ public class Tablero implements Cloneable{
      */
     public int Ganador(){
         int ganador =0;
-        if(tablero[0][0].getEstado()==1 && tablero[0][1].getEstado()==1 && tablero[0][2].getEstado()==2 ||  //Comprobar cada caso :(
+        if(tablero[0][0].getEstado()==2 && tablero[0][1].getEstado()==2 && tablero[0][2].getEstado()==2 ||  //Comprobar cada caso :(
                 tablero[1][0].getEstado()==2 && tablero[1][1].getEstado()==2 && tablero[1][2].getEstado()==2 ||
                 tablero[2][0].getEstado()==2 && tablero[2][1].getEstado()==2 && tablero[2][2].getEstado()==2 ||
                 tablero[0][0].getEstado()==2 && tablero[1][1].getEstado()==2 && tablero[2][2].getEstado()==2 ||
                 tablero[0][2].getEstado()==2 && tablero[1][1].getEstado()==2 && tablero[2][0].getEstado()==2 ||
                 tablero[0][0].getEstado()==2 && tablero[1][0].getEstado()==2 && tablero[2][0].getEstado()==2 ||
                 tablero[0][1].getEstado()==2 && tablero[1][1].getEstado()==2 && tablero[2][1].getEstado()==2 ||
-                tablero[0][2].getEstado()==2 && tablero[1][2].getEstado()==2 && tablero[2][2].getEstado() == 2)
+                tablero[0][2].getEstado()==2 && tablero[1][2].getEstado()==2 && tablero[2][2].getEstado()==2)
             ganador = 1;
         else if(tablero[0][0].getEstado()==1 && tablero[0][1].getEstado()==1 && tablero[0][2].getEstado()==1 ||
                 tablero[1][0].getEstado()==1 && tablero[1][1].getEstado()==1 && tablero[1][2].getEstado()==1 ||

@@ -6,6 +6,7 @@ Propiedades derivadas: no hay.
 Propiedades añadidas:
     - clone
     - equals
+    - toString
 Propiedades comunes: no hay.
 Restricciones: no hay.
 

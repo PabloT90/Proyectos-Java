@@ -16,7 +16,7 @@ INICIO
         EstablecerFichaO
         MostrarTablero
         ComprobarLleno
-    mientras no haya ganador || queden posiciones libres.
+    mientras no haya ganador && queden posiciones libres.
     MostrarGanador
 
 FIN
