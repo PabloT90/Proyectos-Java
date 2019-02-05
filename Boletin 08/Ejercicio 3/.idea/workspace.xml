@@ -17,7 +17,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-569">
+            <state relative-caret-position="115">
               <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Avion.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
-              <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -38,7 +38,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Asiento.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
+            <state relative-caret-position="-121">
               <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
@@ -54,9 +54,9 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/com/company/Objetos/Avion.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/com/company/Objetos/Asiento.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/company/Main.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/com/company/Objetos/Asiento.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/com/company/Objetos/Avion.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -65,10 +65,10 @@
         <option value="$PROJECT_DIR$/src/com/company/Objetos/Asiento.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Objetos/Avion.java" />
-        <option value="$USER_HOME$/Desktop/Examen arrays/src/com/ivanloy/concursopokemon/programa/ConcursoPokemon.java" />
-        <option value="$USER_HOME$/Desktop/Examen arrays/src/com/ivanloy/concursopokemon/programa/MetodosConcursoPokemon.java" />
-        <option value="$USER_HOME$/Desktop/Examen arrays/src/com/ivanloy/concursopokemon/datos/Ficha.java" />
-        <option value="$USER_HOME$/Desktop/Examen arrays/src/com/ivanloy/concursopokemon/datos/GeneradorFichasAleatorias.java" />
+        <option value="$PROJECT_DIR$/../../../../../Examen arrays/src/com/ivanloy/concursopokemon/programa/ConcursoPokemon.java" />
+        <option value="$PROJECT_DIR$/../../../../../Examen arrays/src/com/ivanloy/concursopokemon/programa/MetodosConcursoPokemon.java" />
+        <option value="$PROJECT_DIR$/../../../../../Examen arrays/src/com/ivanloy/concursopokemon/datos/Ficha.java" />
+        <option value="$PROJECT_DIR$/../../../../../Examen arrays/src/com/ivanloy/concursopokemon/datos/GeneradorFichasAleatorias.java" />
       </list>
     </option>
   </component>
@@ -83,8 +83,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -114,6 +112,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,16 +208,6 @@
         <state relative-caret-position="-216" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-569">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Proyectos Sueltos/3 en raya/src/com/company/Objetos/Tablero.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -230,62 +220,31 @@
         <state relative-caret-position="-12" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../Examen arrays/src/com/ivanloy/concursopokemon/datos/GeneradorFichasAleatorias.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Examen arrays/src/com/ivanloy/concursopokemon/programa/MetodosConcursoPokemon.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Examen arrays/src/com/ivanloy/concursopokemon/programa/ConcursoPokemon.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/Persona.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Examen arrays/src/com/ivanloy/concursopokemon/datos/Ficha.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Avion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
-          <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Examen arrays/src/com/ivanloy/concursopokemon/datos/GeneradorFichasAleatorias.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Examen arrays/src/com/ivanloy/concursopokemon/programa/MetodosConcursoPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2277">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Examen arrays/src/com/ivanloy/concursopokemon/programa/ConcursoPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#2147#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Ciclo/Programacion/Compañeros/Presentación_Object/Ejercicio7/Persona.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9327" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Examen arrays/src/com/ivanloy/concursopokemon/datos/Ficha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#4807#0" expanded="true" />
-          </folding>
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Objetos/Asiento.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
+        <state relative-caret-position="-121">
           <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>

@@ -1,7 +1,7 @@
 package com.company.Objetos;
 /*
 Propiedades basicas:
-    - tablero Casilla[][] consultable y modificable
+    - tablero Casilla[][] consultable.
 
 Propiedades derivadas: no hay.
 Propiedades añadidas:
@@ -14,7 +14,6 @@ Propiedades añadidas:
 Propiedades comunes: no hay.
 
 Casilla[][] getTablero()
-void setTablero(Casilla[][] tablero)
 */
 public class Tablero implements Cloneable{
     private Casilla[][] tablero;
@@ -24,7 +23,7 @@ public class Tablero implements Cloneable{
         tablero = new Casilla[3][3];
 
         for(int i = 0; i < tablero.length; i++){			//Asi evito que los valores de cada casilla valgan null
-            for(int j = 0; j < tablero[0].length; j++){
+            for(int j = 0; j < tablero[i].length; j++){
                 tablero[i][j] = new Casilla();              //utilizo el constructor por defecto de la clase Casilla
             }
         }
@@ -43,9 +42,6 @@ public class Tablero implements Cloneable{
     //Gets/Sets
     public Casilla[][] getTablero(){
         return tablero;
-    }
-    public void setTablero(Casilla[][] tablero){
-        this.tablero = tablero;
     }
 
     //MostrarTablero
