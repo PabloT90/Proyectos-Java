@@ -10,6 +10,7 @@ package com.company.Objetos;
 *       - hashCode
 *       - clone
 *  Propiedades comunes: no hay.
+*  Propiedades compartidas: ID
 *  Restricciones:
 *       - no hay
 *
@@ -27,9 +28,12 @@ public class Asiento implements Cloneable{
     private boolean zonaFumador;
     private int numero;
     private boolean ocupacion;
+    private int ID;
 
+    private static int IDcontador = 0;
     //Constructor por defecto
     public Asiento(){
+        ID = IDcontador;
         zonaFumador = false;
         numero = 1;
         ocupacion = false;
@@ -40,6 +44,7 @@ public class Asiento implements Cloneable{
         this.zonaFumador = zonaFumador;
         this.numero = numero;
         this.ocupacion = ocupacion;
+        this.ID = IDcontador++;
     }
 
     //Construcctor de copia
@@ -71,9 +76,13 @@ public class Asiento implements Cloneable{
         this.ocupacion = ocupacion;
     }
 
+    public int getID(){
+        return ID;
+    }
+
     @Override
     public String toString(){
-        return "Zona Fumador: "+this.getZonaFumador()+" Asiento: "+this.getNumero()+" Ocupado: "+this.getOcupacion();
+        return "Zona Fumador: "+this.getZonaFumador()+" Asiento: "+this.getNumero()+" Ocupado: "+this.getOcupacion() + " ID:" + this.getID();
     }
 
     @Override
