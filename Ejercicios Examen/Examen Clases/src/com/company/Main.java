@@ -39,11 +39,10 @@ package com.company;
 * FIN
 *
 */
+
 import com.company.Clases.Encuesta;
 import com.company.Clases.Persona;
 import com.company.Enum.Distrito;
-
-import java.util.Calendar;
 public class Main {
     public static void main(String[] args) {
         Persona persona = new Persona();
