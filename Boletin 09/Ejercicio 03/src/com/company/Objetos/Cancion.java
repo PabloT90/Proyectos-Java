@@ -1,12 +1,14 @@
 package com.company.Objetos;
 import com.company.Interface.intCancion;
+
 /*
 * Propiedades basicas:
 *   - String nombre consultable y modificable.
 *   - int numVotos consultable y modificable.
+*   - ID int consultable.
 * Propiedades derivadas: no hay.
 * Propiedades añadidas: no hay.
-* Propiedades compartidas: no hay.
+* Propiedades compartidas: IDautogenerado
 *
 * get/set
 * String getNombre()
@@ -14,28 +16,41 @@ import com.company.Interface.intCancion;
 *
 * int getNumVotos()
 * void setNumVotos(int votos)
+*
+* int getID()
 * */
 public class Cancion implements Comparable<Cancion>, Cloneable, intCancion {
     private String nombre;
     private int numVotos;
+    private int ID;
+
+    //Compartida
+    private static int IDautogenerado=0;
 
     //Constructor por defecto
     public Cancion(){
+        ID = IDautogenerado++;
         nombre = new String();
         numVotos = 0;
     }
     //Constructor con parametros
     public Cancion(String nombre, int numVotos){
+        ID = IDautogenerado++;
         this.nombre = nombre;
         this.numVotos = numVotos;
     }
     //Constructor de copia
     public Cancion(Cancion otro){
+        this.ID = otro.getID();
         this.nombre = otro.getNombre();
         this.numVotos = otro.getNumVotos();
     }
 
     //GETTERS AND SETTERS
+    public int getID(){
+        return ID;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -55,6 +70,9 @@ public class Cancion implements Comparable<Cancion>, Cloneable, intCancion {
         return nombre.hashCode() *numVotos;
     }
 
+    /*
+    * 2 objetos Cancion son iguales si tienen el mismo numero de votos.
+    * */
     @Override
     public boolean equals(Object obj) {
         boolean ret = false;
@@ -82,7 +100,7 @@ public class Cancion implements Comparable<Cancion>, Cloneable, intCancion {
 
     @Override
     public String toString() {
-        return "Nombre: "+ getNombre()+" Votos: "+ getNumVotos();
+        return "|Nombre: "+ getNombre()+"|  |Votos: "+ getNumVotos()+ "|  |Nº Cancion: "+getID()+"|";
     }
 
     /*Criterio de comparacion:

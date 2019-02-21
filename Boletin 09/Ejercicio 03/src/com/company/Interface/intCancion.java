@@ -5,4 +5,6 @@ public interface intCancion {
 
     public int getNumVotos();
     public void setNumVotos(int numVotos);
+
+    public int getID();
 }
