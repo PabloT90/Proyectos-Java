@@ -5,11 +5,11 @@ import java.util.Arrays;
 * Propiedades basicas:
 *   - Nombre String, consultable.
 *   - Calificaciones int[], consultable.
-*
+*   - ID int, consultable.
 * Propiedades derivadas: no hay.
 *
 * Propiedades compartidas:
-*   - ID int, sonsultable.
+*   - contadorID int, sonsultable.
 *
 * Restricciones: no hay.
 *

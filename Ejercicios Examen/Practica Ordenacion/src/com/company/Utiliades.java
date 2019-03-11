@@ -45,6 +45,7 @@ public class Utiliades {
         return ejecutar;
     }
 
+
     /* Esta funcion genera un nombre compuesto por letras generadas aleatoriamente.
      * Entrada: ---
      * Precondiciones: ---
@@ -52,7 +53,7 @@ public class Utiliades {
      * Postcondiciones: asociado al nombre se envia el nombre de la cancion.
      * Cabecera: public static String PreguntaAleatoria()
      * */
-    public String PreguntaAleatoria() {
+   /*public String PreguntaAleatoria() {
         String pregunta = "";
         Random rnd = new Random();
 
@@ -61,7 +62,7 @@ public class Utiliades {
         }
         pregunta = pregunta + "?";
         return pregunta;
-    }
+    }*/
 
     /* Esta funcion ordena una lista de Personas segun el numero de aciertos.
      * Entrada: ---
@@ -116,15 +117,9 @@ public class Utiliades {
     public int[] ObtenerCalificaciones(){
         int[] calificaciones = new int[10];
         Random rnd = new Random();
-        int correcto;
 
         for(int i = 0; i < calificaciones.length; i++){
-            if(rnd.nextInt(2) == rnd.nextInt(2)){ //Se generan 2 numeros aleatorios, si coinciden quiere decir que ha acertado la pregunta, sino pos no.
-                correcto = 1;                                    //es la forma mas simple que se me ha ocurrido.
-            }else{
-                correcto = 0;
-            }
-            calificaciones[i] = correcto;
+            calificaciones[i] = rnd.nextInt(2);
         }
         return calificaciones;
     }
@@ -170,5 +165,6 @@ public class Utiliades {
         }
         return ret;
     }
+
 
 }
