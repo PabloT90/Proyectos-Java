@@ -11,14 +11,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Clases/Persona.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="804">
+            <state relative-caret-position="517">
               <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Utiliades.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="154" column="26" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -41,15 +62,15 @@
         <option value="$PROJECT_DIR$/src/com/company/Interface/IntPersona.java" />
         <option value="$PROJECT_DIR$/../../../../Primer Año/Programacion/Alumnos/Luis Z/Examen2Trim2.17-18-LZ/src/Clases/PruebaDeIngresoImpl.java" />
         <option value="$PROJECT_DIR$/../../../../Primer Año/Programacion/Alumnos/Luis Z/Examen2Trim2.17-18-LZ/src/Clases/CandidatoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Utiliades.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Clases/Persona.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tests/TestPersona.java" />
         <option value="$PROJECT_DIR$/../../../../../Examen/src/Main/RegistroFichas.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Utiliades.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="697" />
@@ -60,6 +81,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -103,7 +125,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -151,6 +172,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14211309" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -260,19 +282,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Metodos Ordenacion/src/com/company/Clases/MetodosBusqueda.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1116" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Metodos Ordenacion/src/com/company/Clases/MetodosInsercion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-449" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Metodos Ordenacion/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../Metodos Ordenacion/src/com/company/Clases/MetodosBusqueda.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Metodos Ordenacion/src/com/company/Clases/MetodosInsercion.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Metodos Ordenacion/src/com/company/Main.java" />
     <entry file="file://$PROJECT_DIR$/../../../../../Practica Ordenacion/src/com/company/Main.java" />
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -294,13 +306,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa1648.42979/ImplFichaAspirante.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/TestPersona.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -315,55 +320,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Utiliades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="94" column="49" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Clases/ImplFichaAspirante.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Clases/LeerDatosRegistroFichas.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Clases/ListaFichas.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Main/RegistroFichas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Clases/MenusYPantallas.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Clases/LeerDatosRegistroFichas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1484" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Clases/ListaFichas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1188" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Clases/ImplFichaAspirante.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4567">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Clases/ImplFichaAspirante.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Clases/LeerDatosRegistroFichas.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Clases/ListaFichas.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Main/RegistroFichas.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Examen/src/Clases/MenusYPantallas.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Clases/LeerDatosRegistroFichas.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Clases/ListaFichas.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Clases/ImplFichaAspirante.java" />
     <entry file="file://$PROJECT_DIR$/../Examen Clases/src/com/company/Interfaces/IntPersona.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -374,20 +338,8 @@
     <entry file="file://$PROJECT_DIR$/../Examen Clases/src/com/company/Interfaces/IntEncuesta.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Clases/MenusYPantallas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-725" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Main/RegistroFichas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2760">
-          <folding>
-            <element signature="e#0#5098#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Clases/MenusYPantallas.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../../new version/src/Main/RegistroFichas.java" />
     <entry file="file://$PROJECT_DIR$/../../Proyectos Sueltos/Stri Faiter/src/com/company/Objetos/Jugador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1824" />
@@ -396,10 +348,27 @@
     <entry file="file://$PROJECT_DIR$/../../Proyectos Sueltos/Stri Faiter/src/com/company/Objetos/Habilidad.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Clases/Persona.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="804">
+        <state relative-caret-position="517">
           <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Utiliades.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="154" column="26" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

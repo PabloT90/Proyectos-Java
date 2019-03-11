@@ -32,8 +32,6 @@ public class Main {
         Persona[] listado = new Persona[50]; //Esto es el numero de solicitudes. No quiere decir que finalmente se presenten 50 participantes
         int contAux=0;
 
-        int [] aryys = new int[3];
-        aryys[0] = 1;
         while(util.LeerValidarEjecutar() == 's') {//mientras quiera ejecutar
             //CrearPerfilPersona
             persona = util.CrearPerfilPersona();

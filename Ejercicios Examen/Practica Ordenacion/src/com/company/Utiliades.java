@@ -156,15 +156,12 @@ public class Utiliades {
         boolean ret = false;
         int [] aux = persona.getCalificaciones();
 
-        if(aux[0] == 1 && aux[1] == 1 && aux[2] == 1){ //Tiene que acertar las 3
-            if(aux[3] == 1 || aux[4] == 1 || aux[5] ==1 || aux[6] == 1){ //Tiene que acertar al menos 2
-                if(aux[7] == 1 || aux[8] == 1 || aux[9] ==1){ //Tiene que acertar al menos 1
-                    ret = true;
-                }
-            }
+        if(aux[0] + aux[1] + aux[2] == 3 &&           //Tiene que acertar las 3.
+          (aux[3] + aux[4] + aux[5] + aux[6] >= 2) && //Tiene que acertar al menos 2.
+          (aux[7] + aux[8]+aux[9] >= 1)) {            //Tiene que acertar al menos 1.
+            ret = true;
         }
         return ret;
     }
-
 
 }
