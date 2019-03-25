@@ -10,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,7 +48,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -93,6 +92,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,13 +272,7 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa1648.42979/ImplFichaAspirante.java" />
-    <entry file="file://$USER_HOME$/Downloads/TestPersona.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="57" column="5" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="57" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/TestPersona.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Tests/TestPersona.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -314,11 +308,7 @@
     <entry file="file://$PROJECT_DIR$/../../Proyectos Sueltos/Stri Faiter/src/com/company/Objetos/Habilidad.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://H:/Tobillo2/Practica Ordenacion/src/com/company/Utiliades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3264" />
-      </provider>
-    </entry>
+    <entry file="file://H:/Tobillo2/Practica Ordenacion/src/com/company/Utiliades.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Utiliades.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3473">
@@ -346,24 +336,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://H:/Tobillo2/src/Clases/CandidatoImpl.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://H:/Tobillo2/src/Clases/PruebaDeIngresoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://H:/Tobillo2/src/gestionadoras/GestionCandidatos.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://H:/Tobillo2/src/gestionadoras/GestionPruebas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4584" />
-      </provider>
-    </entry>
+    <entry file="file://H:/Tobillo2/src/Clases/CandidatoImpl.java" />
+    <entry file="file://H:/Tobillo2/src/Clases/PruebaDeIngresoImpl.java" />
+    <entry file="file://H:/Tobillo2/src/gestionadoras/GestionCandidatos.java" />
+    <entry file="file://H:/Tobillo2/src/gestionadoras/GestionPruebas.java" />
   </component>
   <component name="masterDetails">
     <states>
