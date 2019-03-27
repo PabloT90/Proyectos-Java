@@ -23,6 +23,7 @@ public class Main {
         try{
             bw = new BufferedWriter(new FileWriter("lecturasTeclado.txt", true)); //Asi me lo crea en la ruta principal de este proyecto.
 
+            //IntroducirDatos
             System.out.println("Escribe lo que quieras, se guardara en un archivo de texto.");
             bw.write(teclado.nextLine());
             bw.newLine(); //Para que al volver a abrirlo se escriba justo debajo.
@@ -31,12 +32,12 @@ public class Main {
             e.printStackTrace();
         }finally{
             try{
+                //CerrarFichero
                 bw.close();
             }catch(IOException e){
                 e.printStackTrace();
             }
         }
-        //IntroducirDatos
-        //CerrarFichero
+
     }
 }
