@@ -3,17 +3,13 @@ import java.io.*;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        try {
-            //FileWriter fw = new FileWriter("C:\\Users\\elmal\\Desktop\\ejemplos\\precentasion.txt");
-            //FileReader fr = new FileReader("C:\\Users\\elmal\\Desktop\\ejemplos\\precentasion.txt");
-            //BufferedReader br = new BufferedReader(fr);
-            //BufferedWriter bw = new BufferedWriter(fw);
-            Scanner teclado = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
 
+        try {
             //Forma abreviada
-            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\elmal\\Desktop\\ejemplos\\precentasion.txt"));
-            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\elmal\\Desktop\\ejemplos\\precentasion.txt", true)); //Asi no sobreescribe lo que ya hay escrito
-            //BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\elmal\\Desktop\\ejemplos\\precentasion.txt")); //Asi sobreescribe lo que haya escrito
+            BufferedWriter bw = new BufferedWriter(new FileWriter("precentasion.txt", true)); //Asi no sobreescribe lo que ya hay escrito
+            BufferedReader br = new BufferedReader(new FileReader("precentasion.txt"));
+            //BufferedWriter bw = new BufferedWriter(new FileWriter("precentasion.txt")); //Asi sobreescribe lo que haya escrito
 
             //Primero vamos a escribir lo que sea
             System.out.println("Escribe lo que quieras: ");
@@ -32,7 +28,7 @@ public class Main {
 
             //Este lee cada caracter del fichero
             int i;
-            while((i=br.read())!=-1){
+            while((i = br.read()) != -1){
                 System.out.print((char)i);
             }
 
