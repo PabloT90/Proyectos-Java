@@ -117,8 +117,6 @@ public class Supermarket {
 	 * Postcondiciones: La función devuelve un tipo Product asociado al nombre,
 	 * según la posición indicada en la lista, si no existe un producto en esa
 	 * posición la función devuelve null.
-	 * La función lanza IndexOutOfBoundsException si position marca una posición
-	 * fuera del rango permitido de la lista de productos (position < 0 || position >= products.size()).
 	 * */
 	public Product getProduct(int position) {
 		Product producto = null;
@@ -180,8 +178,6 @@ public class Supermarket {
 	* Postcondiciones: La función devuelve un tipo Order asociado al nombre,
 	* según la posición indicada en la lista, si no existe un producto en esa
 	* posición la función devuelve null.
-	* La función lanza IndexOutOfBoundsException si position marca una posición
-	* fuera del rango permitido de la lista de pedidos (position < 0 || position >= orders.size()).
 	* */
 	public Order getOrder(int position) {
 		Order pedido = null;

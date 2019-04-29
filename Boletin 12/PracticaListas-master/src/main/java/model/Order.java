@@ -108,8 +108,6 @@ public class Order {
 	* Postcondiciones: La función devuelve un tipo OrderLine asociado al nombre,
 	* según la posición indicada en la lista, si no existe un producto en esa
 	* posición la función devuelve null.
-	* La función lanza IndexOutOfBoundsException si position marca una posición
-	* fuera del rango permitido de la lista de pedidos (position < 0 || position >= orderLines.size()).
 	* */
 	public OrderLine getOrderLine(int position) {
 		OrderLine lineaPedido = null;
