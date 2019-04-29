@@ -27,6 +27,7 @@ public class ListaArticulos {
 				puntero = puntero.getNext();
 			}
 			puntero.setNext(articulo);
+			articulo.setPrevious(puntero);
 		}
 	}
 
@@ -59,11 +60,14 @@ public class ListaArticulos {
 				for(int contador = 0;contador < position-1 && puntero.getNext() != null;contador++){
 					puntero = puntero.getNext();
 				}
-				if((aux = puntero.getPrevious()) != null){
-					aux.setNext(articulo);
+
+				aux = puntero.getNext();
+				if(aux != null){
+					aux.setPrevious(articulo);
 				}
-				articulo.setNext(puntero);//Hacemos que articulo apunte al siguiente articulo del puntero actual
-				//puntero.setNext(articulo);//Hacemos que el siguiente articulo del puntero actual sea el nuevo articulo.
+				articulo.setNext(puntero.getNext());//Hacemos que articulo apunte al siguiente articulo del puntero actual
+				articulo.setPrevious(puntero);
+				puntero.setNext(articulo);//Hacemos que el siguiente articulo del puntero actual sea el nuevo articulo.
 			}
 		}
 
@@ -85,7 +89,7 @@ public class ListaArticulos {
 	* */
 	public int remove(Articulo articulo) {
 		int validez = -1;
-		Articulo puntero = null, aux = null;
+		Articulo puntero = null, aux1 = null, aux2 = null;
 
 		if(cabeza != null){
 			puntero = cabeza;
@@ -94,9 +98,10 @@ public class ListaArticulos {
 			}
 			if(puntero.getId() == articulo.getId()){
 				validez = 0;
-				aux = puntero.getPrevious();//Conectamos el articulo anterior con el proximo articulo del puntero
-				aux.setNext(puntero.getNext());
-				puntero.setPrevious(aux);
+				aux1 = puntero.getPrevious();//Conectamos el articulo anterior con el proximo articulo del puntero
+				aux2 = puntero.getNext();
+				aux1.setNext(aux2);
+				aux2.setPrevious(aux1);
 			}
 		}
 

@@ -19,8 +19,12 @@ public class TestListaArticulos {
         lista.add(articulo3);
         lista.add(articulo4);
 
+        System.out.println();
+
         //numeroDeArticulos
         System.out.println(lista.numeroDeArticulos());
+
+        System.out.println();
 
         //get
         System.out.println(lista.get(0).getId());
@@ -29,10 +33,14 @@ public class TestListaArticulos {
         System.out.println(lista.get(3).getId());
         System.out.println(lista.get(4));
 
+        System.out.println();
+
         //insert
         lista.insert(articulo5, 9);
         lista.insert(articulo5, 4);
         lista.insert(articulo6, 2);
+
+        System.out.println();
 
         //get
         System.out.println(lista.get(0).getId());
@@ -41,5 +49,17 @@ public class TestListaArticulos {
         System.out.println(lista.get(3).getId());
         System.out.println(lista.get(4).getId());
         System.out.println(lista.get(5).getId());
+
+        System.out.println();
+
+        //remove
+        lista.remove(articulo3);
+        //get
+        System.out.println(lista.get(0).getId());
+        System.out.println(lista.get(1).getId());
+        System.out.println(lista.get(2).getId());
+        System.out.println(lista.get(3).getId());
+        System.out.println(lista.get(4).getId());
+        System.out.println(lista.get(5));
     }
 }
