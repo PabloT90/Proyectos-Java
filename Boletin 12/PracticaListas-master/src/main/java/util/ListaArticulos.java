@@ -47,8 +47,8 @@ public class ListaArticulos {
 	* es de la posición 0 hasta el número de articulos almacenados.
 	* */
 	public int insert(Articulo articulo, int position) {
-		int validez = -1, contador = 0;
-		Articulo puntero = null;
+		int validez = -1;
+		Articulo puntero = null, aux = null;
 
 		if(numeroDeArticulos() >= position){
 			validez = 0;
@@ -56,12 +56,14 @@ public class ListaArticulos {
 				cabeza = articulo;
 			}else{
 				puntero = cabeza;
-				while (contador < position){
+				for(int contador = 0;contador < position-1 && puntero.getNext() != null;contador++){
 					puntero = puntero.getNext();
-					contador++;
 				}
-				articulo.setNext(puntero.getNext());//Hacemos que articulo apunte al siguiente articulo del puntero actual
-				puntero.setNext(articulo);//Hacemos que el siguiente articulo del puntero actual sea el nuevo articulo.
+				if((aux = puntero.getPrevious()) != null){
+					aux.setNext(articulo);
+				}
+				articulo.setNext(puntero);//Hacemos que articulo apunte al siguiente articulo del puntero actual
+				//puntero.setNext(articulo);//Hacemos que el siguiente articulo del puntero actual sea el nuevo articulo.
 			}
 		}
 
@@ -145,6 +147,7 @@ public class ListaArticulos {
 
 		if(cabeza != null){
 			puntero = cabeza;
+			numeroArticulos++;
 			while(puntero.getNext() != null){
 				puntero = puntero.getNext();
 				numeroArticulos++;

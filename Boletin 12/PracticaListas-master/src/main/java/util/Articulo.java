@@ -6,6 +6,20 @@ public class Articulo {
 	private Articulo next;
 	private int id;
 
+	//Constructor por defecto
+	public Articulo(){
+		previous = null;
+		next = null;
+		id = 0;
+	}
+
+	//Constructor con parámetros
+	public Articulo(Articulo previous, Articulo next, int id){
+		this.previous = previous;
+		this.next = next;
+		this.id = id;
+	}
+
 	public int getId(){
 		return id;
 	}
