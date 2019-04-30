@@ -3,10 +3,17 @@ package main.java.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import main.java.util.Articulo;
 import main.java.util.ListaArticulos;
 
 public class Order {
-	
+
+	public Order(){
+		code = 0;
+		consumer = "DEFAULT";
+		supermarket = new Supermarket();
+	}
+
 	public Order(Integer code, String consumer, Supermarket supermarket) {
 		this.code = code;
 		this.consumer = consumer;
@@ -120,7 +127,8 @@ public class Order {
 	//SEGUNDA PARTE
 	public void addLinkedOrderLine(OrderLine orderLine) {
 		//TODO Añadir artículo
-		
+		Articulo articulo = new Articulo(null, null, orderLine);
+		linkedOrderLines.add(articulo);
 	}
 	
 	public void removeLinkedOrderLine(OrderLine orderLine) {

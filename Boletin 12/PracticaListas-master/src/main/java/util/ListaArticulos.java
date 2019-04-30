@@ -1,8 +1,11 @@
 package main.java.util;
 
+import java.util.LinkedList;
+
 public class ListaArticulos {
 
-	private Articulo cabeza = null;
+	//private Articulo cabeza = null;
+	private LinkedList<Articulo> lista = new LinkedList<Articulo>();
 
 	/*
 	* Interfaz
@@ -12,12 +15,12 @@ public class ListaArticulos {
 	* Cabecera: public void add(Articulo articulo)
 	* Entrada:
 	* 	-Articulo articulo
-	* Postcondiciones: La función inserta un articulo detrás del último articulo
-	* de la lista, si esta se encuentra vacía se inserta
+	* Postcondiciones: La función inserta un articulo destrás del último
+	* de la lista de articulos, si la lista se encuentra vacía se inserta
 	* en la primera posición de la lista.
 	* */
 	public void add(Articulo articulo) {
-		Articulo puntero = null;
+		/*Articulo puntero = null;
 
 		if(cabeza == null){
 			cabeza = articulo;
@@ -28,7 +31,8 @@ public class ListaArticulos {
 			}
 			puntero.setNext(articulo);
 			articulo.setPrevious(puntero);
-		}
+		}*/
+		lista.add(articulo);
 	}
 
 	/*
@@ -40,8 +44,6 @@ public class ListaArticulos {
 	* Entrada:
 	* 	-Articulo articulo
 	* 	-entero posicion
-	* Precondiciones:
-	* 	-posicion debe ser mayor o igual a 0.
 	* Salida:
 	* 	-entero validez
 	* Postcondiciones: La función devuelve un número entero asociado al nombre,
@@ -51,9 +53,9 @@ public class ListaArticulos {
 	* */
 	public int insert(Articulo articulo, int position) {
 		int validez = -1;
-		Articulo puntero = null, aux = null;
+		//Articulo puntero = null, aux = null;
 
-		if(numeroDeArticulos() >= position){
+		/*if(numeroDeArticulos() >= position){
 			validez = 0;
 			if(cabeza == null){
 				cabeza = articulo;
@@ -71,6 +73,9 @@ public class ListaArticulos {
 				articulo.setPrevious(puntero);
 				puntero.setNext(articulo);//Hacemos que el siguiente articulo del puntero actual sea el nuevo articulo.
 			}
+		}*/
+		if(lista.size() >= position){
+			lista.add(position, articulo);
 		}
 
 		return validez;
@@ -89,13 +94,14 @@ public class ListaArticulos {
 	* 0 si se ha conseguido eliminar correctamente el artículo de la lista o -1
 	* si el artículo no se encontraba en la lista.
 	* */
-	public int remove(Articulo articulo) {
-		int validez = -1;
-		Articulo puntero = null, aux1 = null, aux2 = null;
+	public boolean remove(Articulo articulo) {
+		boolean resultado = false;
+		//int validez = -1;
+		/*Articulo puntero = null, aux1 = null, aux2 = null;
 
 		if(cabeza != null){
 			puntero = cabeza;
-			while (puntero.getId() != articulo.getId() && puntero.getNext() != null){//Buscamos el artículo
+			while (puntero.g() != articulo.getId() && puntero.getNext() != null){//Buscamos el artículo
 				puntero = puntero.getNext();
 			}
 			if(puntero.getId() == articulo.getId()){
@@ -105,9 +111,10 @@ public class ListaArticulos {
 				aux1.setNext(aux2);
 				aux2.setPrevious(aux1);
 			}
-		}
+		}*/
+		resultado = lista.remove(articulo);
 
-		return validez;
+		return resultado;
 	}
 
 	/*
@@ -127,12 +134,13 @@ public class ListaArticulos {
 	public Articulo get(int position) {
 		Articulo articulo = null;
 
-		if(numeroDeArticulos() > position){
+		/*if(numeroDeArticulos() > position){
 			articulo = cabeza;
 			for(int i = 0; i < position; i++){
 				articulo = articulo.getNext();
 			}
-		}
+		}*/
+		articulo = lista.get(position);
 
 		return articulo;
 	}
@@ -146,9 +154,9 @@ public class ListaArticulos {
 	* Salida:
 	* 	-entero numeroArticulos
 	* Postcondiciones: La función devuelve un número entero asociado al nombre,
-	* que es el número de artículos que almacena la lista.
+	* que es el número de articulos que almacena la lista.
 	* */
-	public int numeroDeArticulos(){
+	/*public int numeroDeArticulos(){
 		int numeroArticulos = 0;
 		Articulo puntero = null;
 
@@ -162,5 +170,5 @@ public class ListaArticulos {
 		}
 
 		return numeroArticulos;
-	}
+	}*/
 }

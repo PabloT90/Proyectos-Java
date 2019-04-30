@@ -1,7 +1,14 @@
 package main.java.model;
 
 public class OrderLine {
-	
+
+	public OrderLine(){
+		code = 0;
+		quantity = 0;
+		order = new Order();
+		product = new Product();
+	}
+
 	public OrderLine(Integer code, Integer quantity, Order order, Product product) {
 		this.code = code;
 		this.quantity = quantity;

@@ -5,7 +5,14 @@ import java.util.List;
 import java.util.Queue;
 
 public class Supermarket {
-	
+
+	public Supermarket(){
+		name = "DEFAULT";
+		code = 0;
+		products = new ArrayList<Product>();
+		orders = new ArrayList<Order>();
+	}
+
 	public Supermarket(String name, Integer code) {
 		this.name = name;
 		this.code = code;

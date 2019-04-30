@@ -1,7 +1,14 @@
 package main.java.model;
 
 public class Product {
-	
+
+	public Product(){
+		code = 0;
+		name = "DEFAULT";
+		price = 0.0;
+		supermarket = new Supermarket();
+	}
+
 	public Product(Integer code, String name, Double price, Supermarket supermarket) {
 		this.code = code;
 		this.name = name;

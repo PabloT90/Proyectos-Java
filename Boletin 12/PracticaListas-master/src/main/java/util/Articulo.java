@@ -1,31 +1,33 @@
 package main.java.util;
 
+import main.java.model.OrderLine;
+
 public class Articulo {
 	
 	private Articulo previous;
 	private Articulo next;
-	private int id;
+	private OrderLine orderLine;
 
 	//Constructor por defecto
 	public Articulo(){
 		previous = null;
 		next = null;
-		id = 0;
+		orderLine = new OrderLine();
 	}
 
 	//Constructor con parámetros
-	public Articulo(Articulo previous, Articulo next, int id){
+	public Articulo(Articulo previous, Articulo next, OrderLine orderLine){
 		this.previous = previous;
 		this.next = next;
-		this.id = id;
+		this.orderLine = orderLine;
 	}
 
-	public int getId(){
-		return id;
+	public OrderLine getOrderLine(){
+		return orderLine;
 	}
 
-	public void setId(int id){
-		this.id = id;
+	public void setOrderLine(OrderLine orderLine){
+		this.orderLine = orderLine;
 	}
 
 	public Articulo getPrevious() {
