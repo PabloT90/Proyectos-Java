@@ -12,8 +12,8 @@ public class ListaArticulos {
 	* Cabecera: public void add(Articulo articulo)
 	* Entrada:
 	* 	-Articulo articulo
-	* Postcondiciones: La función inserta un articulo destrás del último
-	* de la lista de articulos, si la lista se encuentra vacía se inserta
+	* Postcondiciones: La función inserta un articulo detrás del último articulo
+	* de la lista, si esta se encuentra vacía se inserta
 	* en la primera posición de la lista.
 	* */
 	public void add(Articulo articulo) {
@@ -40,6 +40,8 @@ public class ListaArticulos {
 	* Entrada:
 	* 	-Articulo articulo
 	* 	-entero posicion
+	* Precondiciones:
+	* 	-posicion debe ser mayor o igual a 0.
 	* Salida:
 	* 	-entero validez
 	* Postcondiciones: La función devuelve un número entero asociado al nombre,
@@ -144,7 +146,7 @@ public class ListaArticulos {
 	* Salida:
 	* 	-entero numeroArticulos
 	* Postcondiciones: La función devuelve un número entero asociado al nombre,
-	* que es el número de articulos que almacena la lista.
+	* que es el número de artículos que almacena la lista.
 	* */
 	public int numeroDeArticulos(){
 		int numeroArticulos = 0;
