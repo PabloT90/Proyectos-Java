@@ -7,7 +7,7 @@ import java.io.Serializable;
 *   - ID: int consultable.
 *   - letalidad: int consultable y modificable (mientras mayor sea este valor mayor serán sus posibilidades de matar a su adversario.)
 *   - nombre: String consultable.
-*   - estado: boolean consultable y modificable (true = vivo | false = muerto)
+*   - victorias: int consultable y modificable.
 * Propiedades derivadas: no hay.
 * Propiedades compartidas: no hay.
 * Metodos añadidos: aun no.
@@ -17,7 +17,7 @@ public class Jugador implements Serializable {
     private int ID;
     private String nombre;
     private int letalidad;
-    private boolean estado;
+    private int victorias;
 
     //Constructores:
     //Por defecto
@@ -25,15 +25,15 @@ public class Jugador implements Serializable {
         ID = 0;
         nombre = "No name";
         letalidad = 0;
-        estado = true;
+        victorias = 0;
     }
 
     //Con parametros
-    public Jugador(int ID, String nombre, int letalidad, boolean estado){
+    public Jugador(int ID, String nombre, int letalidad, int victorias){
         this.ID = ID;
         this.nombre = nombre;
         this.letalidad = letalidad;
-        this.estado = estado;
+        this.victorias = victorias;
     }
 
     //De copia
@@ -41,7 +41,7 @@ public class Jugador implements Serializable {
         this.ID = jugador.getID();
         this.nombre = jugador.getNombre();
         this.letalidad = jugador.getLetalidad();
-        this.estado = jugador.getEstado();
+        this.victorias = jugador.getVictorias();
     }
 
     //Getters and setters
@@ -60,20 +60,20 @@ public class Jugador implements Serializable {
         this.letalidad = letalidad;
     }
 
-    public boolean getEstado(){
-        return estado;
+    public int getVictorias(){
+        return victorias;
     }
     public void setEstado(boolean estado){
-        this.estado = estado;
+        this.victorias = victorias;
     }
 
     @Override
     public String toString(){
-        return ID+','+nombre+','+letalidad+','+estado;
+        return ID+','+nombre+','+letalidad+','+victorias;
     }
 
     public String toStringBonito(){
-        return "ID: "+ID+"  |Nombre: "+nombre+"  |Letalidad: "+letalidad;
+        return "ID: "+ID+"  |Nombre: "+nombre+"  |Letalidad: "+letalidad+ "  |Victorias: "+victorias;
     }
 
     //HashCode en funcion del nombre y su ID.

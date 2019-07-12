@@ -3,6 +3,7 @@ package com.company;
 import com.company.Clases.Gestora;
 import com.company.Clases.Utilidades;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -73,6 +74,7 @@ public class Main {
         int opcionMenu1;
         int opcionMenu2;
         Scanner teclado = new Scanner(System.in);
+        ArrayList lista = new ArrayList();
 
         //Borrar luego:
         Gestora.ajustesEncabezamiento();
@@ -87,12 +89,13 @@ public class Main {
             switch(opcionMenu1) {//segun(opcionMenu1)
                 case 1: //caso 1
                     //EstablecerParticipantes*
-                    Gestora.establecerJugadores();
+                    lista = Gestora.establecerJugadores();
                     //MostrarListaParticipantes*
-                    Gestora.mostrarParticipantes();
+                    Gestora.mostrarParticipantes(lista);
 
                     //repetir
                         //enfrentarOpenentes*
+                        Gestora.enfrentarOponentes();
                         //mensajeEliminacion* //Mesanje que se muestra cuando se consigue una kill
                         //incrementarLetalidad* //La persona que consigue la kill ve incrementada su letalidad
                         //esperar10segundos*
@@ -107,7 +110,7 @@ public class Main {
                         switch(opcionMenu2) {//segun (opcionMenu2)
                             case 1: //caso 1:
                                 //MostrarListaParticipantes*
-                                Gestora.mostrarParticipantes();
+                                Gestora.mostrarParticipantes(lista);
                                 //seleccionarParticipante*
                                 //KillsParticipante* //Muestra las kills que se ha hecho un jugador seleccionado en la partida.
                                 break;

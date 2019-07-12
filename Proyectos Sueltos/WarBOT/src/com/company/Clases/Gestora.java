@@ -4,80 +4,61 @@ import java.io.*;
 import java.util.*;
 
 public class Gestora {
+
+    private static ArrayList<Jugador> jugadoresPartida = new ArrayList<>(); //Creo que asi se me simplifica todo bastante
     /**
-     * Lee el fichero participantes.dat para mostrar los datos en el.
+     * Enfrenta a 2 oponentes.
+     * @param lista Lista con todos los jugadores.
      */
-    public static void mostrarParticipantes(){
-        Jugador j1 = null;
-        FileInputStream fis1 = null;
-        ObjectInputStream ois1 = null;
+    public static void enfrentarOponentes(){
+        Random rd = new Random();
+        Jugador jugador1 = null, jugador2 = null;
+        int ID1, ID2;
+        int posVictoria1 = 0, posVictoria2 = 0; //Posibilidad de victoria de cada uno de los 2 oponentes
 
-        try {
-            fis1 = new FileInputStream("participantes.dat");
-            ois1 = new ObjectInputStream(fis1);
+        //Generar 2 numeros aleatorios que no sean el mismo entre 0 y 20.
+        do {
+            ID1 = rd.nextInt(jugadoresPartida.size()); //Posicion que ocupa un jugador en la lista.
+            ID2 = rd.nextInt(jugadoresPartida.size());
+        }while(ID1 == ID2); //Asi me aseguro que se generan numero diferentes.
 
-            while (true) {//Mientras no haya ningún fin de fichero
-                j1 = (Jugador) ois1.readObject();
-                System.out.println(j1.toStringBonito());
-            }
-        }catch (EOFException error){
-        }catch (IOException error2){
-            error2.printStackTrace();
-        }catch (ClassNotFoundException error3){
-            error3.printStackTrace();
-        }finally {
-            try{
-                ois1.close();
-                fis1.close();
-            }catch (IOException error){
-                error.printStackTrace();
-            }
-        }
+        //Obtener los 2 jugadores.
+        jugador1 = jugadoresPartida.get(ID1);
+        jugador2 = jugadoresPartida.get(ID2);
+
+        //Para decidir un enfrentamiento lo hare mediante un numero aleatorio entre 0 y 10 y le sumare la letalidad del jugador, el que obtenga el valor mas alto gana.
+        do {
+            posVictoria1 = rd.nextInt(jugadoresPartida.size()); //Posicion que ocupa un jugador en la lista.
+            posVictoria2 = rd.nextInt(jugadoresPartida.size());
+
+            //Le sumo el valor de letalidad de cada uno.
+            posVictoria1 += jugador1.getLetalidad();
+            posVictoria2 += jugador2.getLetalidad();
+        }while(posVictoria2 == posVictoria1); //Asi me aseguro que se generan numero diferentes.
+
+        //Incrementar letalidad al ganador
+        if(posVictoria1 > posVictoria2)
+            incrementarLetalidad(jugador1);
+        else
+            incrementarLetalidad(jugador2);
+    }
+
+    //No se si esto funcionara asi xd
+    public static void incrementarLetalidad(Jugador jugador){
+        jugador.setLetalidad(jugador.getLetalidad()+1);
+        System.out.println("Letalidad incrementada al conseguir una Kill.");
     }
 
     /**
-    * Esta funcion solo llama a otras funciones y ordena una lista de manera ascendente.
-    * @return lista ordenada de los jugadores de manera ascendente segun su ID.
-    * */
-    public static ArrayList establecerJugadores(){
-        ArrayList lista;
-        lista = obtenerParticipantes();
-        Collections.sort(lista); //Ordenamos el array para que al buscar a los oponentes en el fichero sea mas rapido y facil.
-        insertarJugadores(lista);
-
-        return lista;
-    }
-
-    /**
-    * Esta funcion obtiene el ID de 20 jugadores de los 40 disponibles. Se hace de forma aleatoria.
-    * @return ArrayList con 20 ID aleatorios de los jugadores.
-    * */
-    public static ArrayList obtenerParticipantes(){
-        int pos;
-        int nID = 41;
-        ArrayList<Integer> sID = new ArrayList<>();
-
-        for (int i = 0; i < nID ; i++) {
-            if(sID.size() < 20) {
-                pos = (int) Math.floor(Math.random() * nID);
-                while (sID.contains(pos)) {
-                    pos = (int) Math.floor(Math.random() * nID);
-                }
-                sID.add(pos);
-            }
-        }
-        return sID;
-    }
-
-    /**
-     * Esta funcion inserta una lista de participantes en el fichero participantes.dat
-     * @param lista Contiene el ID de los participantes
+     * Muestra los participantes que van a jugar la partida.
+     * @param listaJugadores Jugadores que la van a jugar
      */
-    public static void insertarJugadores(ArrayList lista) {
-        int i=0;
+    public static void mostrarParticipantes(ArrayList<Integer> lista) {
+        int i = 0;
         Jugador player = null;
         FileInputStream fis = null;
         ObjectInputStream ois = null;
+        ArrayList listaJugadores = new ArrayList();
 
         try {
             fis = new FileInputStream("listaJugadores.dat");
@@ -85,10 +66,10 @@ public class Gestora {
 
             player = (Jugador) ois.readObject();
             while (i < lista.size()) {//mientras haya numeros en la lista
-                if (player.getID() == (int)lista.get(i)) { //Si los ID coinciden se inserta el jugador.
-                    insertarParticipante(player);
+                if (player.getID() == lista.get(i)) { //Si los ID coinciden se inserta el jugador.
+                    System.out.println(player.toStringBonito());
                     i++; //Incrementamos el valor de i para recorrer el array.
-                }else{
+                } else {
                     player = (Jugador) ois.readObject();
                 }
             }
@@ -108,28 +89,77 @@ public class Gestora {
     }
 
     /**
-     * Inserta jugadores en el fichero participantes.dat
-     * @param j1 Participante que queremos insertar.
-     */
-    public static void insertarParticipante(Jugador j1){
-        MyObjectOutputStream moos = null;
-        FileOutputStream fos = null;
-        File fichero = new File("participantes.dat");
+    * Esta funcion solo llama a otras funciones y ordena una lista de manera ascendente.
+    * @return lista ordenada de los jugadores de manera ascendente segun su ID.
+    * */
+    public static ArrayList<Integer> establecerJugadores(){
+        ArrayList lista;
+        lista = obtenerParticipantes();
+        Collections.sort(lista); //Ordenamos el array para que al buscar a los oponentes en el fichero sea mas rapido y facil.
+        jugadoresPartida = insertarJugadores(lista);
 
-        try{
-            fos = new FileOutputStream(fichero, true);
-            moos = new MyObjectOutputStream(fos);
-            moos.writeObject(j1);//Insertamos al participante en el fichero
-        } catch(IOException error){
-            error.printStackTrace();
-        }finally {
+        return lista;
+    }
+
+    /**
+    * Esta funcion obtiene el ID de 20 jugadores de los 40 disponibles. Se hace de forma aleatoria.
+    * @return ArrayList con 20 ID aleatorios de los jugadores.
+    * */
+    public static ArrayList<Integer> obtenerParticipantes(){
+        int pos;
+        int nID = 41;
+        ArrayList<Integer> sID = new ArrayList<>();
+
+        for (int i = 0; i < nID ; i++) {
+            if(sID.size() < 20) {
+                pos = (int) Math.floor(Math.random() * nID);
+                while (sID.contains(pos)) {
+                    pos = (int) Math.floor(Math.random() * nID);
+                }
+                sID.add(pos);
+            }
+        }
+        return sID;
+    }
+
+    /**
+     * Esta funcion inserta una lista de participantes en el array de jugadores
+     * @param lista Contiene el ID de los participantes
+     */
+    public static ArrayList<Jugador> insertarJugadores(ArrayList<Integer> lista) {
+        int i=0;
+        Jugador player = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        ArrayList listaJugadores = new ArrayList();
+
+        try {
+            fis = new FileInputStream("listaJugadores.dat");
+            ois = new ObjectInputStream(fis);
+
+            player = (Jugador) ois.readObject();
+            while (i < lista.size()) {//mientras haya numeros en la lista
+                if (player.getID() == (int)lista.get(i)) { //Si los ID coinciden se inserta el jugador.
+                    listaJugadores.add(player);
+                    i++; //Incrementamos el valor de i para recorrer el array.
+                }else{
+                    player = (Jugador) ois.readObject();
+                }
+            }
+        } catch (EOFException error4) {
+        } catch (IOException error2) {
+            error2.printStackTrace();
+        } catch (ClassNotFoundException error3) {
+            error3.printStackTrace();
+        } finally {
             try {
-                moos.close();
-                fos.close();
-            }catch (IOException error){
+                ois.close();
+                fis.close();
+            } catch (IOException error) {
                 error.printStackTrace();
             }
         }
+        return listaJugadores;
     }
 
     /**
@@ -137,46 +167,46 @@ public class Gestora {
      * @param menu Menú que queremos insertar.
      */
     public static void rellenarLista(){
-        Jugador j0 = new Jugador(0, "Junkrat", 0, true);
-        Jugador j1 = new Jugador(1, "Pablo Prats", 0, true);
-        Jugador j2 = new Jugador(2, "Jesus de Ubrique", 0, true);
-        Jugador j3 = new Jugador(3, "Ana Obregon", 0, true);
-        Jugador j4 = new Jugador(4, "Ibai Llanos", 0, true);
-        Jugador j5 = new Jugador(5, "AuronPlay", 0, true);
-        Jugador j6 = new Jugador(6, "Wismichu", 0, true);
-        Jugador j7 = new Jugador(7, "Alexelcapo", 0, true);
-        Jugador j8 = new Jugador(8, "Belen Esteban", 0, true);
-        Jugador j9 = new Jugador(9, "Asen Rise", 0, true);
-        Jugador j10 = new Jugador(10, "Garou", 0, true);
-        Jugador j11 = new Jugador(11, "Saitama", 0, true);
-        Jugador j12 = new Jugador(12, "Yuno", 0, true);
-        Jugador j13 = new Jugador(13, "Asta", 0, true);
-        Jugador j14 = new Jugador(14, "Ichigo", 0, true);
-        Jugador j15 = new Jugador(15, "Bang", 0, true);
-        Jugador j16 = new Jugador(16, "Tatsumaki", 0, true);
-        Jugador j17 = new Jugador(17, "Silver Fang", 0, true);
-        Jugador j18 = new Jugador(18, "Ash", 0, true);
-        Jugador j19 = new Jugador(19, "Dr Stone", 0, true);
-        Jugador j20 = new Jugador(20, "Genos", 0, true);
-        Jugador j21 = new Jugador(21, "Jiraya", 0, true);
-        Jugador j22 = new Jugador(22, "Sasuke", 0, true);
-        Jugador j23 = new Jugador(23, "Naruto", 0, true);
-        Jugador j24 = new Jugador(24, "Deidara", 0, true);
-        Jugador j25 = new Jugador(25, "Tsunade", 0, true);
-        Jugador j26 = new Jugador(26, "Sakura", 0, true);
-        Jugador j27 = new Jugador(27, "Itachi", 0, true);
-        Jugador j28 = new Jugador(28, "Konohamaru", 0, true);
-        Jugador j29 = new Jugador(29, "Orochimaru", 0, true);
-        Jugador j30 = new Jugador(30, "Kaido", 0, true);
-        Jugador j31 = new Jugador(31, "Nami", 0, true);
-        Jugador j32 = new Jugador(32, "Brook", 0, true);
-        Jugador j33 = new Jugador(33, "Franky", 0, true);
-        Jugador j34 = new Jugador(34, "Big Mom", 0, true);
-        Jugador j35 = new Jugador(35, "Ron Lucci", 0, true);
-        Jugador j36 = new Jugador(36, "Blueno", 0, true);
-        Jugador j37 = new Jugador(37, "Batman", 0, true);
-        Jugador j38 = new Jugador(38, "Superman", 0, true);
-        Jugador j39 = new Jugador(39, "Roadhog", 0, true);
+        Jugador j0 = new Jugador(0, "Junkrat", 0, 0);
+        Jugador j1 = new Jugador(1, "Pablo Prats", 0, 0);
+        Jugador j2 = new Jugador(2, "Jesus de Ubrique", 0, 0);
+        Jugador j3 = new Jugador(3, "Ana Obregon", 0, 0);
+        Jugador j4 = new Jugador(4, "Ibai Llanos", 0, 0);
+        Jugador j5 = new Jugador(5, "AuronPlay", 0, 0);
+        Jugador j6 = new Jugador(6, "Wismichu", 0, 0);
+        Jugador j7 = new Jugador(7, "Alexelcapo", 0, 0);
+        Jugador j8 = new Jugador(8, "Belen Esteban", 0, 0);
+        Jugador j9 = new Jugador(9, "Asen Rise", 0, 0);
+        Jugador j10 = new Jugador(10, "Garou", 0, 0);
+        Jugador j11 = new Jugador(11, "Saitama", 0, 0);
+        Jugador j12 = new Jugador(12, "Yuno", 0, 0);
+        Jugador j13 = new Jugador(13, "Asta", 0, 0);
+        Jugador j14 = new Jugador(14, "Ichigo", 0, 0);
+        Jugador j15 = new Jugador(15, "Bang", 0, 0);
+        Jugador j16 = new Jugador(16, "Tatsumaki", 0, 0);
+        Jugador j17 = new Jugador(17, "Silver Fang", 0, 0);
+        Jugador j18 = new Jugador(18, "Ash", 0, 0);
+        Jugador j19 = new Jugador(19, "Dr Stone", 0, 0);
+        Jugador j20 = new Jugador(20, "Genos", 0, 0);
+        Jugador j21 = new Jugador(21, "Jiraya", 0, 0);
+        Jugador j22 = new Jugador(22, "Sasuke", 0, 0);
+        Jugador j23 = new Jugador(23, "Naruto", 0, 0);
+        Jugador j24 = new Jugador(24, "Deidara", 0, 0);
+        Jugador j25 = new Jugador(25, "Tsunade", 0, 0);
+        Jugador j26 = new Jugador(26, "Sakura", 0, 0);
+        Jugador j27 = new Jugador(27, "Itachi", 0, 0);
+        Jugador j28 = new Jugador(28, "Konohamaru", 0, 0);
+        Jugador j29 = new Jugador(29, "Orochimaru", 0, 0);
+        Jugador j30 = new Jugador(30, "Kaido", 0, 0);
+        Jugador j31 = new Jugador(31, "Nami", 0, 0);
+        Jugador j32 = new Jugador(32, "Brook", 0, 0);
+        Jugador j33 = new Jugador(33, "Franky", 0, 0);
+        Jugador j34 = new Jugador(34, "Big Mom", 0, 0);
+        Jugador j35 = new Jugador(35, "Ron Lucci", 0, 0);
+        Jugador j36 = new Jugador(36, "Blueno", 0, 0);
+        Jugador j37 = new Jugador(37, "Batman", 0, 0);
+        Jugador j38 = new Jugador(38, "Superman", 0, 0);
+        Jugador j39 = new Jugador(39, "Roadhog", 0, 0);
 
         MyObjectOutputStream moos = null;
         FileOutputStream fos = null;
@@ -246,13 +276,9 @@ public class Gestora {
      */
     public static void ajustesEncabezamiento(){
         File listaJugadores = new File("listaJugadores.dat");
-        File participantes = new File("participantes.dat");
 
         if(!listaJugadores.isFile()){
             crearFichero("listaJugadores.dat");
-        }
-        if(!participantes.isFile()){
-            crearFichero("participantes.dat");
         }
     }
 
