@@ -31,6 +31,8 @@ import java.util.Scanner;
     - opcionMenu2 debe estar entre 1 y 2
 PG N0
 INICIO
+si  no existe el fichero
+    rellenar fichero
 repetir
     MostrarMenu, leer y ValidarOpcionMenu1*
     segun(opcionMenu1)
@@ -56,6 +58,7 @@ INICIO
                 SeleccionarParticipante.
                 KillsParticipante* //Muestra las kills que se ha hecho un participante seleccionado en la partida.
         fin_segun
+        MostrarMenu2, leerValiadarOpcionMenu2
     fin_mientras
 FIN
 
@@ -64,23 +67,22 @@ INICIO
 repetir
     enfrentarOpenentes*
     mensajeEliminacion* //Mesanje que se muestra cuando se consigue una kill
-    incrementarLetalidad* //La persona que consigue la kill ve incrementada su letalidad
-    esperar10segundos*
-mientras queden jugadores mas de 2 jugadores
+    esperar2segundos*
+mientras quede mas de 1 jugador
 FIN
  *  */
 public class Main {
     public static void main(String[] args) {
         int opcionMenu1;
         int opcionMenu2;
+        int IDjugador;
         Scanner teclado = new Scanner(System.in);
         ArrayList lista = new ArrayList();
 
-        //Borrar luego:
-        Gestora.ajustesEncabezamiento();
-        //Rellenar la lista de jugadores totales
-        Gestora.rellenarLista();
-
+        //Si existe el fichero
+        if(Gestora.ajustesEncabezamiento());
+            //Rellenar la lista de jugadores totales
+            Gestora.rellenarLista();
 
         do {//repetir
             //MostrarMenu, leer y ValidarOpcionMenu1*
@@ -93,15 +95,19 @@ public class Main {
                     //MostrarListaParticipantes*
                     Gestora.mostrarParticipantes(lista);
 
-                    //repetir
+                    do {//repetir
                         //enfrentarOpenentes*
                         Gestora.enfrentarOponentes();
-                        //mensajeEliminacion* //Mesanje que se muestra cuando se consigue una kill
-                        //incrementarLetalidad* //La persona que consigue la kill ve incrementada su letalidad
-                        //esperar10segundos*
-                    //mientras queden jugadores mas de 2 jugadores
+                        //esperar2segundos
+                        /*try {
+                            Thread.sleep(2000);
+                        }catch(InterruptedException e){
+                            e.printStackTrace();
+                        }*/
+                    }while(Gestora.jugadoresRestantes() != 1);//mientras quede mas de 1 jugador
 
                     //MostrarGanador*
+                    Gestora.mostrarGanador();
 
                     //MostrarMenu2, leeryValidarOpcionMenu2*
                     opcionMenu2 = Utilidades.leerValidarOpcionMenu2();
@@ -112,9 +118,16 @@ public class Main {
                                 //MostrarListaParticipantes*
                                 Gestora.mostrarParticipantes(lista);
                                 //seleccionarParticipante*
-                                //KillsParticipante* //Muestra las kills que se ha hecho un jugador seleccionado en la partida.
+                                IDjugador = Utilidades.seleccionarParticipante();
+                                if(Gestora.haParticipado(IDjugador, lista)) {//si  el jugador ha participado
+                                    //KillsParticipante* //Muestra las kills que se ha hecho un jugador seleccionado en la partida.
+                                    Gestora.killsParticipante(IDjugador);
+                                }else { //sino
+                                    System.out.println("El jugador seleccionado no ha participado en la partida.");
+                                }
                                 break;
                         }//fin_segun
+                        opcionMenu2 = Utilidades.leerValidarOpcionMenu2();
                     }//fin_mientras
                     break;
                 case 2: //caso 2

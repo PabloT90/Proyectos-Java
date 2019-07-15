@@ -47,4 +47,17 @@ public class Utilidades {
 
         return opcion;
     }
+
+    public static int seleccionarParticipante(){
+        Scanner teclado = new Scanner(System.in);
+        int participante;
+
+        do{
+            System.out.println("Que participante quieres seleccionar para ver su rendimiento en la partida?");
+            participante = teclado.nextInt();
+        }while(participante < 0 || participante > 40);
+
+        return participante;
+    }
+
 }

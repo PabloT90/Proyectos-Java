@@ -6,9 +6,68 @@ import java.util.*;
 public class Gestora {
 
     private static ArrayList<Jugador> jugadoresPartida = new ArrayList<>(); //Creo que asi se me simplifica todo bastante
+    private static ArrayList<Jugador> copiaJugadores = new ArrayList<>(); //Aqui guardo una copia de los jugadores para luego mostrar las muertes de cada jugador.
+
+    public static void killsParticipante(int ID){
+        String IDJugador = String.valueOf(ID);
+        int kills = 0;
+
+        //Leer la copia de los jugadores e imprimir los que en su nombre tengan el ID recibido como parametro
+        for(int i = 0; i < copiaJugadores.size(); i++){
+            if(copiaJugadores.get(i).getNombre().equals(IDJugador)){
+                kills++;
+            }
+        }
+        System.out.println("El jugador con el ID: "+ ID + " asesino a "+ kills + " oponentes.");
+    }
+
+    /**
+     * Cambia el nombre del jugador2 al ID del jugador que lo ha matado
+     * @param j1 Jugador 1
+     * @param j2 Jugador 2
+     */
+    public static void registrarKill(Jugador j1, Jugador j2){
+        String nombre = String.valueOf(j1.getID());
+        j2.setNombre(nombre);
+    }
+
+    /**
+     * Comprueba si un jugador ha participado en la partida.
+     * @param ID ID del jugador.
+     * @param lista Lista de los participantes.
+     * @return True si ha participado, false en caso contrario.
+     */
+    public static boolean haParticipado(int ID, ArrayList<Integer> lista){
+        boolean participado = false;
+
+        if(lista.contains(ID)){
+            participado = true;
+        }
+
+        return participado;
+    }
+
+    /**
+     * Muestra los jugadores que quedan.
+     * @return cantidad de jugadores restantes
+     */
+    public static int jugadoresRestantes(){
+        return jugadoresPartida.size();
+    }
+
+    /**
+     * Muestra al ganador de la partida.
+     */
+    public static void mostrarGanador(){
+        Jugador jugador = new Jugador();
+        jugador = jugadoresPartida.get(0); //El ganador de la partida sera el que una vez acabado el bucle de los enfrentamientos quede en el array, pues se van eliminando de este conforme van perdiendo.
+        System.out.println("  ****************************************************");
+        System.out.println("*** El ganador ha sido: "+jugador.getNombre()+"  con una tasa de letalidad de " + jugador.getLetalidad()+" ***");
+        System.out.println("  ****************************************************");
+    }
+
     /**
      * Enfrenta a 2 oponentes.
-     * @param lista Lista con todos los jugadores.
      */
     public static void enfrentarOponentes(){
         Random rd = new Random();
@@ -37,13 +96,31 @@ public class Gestora {
         }while(posVictoria2 == posVictoria1); //Asi me aseguro que se generan numero diferentes.
 
         //Incrementar letalidad al ganador
-        if(posVictoria1 > posVictoria2)
+        if(posVictoria1 > posVictoria2) {
+            System.out.println("------------------------------");
+            System.out.println("El jugador "+ jugador1.getNombre()+ " ha matado a "+ jugador2.getNombre()+".");
             incrementarLetalidad(jugador1);
-        else
+            //Elimino al jugador del array.
+            jugadoresPartida.remove(jugador2);
+
+            //registrarKill
+            registrarKill(jugador1, jugador2);
+        }else{
+            System.out.println("------------------------------");
+            System.out.println("El jugador "+ jugador2.getNombre()+ " ha matado a "+ jugador1.getNombre()+".");
             incrementarLetalidad(jugador2);
+            //Elimino al jugador del array.
+            jugadoresPartida.remove(jugador1);
+
+            //registrarKill
+            registrarKill(jugador2, jugador1);
+        }
     }
 
-    //No se si esto funcionara asi xd
+    /**
+     * Incrementa la letalidad de un jugador 1 punto.
+     * @param jugador Jugador al que aumentar su letalidad.
+     */
     public static void incrementarLetalidad(Jugador jugador){
         jugador.setLetalidad(jugador.getLetalidad()+1);
         System.out.println("Letalidad incrementada al conseguir una Kill.");
@@ -51,7 +128,7 @@ public class Gestora {
 
     /**
      * Muestra los participantes que van a jugar la partida.
-     * @param listaJugadores Jugadores que la van a jugar
+     * @param lista Lista con los ID de los participantes. La lista debe estar ordenada de menor a mayor.
      */
     public static void mostrarParticipantes(ArrayList<Integer> lista) {
         int i = 0;
@@ -97,6 +174,7 @@ public class Gestora {
         lista = obtenerParticipantes();
         Collections.sort(lista); //Ordenamos el array para que al buscar a los oponentes en el fichero sea mas rapido y facil.
         jugadoresPartida = insertarJugadores(lista);
+        copiaJugadores = (ArrayList<Jugador>) jugadoresPartida.clone(); //Copio los jugadores de la partida.
 
         return lista;
     }
@@ -125,9 +203,10 @@ public class Gestora {
     /**
      * Esta funcion inserta una lista de participantes en el array de jugadores
      * @param lista Contiene el ID de los participantes
+     * @return Array con todos los jugadores de la partida.
      */
     public static ArrayList<Jugador> insertarJugadores(ArrayList<Integer> lista) {
-        int i=0;
+        int i = 0;
         Jugador player = null;
         FileInputStream fis = null;
         ObjectInputStream ois = null;
@@ -273,13 +352,18 @@ public class Gestora {
     /**
      * Esta función crear los ficheros maestro y de movimiento con una cabecera válida para trabajar
      * con la clase ObjectStream, en caso de no existir.
+     * @return True en caso de crear el fichero. False en caso en que ya este creado el fichero.
      */
-    public static void ajustesEncabezamiento(){
+    public static boolean ajustesEncabezamiento(){
+        boolean ret = false;
         File listaJugadores = new File("listaJugadores.dat");
 
         if(!listaJugadores.isFile()){
             crearFichero("listaJugadores.dat");
+            ret = true;
         }
+
+        return ret;
     }
 
     /**

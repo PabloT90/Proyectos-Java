@@ -6,7 +6,7 @@ import java.io.Serializable;
 * Propiedades basicas:
 *   - ID: int consultable.
 *   - letalidad: int consultable y modificable (mientras mayor sea este valor mayor serán sus posibilidades de matar a su adversario.)
-*   - nombre: String consultable.
+*   - nombre: String consultable y modificable.
 *   - victorias: int consultable y modificable.
 * Propiedades derivadas: no hay.
 * Propiedades compartidas: no hay.
@@ -51,6 +51,9 @@ public class Jugador implements Serializable {
 
     public String getNombre(){
         return nombre;
+    }
+    public void setNombre(String nombre){
+        this.nombre = nombre;
     }
 
     public int getLetalidad(){
