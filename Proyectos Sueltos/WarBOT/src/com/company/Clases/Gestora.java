@@ -8,7 +8,12 @@ public class Gestora {
     private static ArrayList<Jugador> jugadoresPartida = new ArrayList<>(); //Creo que asi se me simplifica todo bastante
     private static ArrayList<Jugador> copiaJugadores = new ArrayList<>(); //Aqui guardo una copia de los jugadores para luego mostrar las muertes de cada jugador.
 
-    public static void killsParticipante(int ID){
+    /**
+     * Cuenta las kills que se ha hecho un participante en la partida.
+     * @param ID ID del participante al que queremos consultar su rendimiento en la partida.
+     * @return El numero de kills.
+     */
+    public static int killsParticipante(int ID){
         String IDJugador = String.valueOf(ID);
         int kills = 0;
 
@@ -18,7 +23,7 @@ public class Gestora {
                 kills++;
             }
         }
-        System.out.println("El jugador con el ID: "+ ID + " asesino a "+ kills + " oponentes.");
+        return kills;
     }
 
     /**
@@ -87,8 +92,8 @@ public class Gestora {
 
         //Para decidir un enfrentamiento lo hare mediante un numero aleatorio entre 0 y 10 y le sumare la letalidad del jugador, el que obtenga el valor mas alto gana.
         do {
-            posVictoria1 = rd.nextInt(jugadoresPartida.size()); //Posicion que ocupa un jugador en la lista.
-            posVictoria2 = rd.nextInt(jugadoresPartida.size());
+            posVictoria1 = rd.nextInt(10);
+            posVictoria2 = rd.nextInt(10);
 
             //Le sumo el valor de letalidad de cada uno.
             posVictoria1 += jugador1.getLetalidad();

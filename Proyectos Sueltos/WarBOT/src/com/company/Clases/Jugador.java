@@ -66,7 +66,7 @@ public class Jugador implements Serializable {
     public int getVictorias(){
         return victorias;
     }
-    public void setEstado(boolean estado){
+    public void setVictorias(int victorias){
         this.victorias = victorias;
     }
 

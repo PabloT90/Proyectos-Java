@@ -76,6 +76,7 @@ public class Main {
         int opcionMenu1;
         int opcionMenu2;
         int IDjugador;
+        int kills = 0;
         Scanner teclado = new Scanner(System.in);
         ArrayList lista = new ArrayList();
 
@@ -121,7 +122,8 @@ public class Main {
                                 IDjugador = Utilidades.seleccionarParticipante();
                                 if(Gestora.haParticipado(IDjugador, lista)) {//si  el jugador ha participado
                                     //KillsParticipante* //Muestra las kills que se ha hecho un jugador seleccionado en la partida.
-                                    Gestora.killsParticipante(IDjugador);
+                                    kills = Gestora.killsParticipante(IDjugador);
+                                    System.out.println("El jugador con el ID: "+ IDjugador + " asesino a "+ kills + " oponentes.");
                                 }else { //sino
                                     System.out.println("El jugador seleccionado no ha participado en la partida.");
                                 }
